@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <form action="" method="post"> 
+        
+        <!--method può avere due dati princ post (non sporco lindirizzo serve poer grand qta di dati) e get(sporca l'url aggiungendo una serie di query params(chiave valore))num di dati limit-->
+
+        <label for="nome">Nome</label>
+        <label for="cons">Accetto policy</label>
+
+        <input id="nome" name="nome" type="text" placeholder="Nome">
+        <input name="num" type="number" placeholder="Numero">
+        <input name="email" type="email" placeholder="Email">
+        <input name="psw" type="password" placeholder="Password">
+
+        <input id="cons" type="checkbox">
+
+
+        <select  name="city">
+            <option value="">-seleziona-</option>
+            <option value="roma">Roma</option>
+            <option value="milano">Milano</option>
+        </select>
+
+        
+        <button>Invia</button>
+       <!-- <input type="submit" value="salva">-->
+    </form>
+
+</body>
+</html>
