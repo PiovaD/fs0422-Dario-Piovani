@@ -40,7 +40,7 @@ header h2 {
 /* MAIN */
 
 hr {    
-    /*border-bottom: 3px dashed #bbb;450*/
+    height: 20px;
     border: #bbb;
     border-style:none none dashed;
 }
