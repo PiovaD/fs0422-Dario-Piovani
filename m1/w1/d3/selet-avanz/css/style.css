@@ -1,0 +1,19 @@
+blockquote + p{
+    color: red;
+}
+
+span ~ b{
+    color: blue;
+}
+
+button{
+    color: white;
+    background-color: red;
+}
+
+button:hover{
+    background-color: yellow;
+    color: red;    
+    border: none;
+    transition: background-color 2s,  color 1s;
+}

@@ -1,0 +1,36 @@
+/*id peso 100 
+tag peso 1  
+classe peso 10
+style(in html) peso 1000*/
+
+
+/*a{ /*in caso di conflitto vince il sotto anche all interno dl blocco
+    text-decoration: none;
+    color: blue;
+    color: green;
+}*/
+
+
+a{/*peso 1*/
+    text-decoration: none;
+    color: blue;
+}
+
+
+#main-header a{ /*peso 100*/
+    
+    text-decoration: none;
+    color: black;
+}
+
+div.sfondo-blue{
+    background-color: red;
+}
+
+div.sfondo-blue.testo-grassetto{
+    font-weight: bold;
+}
+
+.sfondo-blue, .testo-grassetto{
+    height: 50px;
+}
