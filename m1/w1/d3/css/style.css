@@ -1,0 +1,27 @@
+/*sel attraverso tag*/
+div{
+    color: red;
+}
+
+/*sel attraverso id*/
+#div-blue {
+    color: blue;
+}
+
+
+/*sel attraverso classe*/
+.testo-verde{
+    color: green;
+}
+
+span{ 
+    font-style: italic;
+}
+
+#area-grassetto > span{ /*il simbolo > indica solo i figli diretti*/
+    font-weight: bold ;
+}
+
+#area-grassetto >div span{
+    background-color: blue;
+}
