@@ -7,49 +7,53 @@
 header {
     font-family: 'Raleway', sans-serif;
     background-color: #2bb0d8;
-    text-align: center;    
-    border-bottom: 10px solid #1e94b8;    
-    font-size: 2rem;
+    text-align: center;
+    border-bottom: 10px solid #1e94b8;
+    font-size: 2rem;    
+    line-height: 3rem;
 }
 
 h1 {
     text-transform: uppercase;
     color: white;
-    line-height: 3rem;
-    
+
 }
 
-h1>span {    
+h1>span::before{
+    content: "\a";
+    white-space: pre;
+}
+
+h1>span {
     color: #2bb0d8;
     background-color: white;
-    line-height: 3rem; 
 }
 
 
-header h2 { 
+header h2 {
     font-variant: small-caps;
     font-size: 1.7rem;
-    line-height: 6rem; 
+    line-height: 6rem;
 }
 
 /* MAIN */
 
-hr{
+hr {
     border-bottom: 3px dashed #bbb;
 }
 
-main{
+main {
     font-family: 'Raleway', sans-serif;
-    font-size: 1.2rem;    
+    font-size: 1.2rem;
     line-height: 2rem;
     margin-left: 20px;
-    margin-right: 20px;    
-    font-weight:500;
+    margin-right: 20px;
+    font-weight: 500;
 }
 
 /* ELEMENTI NEL MAIN */
 
-section h2{
+section h2 {
     text-transform: uppercase;
     text-align: center;
     color: #1e94b8;
@@ -57,75 +61,77 @@ section h2{
     line-height: 6rem;
 }
 
-figure img{ 
+figure img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     height: auto;
-    width:80%;
+    width: 80%;
     padding: 5px;
     border: 2px solid #ddd;
 }
 
-figure figcaption{    
+figure figcaption {
     text-align: center;
 }
 
-div address{
+div address {
     line-height: 2em;
 }
-div address b{
-    font-weight: bold; 
+
+div address b {
+    font-weight: bold;
 }
 
-a{
+a {
     color: #ff4000;
 }
 
-p b{
+p b {
     line-height: 4em;
     font-weight: bold;
 }
 
-blockquote{
-    text-indent:5px;
-    text-justify:inter-word;
+blockquote {
+    padding: 20px;
+    text-indent: 5px;
+    text-justify: inter-word;
     border-radius: 10px;
     background-color: #ddd;
 }
 
-blockquote p{
-    text-align:center;
+blockquote p {
+    text-align: center;
     font-style: italic;
 }
 
-strong{
-    color:#1e94b8;
+strong {
+    color: #1e94b8;
 }
 
-div h3{
+div h3 {
     font-weight: bold;
     line-height: 3em;
 }
 
-mark{
+mark {
     background-color: #1e94b8;
     color: white;
 }
 
-ul{
+ul {
     margin-left: 2em;
 }
 
-dd{
+dd {
 
     margin-left: 2em;
 }
 
 /* FOOTER */
 
-footer{
-    border-top:8px solid #1e94b8;
+footer {
+    border-top: 8px solid #1e94b8;
     text-align: center;
     font-family: 'Raleway', sans-serif;
     color: white;
@@ -133,12 +139,12 @@ footer{
     line-height: 1.5rem;
 }
 
-kbd{
+kbd {
     color: yellow;
     font-weight: bold;
     font-style: italic;
 }
 
-small{
+small {
     color: grey;
 }
