@@ -4,6 +4,7 @@
 
 /* HEADER */
 
+
 header {
     font-family: 'Raleway', sans-serif;
     background-color: #2bb0d8;
@@ -38,8 +39,10 @@ header h2 {
 
 /* MAIN */
 
-hr {
-    border-bottom: 3px dashed #bbb;
+hr {    
+    /*border-bottom: 3px dashed #bbb;450*/
+    border: #bbb;
+    border-style:none none dashed;
 }
 
 main {
@@ -68,7 +71,7 @@ figure img {
     height: auto;
     width: 80%;
     padding: 5px;
-    border: 2px solid #ddd;
+    border: 2px solid #bbb;
 }
 
 figure figcaption {
@@ -97,7 +100,7 @@ blockquote {
     text-indent: 5px;
     text-justify: inter-word;
     border-radius: 10px;
-    background-color: #ddd;
+    background-color: #bbb;
 }
 
 blockquote p {
