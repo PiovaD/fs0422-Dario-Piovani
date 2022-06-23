@@ -1,0 +1,27 @@
+.container{
+   margin: 0 auto;
+   width: 90%;
+}
+
+.blocco{
+    background-color: yellow;
+    width: calc(100%/3);
+    height: 200px;
+    display: inline-block;
+    margin-left: -4px;
+    
+}
+
+.blocco:nth-of-type(3){
+    display: none;
+}
+
+.blocco:nth-of-type(5){
+    opacity: 0;
+}
+
+
+.blocco:last-of-type{
+    display: none;
+}
+

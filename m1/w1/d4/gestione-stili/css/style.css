@@ -1,0 +1,26 @@
+#blocco-trasparente span{
+    opacity: 0.5;
+}
+
+body{
+    font-size: 1.2rem;
+}
+
+#sezione1{
+    height: 200px;
+    overflow: auto;
+    
+}
+
+::-webkit-scrollbar{
+    background-color: red;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: blue;
+}
+
+#sezione2{
+    margin-top: 20px;
+    hyphens: auto;
+}
