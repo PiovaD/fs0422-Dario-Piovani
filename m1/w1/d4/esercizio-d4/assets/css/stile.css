@@ -1,15 +1,264 @@
 /* IMPOSTAZIONI GENERALI */
+body{
+    background-image: url("../img/sfondo.png") ;
+    background-position: center;
+}
+
+hr{
+    display:none;
+}
 
 /* HEADER */
+header {
+    font-size: 1.3rem;
+    font-family: poppins; 
+    background-image: linear-gradient(0deg, rgba(9,98,121,1) 16%, rgba(0,159,255,1) 100%);;
+    margin: 3%;
+    padding: 3%;
+    box-shadow: 0px 2px 4px #000000a5;
+
+    color:white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header img{
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    padding: 15px;
+}
+header p{
+    padding: 15px;
+}
+
+header ul{
+    list-style-type: none;
+    padding: 15px;
+}
+
+header li>a{
+    text-decoration: none;
+    color: white;
+}
+
+header li::before{
+    content: "⇒ "
+}
+
+header li::after{
+    content: " ⇐";
+}
 
 /* MAIN */
 
+main {
+    font-family: poppins; 
+    background-color: #fff;    
+    margin: 3%;
+    padding: 3%;
+    box-shadow: 0px 2px 4px #000000a5;
+}
+
 /* ELEMENTI NEL MAIN - ARTICLE */
 
+article{
+    margin: 0px auto 20px 0px;    
+    line-height: 1.5em;    
+    font-size: 1.3rem;
+}
+
+h1{
+    margin: 0px auto 20px 0px;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+article>p:first-of-type{
+    color:rgba(102, 102, 102, 0.833);    
+    margin: 0px auto 20px 0px;
+}
+
+
+article p{
+    margin: 0px auto 20px 0px;
+}
+
+article strong{
+    font-weight: bold;
+    color: purple;
+}
+
+article  ul, ol{
+    margin: 0px auto 20px 20px;
+    padding: 10px;
+}
+
+code{
+    background-color: #ddd;
+    border-radius: 10px;
+    border: 2px solid #bbb;
+    
+    
+}
 /* TABELLE */
+
+table {
+    border-bottom: 3px solid #3971ff;
+    margin: 50px 0px;
+}
+
+table caption{
+    font-weight: bold;
+    font-style: italic
+}
+
+table thead th{
+    border: 1px solid white;
+    background-color: #3971ff;
+    padding: 10px;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center ;
+}
+
+table td{
+    text-align: center;
+    padding: 10px;
+    
+}
+
+table tr:nth-child(even){
+    background-color: #ddd;
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+}
+
+p a{
+    font-weight: bold;
+    color: rgb(0, 160, 213);
+}
+
+iframe{
+    padding: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 80%;
+    border-radius: 50px;
+}
 
 /* FORM */
 
+section{
+    background-color: #ddd;
+}
+
+section h2{
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    text-transform: uppercase;
+    padding: 20px;
+    font-weight: bold;
+}
+
+section p{
+    font-size: 1.2rem;
+    padding: 15px;
+}
+
+fieldset{
+    text-align: center;
+    font-family: poppins;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+fieldset input{
+    background-color: white;
+    border: none;
+    border-bottom: 1px dashed #333;
+    font-size: 1.2rem;
+    height: 30px;
+}
+
+fieldset button{
+    font-family: poppins;
+    color: white;
+    font-weight: bold;
+    background-color: #0048ff;
+    border: 1px;
+    font-size: 1.2rem;
+    
+    height: 30px;
+}
 /* ELEMENTI NELL' ASIDE */
 
+aside{
+    font-family: poppins; 
+}
+
+aside h2{
+    text-align: center;
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: uppercase;
+    padding: 20px;
+    font-weight: bold;
+}
+
+aside p{
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+aside div{
+    background-color: #ddd;
+    margin-bottom: 20px;
+    border: 1px solid #bbb;
+    padding: 15px;
+
+}
+
+aside div a{    
+    font-weight: bold;
+    color: #3971ff;
+}
+
+aside div p:last-child{
+    text-align: right;
+    font-size: 0.9rem;
+}
 /* FOOTER */
+
+footer{
+    font-size: 1rem;
+    font-family: poppins; 
+    background-color: #009908;
+    background-image: linear-gradient(180deg, rgba(9,98,121,1) 32%, rgba(3,44,55,1) 100%);;
+    margin: 3%;
+    padding: 3%;
+    box-shadow: 0px 2px 4px #000000a5;
+
+    color:white;
+    text-align: center;
+    line-height:1.5rem;
+}
+
+footer p{
+    padding: 20px;
+}
+
+
+footer address{
+    padding-bottom: 30px;
+}
+
+footer address a{
+    color: rgb(177, 1, 177);
+    font-weight: bold;
+}
