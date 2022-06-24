@@ -86,15 +86,19 @@ main {
     padding-bottom: 50px;
 }
 
-.partiamo a {
+.button{
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     color: white;
-
+    
     padding: 15px 50px;
     background-color: #f04c2f;
     border-radius: 5px;
+}
+
+.button:hover{
+    background-color: #e22d0e;
 }
 
 /* ELEMENTI NEL MAIN - ARTICLE */
