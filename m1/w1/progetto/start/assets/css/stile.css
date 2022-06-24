@@ -1,68 +1,66 @@
 /* IMPOSTAZIONI GENERALI */
-body{    
+body {
     text-align: center;
     font-family: "Open sans";
-    color:#393d41;
-    line-height:1.65em;
+    color: #393d41;
+    line-height: 1.65em;
     font-size: 1.4rem;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-section{
-   padding: 30px;
+section {
+    padding: 30px;
 }
 
-h1, h2, h3, h4{
+h1,h2,h3,h4 {
     font-family: 'Montserrat';
     font-weight: bold;
     line-height: 1.5em;
 }
 
-h1{    
+h1 {
     color: #25a2c3;
     font-size: 2.5rem;
 }
 
-h2{    
+h2 {
     color: white;
     font-size: 2.5rem;
 
     padding: 20px 0px;
 }
 
-h3{
-    
+h3 {
     color: #25a2c3;
     font-size: 1.2rem;
 
     padding: 10px 0px;
 }
 
-h4{
-    color: white;    
-    font-size: 1.7rem;
+h4 {
+    color: white;
+    font-size: 2rem;
 
     padding: 10px 0px;
 }
 
-p{
+p {
     padding-bottom: 20px;
 }
 
 /* HEADER */
-header {    
+header {
     background-color: black;
-    padding: 3rem;
+    padding: 2rem;
 }
 
-header img{
+header img {
     width: 50%;
     max-width: fit-content;
 }
-
 
 /* MAIN */
 
@@ -70,114 +68,113 @@ main {
     font-family: 'Open Sans';
 }
 
-
 /* ARTICLE */
 
-.partiamo{
-    background-image: url(../images/banner.jpg) ;
+.partiamo {
+    background-image: url(../images/banner.jpg);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size:cover;
+    background-size: cover;
     padding-top: 60px;
-    padding-bottom: 60px;   
+    padding-bottom: 60px;
 }
 
-.partiamo p{
-    font-weight:500;  
+.partiamo p {
+    font-weight: 500;
     padding-top: 20px;
     padding-bottom: 50px;
 }
 
-.partiamo a{
+.partiamo a {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     color: white;
 
-    
     padding: 15px 50px;
-    background-color: #f04c2f ;
+    background-color: #f04c2f;
     border-radius: 5px;
-
 }
 
 /* ELEMENTI NEL MAIN - ARTICLE */
 
-#notebook{
+#notebook {
     border-radius: 50%;
     margin: 20px 0px;
 }
 
-blockquote{
-    background-color:#e22d0e;
+blockquote {
     color: white;
+
+    background-color: #e22d0e;
     padding: 20px
 }
 
-
-
-blockquote p{   
+blockquote p {
     font-style: italic;
     font-size: 1.3rem;
 }
 
-blockquote cite{
+blockquote cite {
     display: block;
     line-height: 1.5em;
 }
 
-cite>p{
+cite>p {
     font-size: 1rem;
 }
 
 /* ELEMENTI NELL' ASIDE */
 
-aside{
+aside {
     padding: 30px 0px;
 }
 
-aside div{
+aside div {
     margin: 30px;
     border: 1px solid #dee1e3;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
-div>p{
-    padding: 15px;
+div>p {
     font-size: 1.2rem;
+
+    padding: 15px;
     margin-bottom: 20px;
 }
 
 /* FOOTER */
 
-footer {    
-    padding: 30px 0px;
+footer {
     background-color: #25a2c3;
+    padding: 30px;
 }
 
-footer address{
-    padding:10px 0px;
+footer address {
+    font-size: 1.1rem;
+
+    padding: 10px 0px;
 }
 
-footer address b{
+footer address b {
     display: block;
 }
 
-footer a, b{    
+footer a,b {
     color: #c8e7f0;
+    line-height: 1.5em;
 }
 
-footer i{
+footer i {
     color: white;
 }
 
-
-footer>p{
+footer>p {
     color: #c8e7f0;
     font-size: 0.8rem;
 
     border-top: 1px solid #c8e7f0;
-    margin: 10px 30%;
+    margin: 10px 20%;
     padding-top: 20px;
 }
