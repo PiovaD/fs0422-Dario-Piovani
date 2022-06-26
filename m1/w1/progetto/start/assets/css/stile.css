@@ -132,11 +132,13 @@ cite>p {
 /* ELEMENTI NELL' ASIDE */
 
 aside {
-    padding: 30px 0px;
+    padding: 30px;
 }
 
 aside div {
-    margin: 30px;
+    margin: 30px auto;
+    max-width: 640px;
+
     border: 1px solid #dee1e3;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
