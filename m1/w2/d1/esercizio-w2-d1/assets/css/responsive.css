@@ -8,6 +8,10 @@
         font-size: 1.7em;
         padding: 0px
     }
+
+    th{
+        color: black;
+    }
 }
 
 @media screen and (min-width: 320px) {
@@ -56,6 +60,10 @@
     aside div p:first-of-type{        
         min-height: 4em;
     }
+
+    section form input, section form button{
+        font-size: 1.1em;
+    }
 }
 
 @media screen and (min-width: 1200px){
@@ -77,9 +85,13 @@
         width: calc(100%/3 - 4px);
     }
 
+    section form input, section form button{
+        font-size: 1.2em;
+    }
+
 }
 
-@media screen and (min-width: 1410px){
+@media screen and (min-width: 1440px){
     .social, .toTop{
         right: calc((100% - 1300px)/2 - 50px );
     }

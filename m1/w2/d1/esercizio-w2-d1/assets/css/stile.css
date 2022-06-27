@@ -15,12 +15,12 @@ hr {display: none;} /* rimuove l'elemento */
 .toTop {
     position: fixed;
     bottom: 10px;
-    right: 7px;
+    right: 20px;
 }
 .social {
     position: fixed;
     bottom: 20vh;
-    right: 7px;
+    right: 20px;
 }
 .toTop a, .social a {
     color: #c77ea2;
@@ -32,6 +32,7 @@ hr {display: none;} /* rimuove l'elemento */
     }
 .toTop .far, .social .far {
     background: white;
+    border-radius: 5%;
 }
 
 /* HEADER */
