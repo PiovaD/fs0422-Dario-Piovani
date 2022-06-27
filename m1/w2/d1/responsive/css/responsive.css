@@ -1,0 +1,47 @@
+/*breack point
+and fa la concatenazione*/ 
+
+@media screen and (min-width: 480px){
+    .col{
+        background-color: yellow;
+        width: calc(100%/2 - 8px);
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+}      
+
+@media screen and (min-width: 768px) {
+    
+    .col{
+        background-color: green;
+        width: calc(100%/3 - 8px);
+        margin-bottom: 5px;
+    }
+    .container{
+        margin:0 auto;
+        width: 765px;
+    }
+
+}
+
+@media screen and (min-width: 1440px){
+
+    .col{
+        background-color: blue;
+        width: calc(100%/4 - 8px);
+        margin-bottom: 5px;
+    }
+
+    .container{
+        width: 1435px;
+    }
+    
+}
+
+
+/*modifica il ctrl+p*/
+@media print{
+    .test{
+        display: none;
+    }
+}
