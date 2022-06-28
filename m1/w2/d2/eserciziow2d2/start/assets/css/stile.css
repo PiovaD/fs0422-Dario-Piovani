@@ -33,8 +33,11 @@ header {
     box-shadow: 0 3px 3px #444;
     margin-bottom: 1.5em;
     padding: 2em 1.5em;
+
+
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 
 header div img {
