@@ -1,0 +1,50 @@
+#main-header {
+    background-color: darkgreen;
+    height: 50px;
+    text-align: center;
+}
+
+#menu > li {
+    display: inline-block;
+}
+
+#menu li{
+    transition: all 0.3s;    
+}
+
+#menu li:hover{
+    background-color: #fff;
+}
+
+#main-header li:hover > a{
+    color: darkgreen;
+}
+
+#menu > li, #menu, #main-header nav{
+    height: 100%;
+}
+
+#main-header a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px;
+    line-height: 50px;
+    display: block;
+}
+
+/*sotto menu*/
+
+/*mouse sotto contatti attiva tendina chi siamo*/
+#menu li > ul{
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    background-color: darkgreen;
+    width: 200px;
+    transition: height 0.3s;
+    
+}
+
+#menu li:hover > ul {
+    height: 150px;
+}

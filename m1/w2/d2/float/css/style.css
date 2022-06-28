@@ -1,0 +1,34 @@
+img{
+    float:left;
+    padding: 5px;
+}
+
+.blog article{
+    width: 30%;
+    height: 300px;
+    background-color: red;
+
+    float: left;
+
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+/* reso inutile dal clearfix
+.blog article:last-child{
+    clear: both;
+}*/
+
+.blog.article-right article{
+    float: right;
+}
+
+#foto{
+    background-image: url(https://picsum.photos/1000/300);
+    height: 300px;
+}
+
+.clearfix{
+    visibility: hidden;
+    clear: both;
+}

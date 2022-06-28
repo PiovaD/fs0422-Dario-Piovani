@@ -1,0 +1,13 @@
+#top-bar{
+    height: 50px;
+    background-color: red;
+}
+
+#main-header{
+    background-color: purple;
+    height: 70px;
+    position: sticky;
+    width: 100%;
+    top: 0;
+}
+

@@ -1,0 +1,19 @@
+.fascia {
+    background-color: #ddd;
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px 0;
+    text-align: center;
+}
+
+#elemento-relative{
+    position: relative;
+    top: 50px; /*dipende da position non static*/
+    left: 20px;
+}
+
+#elemento-relative1{
+    position: relative;
+    top: -50px; 
+    right: 20px;
+}
