@@ -8,10 +8,10 @@ main{
     ;
 }
 
-.clearfix{
+.clearfix{                  /*classe del main*/
     grid-area: article;    
 }
-.news{
+.news{                      /*classe della sezione novità/mail*/
     margin-top: 20px;
     grid-area: news; 
     position: sticky; 

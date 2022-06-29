@@ -267,7 +267,7 @@ aside h2 {
     text-transform: uppercase;
     margin-bottom: 1em;
 }
-.related div {
+.related div {                      /*modificato con classe per background */
     background-color: #e3e3e3;
     border: 1px solid #c3c3c3;
     margin-bottom: 1em;
