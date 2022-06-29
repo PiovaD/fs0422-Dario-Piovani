@@ -1,0 +1,40 @@
+@media screen and (min-width:500px) {
+    header div{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .related{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .related div{
+        width: 30%;
+    }
+
+}
+
+@media screen and (min-width:800px) {
+    .related div{
+        width: auto;
+    }
+
+    .related{
+        flex-direction: column-reverse;
+    }
+
+    main{
+        display: flex;        
+        justify-content: space-around;
+        flex: 1 1 auto;
+    }
+
+    .clearfix{
+        flex-basis: 60%;
+    }
+
+    aside{
+       flex-basis: 30%;
+    }
+}

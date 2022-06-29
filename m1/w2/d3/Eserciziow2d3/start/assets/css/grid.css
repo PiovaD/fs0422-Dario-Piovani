@@ -1,0 +1,54 @@
+main{
+    display: grid;
+
+    grid-template-areas:
+    "article article related"
+    "article article news"
+    "article article ."
+    ;
+}
+
+.clearfix{
+    grid-area: article;    
+}
+.news{
+    margin-top: 20px;
+    grid-area: news; 
+    position: sticky; 
+    top: 17em;  
+}
+aside{
+    grid-area: related;    
+}
+
+/*main{
+    display: grid;
+}
+
+.clearfix{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;  
+    grid-row-end: 4;    
+}
+.news{
+    margin-top: 20px;
+    grid-column-start: 3;
+    grid-column-end: 4;   
+    grid-row-start: 2;  
+    grid-row-end: 3; 
+    position: sticky; 
+    top: 17em;  
+}
+aside{
+    grid-column-start: 3;
+    grid-column-end: 4;  
+    grid-row-start: 1;  
+    grid-row-end: 2;   
+}*/
+
+@media screen and (min-width:800px) {
+    .news {
+        top: 15em;
+    }
+}
