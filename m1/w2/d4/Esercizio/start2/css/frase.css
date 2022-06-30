@@ -27,7 +27,7 @@
     opacity: 0;
     position: absolute;
     margin-left: 8px;
-    width: max-content;
+    width:max-content;
     opacity: 0;
     color: rgb(64, 131, 154);
     font-weight: bold;
@@ -43,12 +43,15 @@
     }
     25%{
         opacity: 0;
+        transform: translateY(-20px)
     }
     50%{
         opacity: 1;
+        transform: translateY(0px)
     }
     75%{        
-        opacity: 0;
+        opacity: 0;   
+        transform: translateY(20px)     
     }
     100%{
         opacity: 0;
