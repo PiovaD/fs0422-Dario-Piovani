@@ -134,9 +134,12 @@ blockquote {
     padding: 2px;
 }
 
-.rel {
-    margin-bottom: 30px;
-}
+.rel::after { /*clearfix*/
+    content: "";
+    clear: both;
+    display: block;
+  }
+  
 
 h1+p {
     color: #a0a0a0;
