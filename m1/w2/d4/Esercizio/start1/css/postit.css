@@ -1,0 +1,73 @@
+.table{
+    background-color: #777;
+    height: 60vh;
+
+    display: flex;
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*.table{
+    background-color: #777;
+    height: 60vh;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 2.1fr);
+    gap: 20px;
+}*/
+
+.postit{
+    display: inline-block;
+
+    font-family: Indie Flower;
+    box-shadow: 3px 3px 5px;
+
+    
+    width: 21%;
+    max-height: 150px;
+    padding: 50px 0;
+
+
+    font-size: 1.5rem;
+    text-align: center;
+
+    
+    transition: transform 0.5s;
+}
+
+.postit h3{
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2em;
+}
+
+.t1, .t5,.t7{
+    transform: rotate(-5deg);
+    background: linear-gradient(180deg, rgba(255,253,180,1) 70%, rgba(162,161,120,1) 100%);
+}
+
+.t2, .t8{
+    transform: rotate(5deg);
+    background: linear-gradient(180deg, rgba(220,255,180,1) 70%, rgba(132,152,110,1) 100%);
+}
+
+.t3, .t6{
+    transform: rotate(-10deg);
+    background: linear-gradient(180deg, rgba(190,180,255,1) 70%, rgba(126,110,152,1) 100%);
+}
+
+.t4{
+    transform: rotate(15deg);
+    background: linear-gradient(180deg, rgba(220,255,180,1) 70%, rgba(132,152,110,1) 100%)
+}
+
+
+.postit:hover{
+    transform: scale(1.5) rotate(0deg);
+    z-index: 5;
+}
+
