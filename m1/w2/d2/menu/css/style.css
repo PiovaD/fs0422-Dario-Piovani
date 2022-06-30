@@ -48,3 +48,36 @@
 #menu li:hover > ul {
     height: 150px;
 }
+
+@media screen and (max-width: 768px) {
+    #main-header{
+        height:auto;
+    }
+
+    #menu{
+        height: 0;
+        overflow: hidden;
+    }
+
+    label[for="toggle"]{
+        cursor: pointer;
+    }
+
+    input[type="checkbox"]{
+        display: none;
+    }
+
+    input[type="checkbox"]:checked + #menu{
+        height: 150px;
+    }
+
+    #menu li{
+        height: 50px;
+        display: block;
+    }
+
+    #menu li>ul{
+        display: none;
+    }
+    
+}

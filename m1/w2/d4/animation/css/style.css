@@ -1,0 +1,195 @@
+#transform-area {
+    perspective: 400px;
+    background-color: black;
+    height: 100vh;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.quadrato {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    margin-bottom: 20px;
+}
+
+#n1 {
+    animation-name: animazione1;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes animazione1 {
+    from {
+        background-color: red;
+    }
+
+    to {
+        background-color: yellow;
+    }
+}
+
+#n2 {
+    animation-name: animazione2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animazione2 {
+    from {
+        background-color: red;
+    }
+
+    50% {
+        background-color: yellow;
+    }
+
+    to {
+        background-color: red;
+    }
+}
+
+#n3 {
+    animation-name: animazione3;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+#n4 {
+    animation-name: animazione3;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animazione3 {
+    0% {
+        transform: translate(0%, 0%) rotateY(0deg);
+        background-color: red;
+    }
+
+    25% {
+        transform: translate(20%, 10%) rotateY(30deg);
+        background-color: blue;
+    }
+
+    75% {
+        transform: translate(80%, 50%) rotateY(300deg);
+        background-color: white;
+    }
+
+    100% {
+        transform: translate(0%, 0%) rotateY(0deg);
+        background-color: red;
+    }
+}
+
+#n5 {
+    animation-name: animazione4;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes animazione4 {
+    from {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 90%;
+    }
+
+    to {
+       margin-left: 0;
+    }
+}
+
+#n6 {
+    animation-name: animazione5;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    background-color: lightblue;
+}
+
+@keyframes animazione5 {
+    from {
+        transform: translateZ(0);
+    }
+
+    50% {
+        transform: translateZ(-100000px)    
+    }
+
+    to {
+        transform: translateZ(0)  
+    }
+}
+
+/*esperimento*/
+
+#area-trasformzione{
+    perspective: 400px;
+    height: 100vh;
+    transform-style: preserve-3d;
+}
+
+#cubo{
+    transform-style: preserve-3d;
+
+    position: relative;
+    margin-top: 200px;
+    margin-left: 200px;
+    height: 200px;
+    width: 200px;
+    animation-name: cubo;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cubo {
+    0%{transform: rotateZ(0) rotateY(0) rotateX(0);}
+    50%{transform: rotateZ(360deg) rotateY(360deg) rotateX(360deg);}
+    100%{transform: rotateZ(0) rotateY(0) rotateX(0);}
+}
+
+.faccia{
+    background-color: #ccc;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border: 1px solid black;
+}
+
+#sx{
+    left: -200px;
+    transform: rotateY(90deg);
+    transform-origin: right;
+}
+
+#dx{
+    right: -200px;
+    transform: rotateY(-90deg);
+    transform-origin: left;
+}
+
+#top{
+    top: -200px;
+    transform: rotatex(-90deg);
+    transform-origin: bottom;
+}
+
+#bottom{
+    bottom: -200px;
+    transform: rotatex(90deg);
+    transform-origin: top;
+}
+
+#rear{
+    background-color: #777;
+}
+
+#front{
+    transform: translateZ(200px);
+    z-index: 1;
+}
