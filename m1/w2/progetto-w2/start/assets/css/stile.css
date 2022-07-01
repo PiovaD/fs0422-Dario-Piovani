@@ -1,0 +1,215 @@
+/* IMPOSTAZIONI GENERALI */
+
+body{
+    font-family: 'Fira Sans', sans-serif;
+    color: #000;
+    font-size: 1.4rem;
+    line-height: 1.8;
+}
+
+h1{
+    font-size: 4rem;
+    line-height: 1;
+}
+
+h2,h3{
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 40px;
+}
+
+h4{
+    font-size: 2rem;
+}
+
+h5{
+    font-size: 1.5rem;
+}
+
+span{
+    display: block;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+a, label, i{
+    text-decoration: none;
+    color: #e42424;
+}
+
+.button{
+    color: white;
+    background: linear-gradient(90deg, #6cc1e2 50%, #392f7a 100%);
+    padding: 18px;
+}   
+
+.animation{
+    text-shadow: 0 0 5px black ;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+}
+
+section{
+    text-align: center;
+}
+
+section, .social{
+    padding: 50px 25px;
+}
+
+
+/* HEADER */
+
+header{
+    background-color: white ;
+    padding: 20px;
+    box-shadow: 0px 3px 5px #d3d3d3;
+
+    position: sticky;
+    top: 0;
+}
+
+#menu-toggle{
+    height: 0;
+    overflow: hidden;
+    
+    text-align:center;
+}
+
+#menu-toggle li>a{
+    color: #777;
+    margin-left: 10px;
+}
+
+.container{
+    position: relative;
+}
+
+.container img{
+    width: auto;
+}
+
+.container nav{
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+}
+
+.container nav label{
+    float: right;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + #menu-toggle{
+    position: relative;
+    height: max-content;
+    z-index: 10;
+    
+    margin-top: 30px;
+    padding: 30px 0;
+    box-shadow: 0px 3px 5px #d3d3d3;
+    
+    background-color: white;
+}
+
+/* MAIN */
+
+.welcome{
+    background-image: url(../images/banner.jpg);    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color: white;
+    text-shadow: 0 0 5px black ;
+    text-align: left;
+    
+}
+
+p{
+    margin: 20px 0;
+}
+
+.contact-us{
+    background-color: #0c0633;
+    
+    color: white;
+}
+
+
+
+/* FOOTER */
+
+footer{
+    background-color: rgb(238, 238, 238);
+}
+
+footer p{
+    font-size: 1.1rem;
+}
+
+footer div>a, footer form>input{
+    font-size: 2rem;
+}
+
+form{
+    width: 100%;
+}
+
+footer form>input{
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 70px;
+}
+
+footer form>input:first-child{
+    box-shadow:0px 0px 2px black inset;
+}
+
+/*Contatti form*/
+
+.button{
+    border: none;
+}
+
+.name, .mail, .message{
+    border: none;
+    width: 100%;
+    font-style: italic;
+    margin-bottom: 20px;
+    
+    box-shadow:0px 0px 2px black inset;
+}
+
+.name, .mail{
+    height: 40px;
+}
+
+.message{
+    height: 80px;
+}
+
+.summary .button{
+    font-size: 1.2rem;
+}
+
+
+/*animazione*/
+
+.animation{
+    animation: shadow 5s infinite;
+}
+
+@keyframes shadow {
+    50% {box-shadow: 0px 0px 20px black ;
+    }
+}
