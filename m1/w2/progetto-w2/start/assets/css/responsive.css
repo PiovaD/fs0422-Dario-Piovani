@@ -5,7 +5,7 @@
     }
     
     #courses{
-        display: block;  
+        display: table;  
     }
 
     #menu-toggle{
@@ -23,14 +23,19 @@
     .container nav{
         width: auto;
         font-size: 1.2rem;
-        top: 30px;
+        top: 20px;
         right: 20px;
+    }
+
+
+    .container #menu-toggle{
+        padding: 10px 0;
     }
 
     .container #menu-toggle .register{
         color: white;
-        background: linear-gradient(90deg, #6cc1e2 50%, #392f7a 100%);
-        padding: 18px;
+        background: linear-gradient(90deg, #6cc1e2 10%, #392f7a 100%);
+        padding: 15px;
     }
 
     .summary, .become, .social{
@@ -40,7 +45,32 @@
 
     .summary div{     
         flex: 1 1 30%;
-        margin:0 15px;
+        margin:20px 15px;
+    }
+
+    h4{
+        font-size: 1.5em;
+    }
+
+    .contact-us h3{
+        margin-top: 0;
+    }
+
+    .exposition .summary div p{
+        text-align: left;
+    }
+
+
+    .contact .summary .button{
+        font-size: 1.5rem;
+    }
+
+    .contact .summary form > input, .contact .summary form > textarea{
+        font-size: 1.2rem;
+    }
+
+    .contact-us, .welcome{
+        padding: 15%;
     }
 
     .become{
@@ -61,19 +91,18 @@
         text-align: center;
     }
 
-    #courses{
-        width: 100%;
-        margin-left: 1px;
-        margin-right: 1px;
+    footer span{
+        display: inline;
+    }
+   
+    footer form{
+        margin-top: 30px;
     }
 
 }
 
 @media screen and (min-width: 1024px) {
     
-    #courses{
-        margin-left: 30%;
-        margin-right: 30%;
-    }
+
 
 }

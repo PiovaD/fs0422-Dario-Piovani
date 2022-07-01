@@ -15,10 +15,10 @@ h1{
 h2,h3{
     font-size: 3.5rem;
     line-height: 1.1;
-    margin-bottom: 40px;
 }
 
 h3{
+    margin-top: 50px;
     text-align: center;
 }
 
@@ -33,7 +33,8 @@ h4{
 }
 
 h5{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1.1;
 }
 
 span{
@@ -51,7 +52,7 @@ a, label, i{
 
 .button{
     color: white;
-    background: linear-gradient(90deg, #6cc1e2 50%, #392f7a 100%);
+    background: linear-gradient(90deg, #6cc1e2 10%, #392f7a 100%);
     padding: 18px;
 }   
 
@@ -69,9 +70,6 @@ img{
 
 section{
     text-align: center;
-}
-
-section, .social{
     padding: 50px 25px;
 }
 
@@ -87,11 +85,8 @@ header{
 }
 
 .container{
-    
-    padding: 20px 20px;
-    
-    position: relative;
- 
+    position: relative;    
+    height: 88px;
 }
 
 /*menu*/
@@ -113,7 +108,8 @@ header i{
 }
 
 .container img{
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
     width: auto;
 }
 
@@ -141,7 +137,7 @@ input[type="checkbox"]:checked + #menu-toggle{
     background-color: white;
 }
 
-.container nav label::after {
+.container::after {
     display: block;
     content: "";
     clear: both;
@@ -170,6 +166,10 @@ p{
     color: white;
 }
 
+.contact-us p{
+    margin-top: 50px;
+}
+
 .summary > div{
     margin-top: 30px;
 }
@@ -178,14 +178,25 @@ p{
 
 footer{
     background-color: rgb(238, 238, 238);
+    padding: 50px 20px;
 }
 
 footer p{
-    font-size: 1.1rem;
+    font-size: 1.4rem;
 }
 
-footer div>a, footer form>input{
+footer div{
+    padding-bottom: 30px;
+}
+
+footer form>input{
     font-size: 2rem;
+}
+
+footer div>a{
+    
+    line-height: 2em;
+    font-size: 3rem;
 }
 
 form{
@@ -204,7 +215,7 @@ footer form>input:first-child{
 }
 
 .copyright{
-    padding: 20px;
+    padding: 0 20px;
 }
 
 /*Contatti form*/
@@ -218,6 +229,7 @@ footer form>input:first-child{
     width: 100%;
     font-style: italic;
     margin-bottom: 20px;
+    text-indent: 15px;
     
     box-shadow:0px 0px 2px black inset;
 }
@@ -228,11 +240,18 @@ footer form>input:first-child{
 
 .message{
     height: 20vw;
+    padding-top: 15px;
 }
 
 .summary .button{
     font-size: 1.2rem;
 }
+
+.contact .summary{
+    padding-top: 0;
+}
+
+
 
 
 /*tabella*/
@@ -250,8 +269,17 @@ footer form>input:first-child{
     background-color: #d2dce7;    
 }
 
-#courses caption, #courses-mobile caption{
+#courses-mobile caption{
     font-size: 1.8rem;
+}
+
+#courses caption{
+    font-size: 2rem;
+}
+
+#courses th, #courses td{
+
+    font-size: 1.4em;
 }
 
 #courses-mobile th{
@@ -275,9 +303,13 @@ th, td {
     text-align: center;
 }
 
+#courses tr > td, #courses tr > th{
+    padding: 20px;
+}
 
 #courses, #courses-mobile {
-    margin-left: auto;
+    margin-top: 70px;
+    margin-left: h;
     margin-right: auto;
 }
 
