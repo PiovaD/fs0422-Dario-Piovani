@@ -68,7 +68,7 @@ img{
     width: 100%;
 }
 
-section{
+section, .we-are{
     text-align: center;
     padding: 50px 25px;
 }
@@ -309,7 +309,7 @@ th, td {
 
 #courses, #courses-mobile {
     margin-top: 70px;
-    margin-left: h;
+    margin-left: auto;
     margin-right: auto;
 }
 

@@ -1,18 +1,18 @@
 @media screen and (min-width: 768px) {
-    
-    #courses-mobile{
+
+    #courses-mobile {
         display: none;
     }
-    
-    #courses{
-        display: table;  
+
+    #courses {
+        display: table;
     }
 
-    #menu-toggle{
+    #menu-toggle {
         height: auto;
     }
 
-    .container label>i{
+    .container label>i {
         display: none;
     }
 
@@ -20,7 +20,7 @@
         display: inline;
     }
 
-    .container nav{
+    .container nav {
         width: auto;
         font-size: 1.2rem;
         top: 20px;
@@ -28,81 +28,107 @@
     }
 
 
-    .container #menu-toggle{
+    .container #menu-toggle {
         padding: 10px 0;
     }
 
-    .container #menu-toggle .register{
+    .container #menu-toggle .register {
         color: white;
         background: linear-gradient(90deg, #6cc1e2 10%, #392f7a 100%);
         padding: 15px;
     }
 
-    .summary, .become, .social{
+    .summary,
+    .become,
+    .social {
         display: flex;
         align-content: center;
     }
 
-    .summary div{     
+    .summary div {
         flex: 1 1 30%;
-        margin:20px 15px;
+        margin: 20px 15px;
     }
 
-    h4{
+    h4 {
         font-size: 1.5em;
     }
 
-    .contact-us h3{
+    .contact-us h3 {
         margin-top: 0;
     }
 
-    .exposition .summary div p{
+    .exposition .summary div p {
         text-align: left;
     }
 
 
-    .contact .summary .button{
+    .contact .summary .button {
         font-size: 1.5rem;
     }
 
-    .contact .summary form > input, .contact .summary form > textarea{
+    .contact .summary{
+        gap: 5%;
+    }
+
+    .contact .summary form>input,
+    .contact .summary form>textarea {
         font-size: 1.2rem;
     }
 
-    .contact-us, .welcome{
-        padding: 15%;
+    .contact-us,
+    .welcome {
+        padding: 110px 15%;
     }
 
-    .become{
+    .become {
         align-content: center;
         align-items: center;
     }
 
-    .become div{    
+    .become div {
         flex: 1 1 50%;
     }
 
-    .social div{     
+    .social div {
         flex: 1 1 30%;
-        margin:0 15px;
+        margin: 0 15px;
     }
 
-    .copyright{
+    .copyright {
         text-align: center;
     }
 
-    footer span{
+    footer span {
         display: inline;
     }
-   
-    footer form{
+
+    footer form {
         margin-top: 30px;
     }
 
 }
 
 @media screen and (min-width: 1024px) {
-    
 
+    .exposition,
+    .become,
+    .container,
+    .welcome>div,
+    .social,
+    .contact,
+    .we-are {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .message{
+        height: 240px;
+    }
+
+    .contact .summary{
+        gap: 10%;
+    }
 
 }
