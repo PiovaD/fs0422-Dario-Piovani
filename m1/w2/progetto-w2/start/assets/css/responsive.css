@@ -131,4 +131,8 @@
         gap: 10%;
     }
 
+    .contact{ /*mette il footer nella parte bassa della parte  bassa della pagina negli schermi grandi*/
+        min-height: calc(100vh - 492px - 88px);    
+    }
+
 }

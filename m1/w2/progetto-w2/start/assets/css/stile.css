@@ -50,6 +50,13 @@ a, label, i{
     color: #e42424;
 }
 
+/*Rende i link dei contatti dello stesso colore del testo
+l'ho omesso per rendere più chiari i link*/
+
+/*.summary a{
+    color: black;
+}*/
+
 .button{
     color: white;
     background: linear-gradient(90deg, #6cc1e2 10%, #392f7a 100%);
@@ -317,9 +324,11 @@ th, td {
 
 .animation{
     animation: shadow 5s infinite;
+    box-shadow: 0 0 0 40px transparent;
 }
 
 @keyframes shadow {
-    50% {box-shadow: 0px 0px 20px black ;
+    0% {box-shadow: 0 0 0 black;
     }
 }
+
