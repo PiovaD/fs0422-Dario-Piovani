@@ -1,51 +1,56 @@
 /* IMPOSTAZIONI GENERALI */
 
-body{
+body {
     font-family: 'Fira Sans', sans-serif;
     color: #000;
     font-size: 1.4rem;
     line-height: 1.8;
+
+    overflow-wrap: break-word;
 }
 
-h1{
+h1 {
     font-size: 4rem;
     line-height: 1;
 }
 
-h2,h3{
+h2,
+h3 {
     font-size: 3.5rem;
     line-height: 1.1;
 }
 
-h3{
+h3 {
     margin-top: 50px;
     text-align: center;
 }
 
-main i{
-    
+main i {
+
     font-size: 2.5rem;
 }
 
-h4{
+h4 {
     font-size: 2rem;
     line-height: 1.1;
 }
 
-h5{
+h5 {
     font-size: 1.8rem;
     line-height: 1.1;
 }
 
-span{
+span {
     display: block;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     display: none;
 }
 
-a, label, i{
+a,
+label,
+i {
     text-decoration: none;
     color: #e42424;
 }
@@ -57,25 +62,26 @@ l'ho omesso per rendere più chiari i link*/
     color: black;
 }*/
 
-.button{
+.button {
     color: white;
     background: linear-gradient(90deg, #6cc1e2 10%, #392f7a 100%);
     padding: 18px;
-}   
-
-.animation{
-    text-shadow: 0 0 5px black ;
 }
 
-ul{
+.animation {
+    text-shadow: 0 0 5px black;
+}
+
+ul {
     list-style: none;
 }
 
-img{
+img {
     width: 100%;
 }
 
-section, .we-are{
+section,
+.we-are {
     text-align: center;
     padding: 50px 25px;
 }
@@ -83,178 +89,204 @@ section, .we-are{
 
 /* HEADER */
 
-header{
-    background-color: white ;
+header,
+.container {
+    background-color: white;
     box-shadow: 0px 3px 5px #d3d3d3;
+
+    height: 80px;
 
     position: sticky;
     top: 0;
+
+    width: 100%;
+
+    z-index: 5;
 }
 
-.container{
-    position: relative;    
-    height: 88px;
+.navigator img {
+    width: auto;
 }
 
 /*menu*/
 
-header i{
-    font-size: 3rem;
+.menu li {
+    padding: 5px 5px;
 }
 
-#menu-toggle{
-    height: 0;
-    overflow: hidden;
-    
-    text-align:center;
+.menu li:hover {
+    background-color: #ddd;
 }
 
-#menu-toggle li>a{
+.menu li>a {
     color: #777;
-    margin-left: 10px;
 }
 
-.container img{
-    margin-top: 20px;
-    margin-left: 20px;
-    width: auto;
+.logo,
+.button-container {
+    z-index: 6;
 }
 
-.container nav{
-    position:absolute;
-    top: 20px;
-    right: 20px;
-    width: 200px;
+.logo {
+    position: absolute;
+    left: 30px;
+    top: calc((-40px / 2) + 40px);
 }
 
-.container nav label{
-    float: right;
+.button-container {
+    /*top 0 = -18 -> 8+4+6*/
+    position: absolute;
+    right: 40px;
+    top: calc(-18px - (8px/2) + 40px);
     cursor: pointer;
+
+    padding: 0 20px;
+
+    transition: transform 0.5s;
+    transform: rotate(-90deg);
 }
 
-input[type="checkbox"]:checked + #menu-toggle{
+.button-container div {
+    width: 8px;
+    height: 8px;
+    background: #e42424;
+    margin: 6px 0;
+    border-radius: 8px;
+}
+
+.menu {
+    z-index: 4;
     position: relative;
-    height: max-content;
-    z-index: 10;
-    
-    margin-top: 30px;
-    padding: 30px 0;
-    box-shadow: 0px 3px 5px #d3d3d3;
-    
+    top: 0px;
+    text-align: center;
     background-color: white;
+    overflow: hidden;
+
+    transition: height 0.5s;
+    height: 0;
+
+    box-shadow: 0px 3px 5px #d3d3d3;
 }
 
-.container::after {
-    display: block;
-    content: "";
-    clear: both;
-  }
+input[type="checkbox"]:checked~.menu {
+    transition: height 0.5s;
+    height: 200px;
+
+}
+
+input[type="checkbox"]:checked~.button-container {
+    transition: transform 0.5s;
+    transform: rotate(0)
+}
 
 /* MAIN */
 
-.welcome{
-    background-image: url(../images/banner.jpg);    
+.welcome {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/banner.jpg);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     color: white;
-    text-shadow: 0 0 5px black ;
+    text-shadow: 0px 0px 8px black;
     text-align: left;
-    
+
 }
 
-p{
+p {
     margin: 20px 0;
 }
 
-.contact-us{
+.contact-us {
     background-color: #0c0633;
-    
+
     color: white;
 }
 
-.contact-us p{
+.contact-us p {
     margin-top: 50px;
 }
 
-.summary > div{
+.summary>div {
     margin-top: 30px;
 }
 
 /* FOOTER */
 
-footer{
+footer {
     background-color: rgb(238, 238, 238);
     padding: 50px 20px;
 }
 
-footer p{
+footer p {
     font-size: 1.4rem;
 }
 
-footer div{
+footer div {
     padding-bottom: 30px;
 }
 
-footer form>input{
+footer form>input {
     font-size: 2rem;
 }
 
-footer div>a{
-    
+footer div>a {
+
     line-height: 2em;
     font-size: 3rem;
 }
 
-form{
+form {
     width: 100%;
 }
 
-footer form>input{
+footer form>input {
     padding: 0;
     border: none;
     width: 100%;
     height: 70px;
 }
 
-footer form>input:first-child{
-    box-shadow:0px 0px 2px black inset;
+footer form>input:first-child {
+    box-shadow: 0px 0px 2px black inset;
 }
 
-.copyright{
+.copyright {
     padding: 0 20px;
 }
 
 /*Contatti form*/
 
-.button{
+.button {
     border: none;
 }
 
-.name, .mail, .message{
+.name,
+.mail,
+.message {
     border: none;
     width: 100%;
     font-style: italic;
     margin-bottom: 20px;
     text-indent: 15px;
-    
-    box-shadow:0px 0px 2px black inset;
+
+    box-shadow: 0px 0px 2px black inset;
 }
 
-.name, .mail{
+.name,
+.mail {
     height: 40px;
 }
 
-.message{
+.message {
     height: 20vw;
     padding-top: 15px;
 }
 
-.summary .button{
+.summary .button {
     font-size: 1.2rem;
 }
 
-.contact .summary{
+.contact .summary {
     padding-top: 0;
 }
 
@@ -263,58 +295,65 @@ footer form>input:first-child{
 
 /*tabella*/
 
-#courses{
+#courses {
     display: none;
 }
 
-#courses thead{
+#courses thead {
     background-color: #5f82a3;
     color: white;
 }
 
-#courses-mobile .even, #courses tbody tr:nth-child(odd) {
-    background-color: #d2dce7;    
+#courses-mobile .even,
+#courses tbody tr:nth-child(odd) {
+    background-color: #d2dce7;
 }
 
-#courses-mobile caption{
+#courses-mobile caption {
     font-size: 1.8rem;
 }
 
-#courses caption{
+#courses caption {
     font-size: 2rem;
 }
 
-#courses th, #courses td{
+#courses th,
+#courses td {
 
     font-size: 1.4em;
 }
 
-#courses-mobile th{
-    
+#courses-mobile th {
+
     font-weight: bold;
     width: 50%;
 }
 
-th, td {
+th,
+td {
     padding: 5px 8px;
     text-align: left;
-  }
+}
 
-#courses tr, #courses-mobile tr{
+#courses tr,
+#courses-mobile tr {
     font-size: 1rem;
     width: 50%;
     text-align: left;
 }
 
-#courses th, #courses td{    
+#courses th,
+#courses td {
     text-align: center;
 }
 
-#courses tr > td, #courses tr > th{
+#courses tr>td,
+#courses tr>th {
     padding: 20px;
 }
 
-#courses, #courses-mobile {
+#courses,
+#courses-mobile {
     margin-top: 70px;
     margin-left: auto;
     margin-right: auto;
@@ -322,13 +361,13 @@ th, td {
 
 /*animazione*/
 
-.animation{
-    animation: shadow 5s infinite;
+.animation {
+    animation: shadow 5s ease-in-out infinite;
     box-shadow: 0 0 0 40px transparent;
 }
 
 @keyframes shadow {
-    0% {box-shadow: 0 0 0 black;
+    0% {
+        box-shadow: 0 0 0 black;
     }
 }
-

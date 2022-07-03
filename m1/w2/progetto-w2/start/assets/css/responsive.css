@@ -1,6 +1,7 @@
 @media screen and (min-width: 768px) {
 
-    #courses-mobile {
+    #courses-mobile,
+    .container {
         display: none;
     }
 
@@ -8,34 +9,51 @@
         display: table;
     }
 
-    #menu-toggle {
+    .menu {
         height: auto;
+        box-shadow: none;
+
+        text-align: right;
+        right: 30px;
+
+        top: calc((-53px/2) + 40px);
     }
 
-    .container label>i {
+    .button-container {
         display: none;
     }
 
-    #menu-toggle li {
+    .menu li {
         display: inline;
     }
 
-    .container nav {
+    .navigator {
         width: auto;
         font-size: 1.2rem;
         top: 20px;
         right: 20px;
     }
 
-
-    .container #menu-toggle {
+    .menu {
         padding: 10px 0;
     }
 
-    .container #menu-toggle .register {
+    .menu .register {
         color: white;
         background: linear-gradient(90deg, #6cc1e2 10%, #392f7a 100%);
         padding: 15px;
+    }
+
+    .menu li a:hover {
+        color: #e42424;
+    }
+
+    .menu .register:hover {
+        color: #ddd;
+    }
+
+    .menu li:hover {
+        background: none;
     }
 
     .summary,
@@ -67,7 +85,7 @@
         font-size: 1.5rem;
     }
 
-    .contact .summary{
+    .contact .summary {
         gap: 5%;
     }
 
@@ -82,8 +100,12 @@
     }
 
     .become {
+        text-align: left;
+
         align-content: center;
         align-items: center;
+
+        gap: 20px;
     }
 
     .become div {
@@ -117,22 +139,28 @@
     .welcome>div,
     .social,
     .contact,
+    .navigator,
     .we-are {
         max-width: 1400px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .message{
+    .navigator>div {
+        position: relative;
+    }
+
+    .message {
         height: 240px;
     }
 
-    .contact .summary{
+    .contact .summary {
         gap: 10%;
     }
 
-    .contact{ /*mette il footer nella parte bassa della parte  bassa della pagina negli schermi grandi*/
-        min-height: calc(100vh - 492px - 88px);    
+    .contact {
+        /*mette il footer nella parte bassa della parte  bassa della pagina negli schermi grandi*/
+        min-height: calc(100vh - 492px - 88px);
     }
 
 }
