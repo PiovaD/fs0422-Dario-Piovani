@@ -79,7 +79,6 @@ function verifica() {
     if (!(win())) {
         let x = document.querySelector('#asse-x').value;
         let y = document.querySelector('#asse-y').value;
-        console.log(x, y);
         x--;
         y--;
         if ((x >= 0 && x <= 3) && (y => 0 && y <= 3)) {
