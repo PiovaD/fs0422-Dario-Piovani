@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="prova"><li>Item</li></div>
+
+    <script>
+
+        var stringa = 'prova'; //sono uguali
+        var stringa1 = "prova";
+
+        var html = '<div class="test"></div>';
+        var html2 = "<div class=\"test\"></div>"; //  \" indica che le " sono testuali
+        var html3 = '<div class="test">' + stringa + '</div>';
+
+        console.log(html3);
+        document.write(html3);
+
+        //Imnterpolazione di stringhe
+
+        var html4 = `<div class="test">${stringa}</div>`;
+
+        console.log(html4);
+        document.write(html4);
+
+        var separatore = "============================================================================================";
+        // ovunque sia richiesto  linserimento di stringa o numero si può essere inserito un var con val richiesto
+        //var id = #bloccoRosso
+        //document.queryelector(id)
+
+        console.log(separatore);
+
+        /*************************************************************************************/
+        //let
+
+        let a = 5;
+        //var a; L'identificatore è un let non posso riusarlo per una var
+        console.log(a);
+        {
+            console.log(a);
+        }
+
+        {
+            let b = 4;
+            console.log(b);
+        }
+        //console.log(b); //b non esiste fuori dal blocco
+
+        {
+            var b = 3; // in questo caso posso perchè la let b è all interno di un blocco quindi termina il suo scope
+        }
+        console.log(b); // è un var quindi esiste nonostante il blocco
+
+
+        console.log(separatore);
+        /*************************************************************************************/
+        //const
+
+        // const b; è già usato dal var non si può riutilizzare
+
+        const C = 2;
+        console.log(C)
+        //c = 1; errore non può essere riassegnato
+
+        const OBJ = {
+            nome: '',
+            cognome: 'Barone'
+        };
+
+        OBJ.nome = 'Fabiola';
+
+        console.log(OBJ);
+
+        {
+            const SA = 2;
+            console.log(SA);
+        }
+
+        //console.log(SA); fuori scope
+
+        //operatori
+
+        var x = 10;
+        x = 11;
+
+        x += 2;
+        console.log(x);
+
+        x -= 2;
+        console.log(x);
+
+        x++;
+        console.log(x);
+
+        x--;
+        console.log(x);
+
+        // + operatore matematico per somma e operatore di concatenamento
+
+        var saluto = 'ciao';
+
+        saluto +=' '; 
+        saluto +='Mario'; 
+        console.log(saluto);
+
+        let prova = document.querySelector('#prova');
+        console.log(prova.innerHTML);
+
+        prova.innerHTML += '<li>item</li>';
+        prova.innerHTML += '<li>item</li>';
+        prova.innerHTML += '<li>item</li>';
+    
+        console.log(prova.innerHTML);
+
+        
+
+    </script>
+</body>
+
+</html>

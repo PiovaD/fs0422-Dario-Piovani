@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="changeBackground(this)" data-colore="red">Rosso</button> <!--data attribute sono data-*** quello che vuoi -->
+    <button onclick="changeBackground(this)" data-colore="blue">Blu</button>
+
+    <script>
+
+        let body = document.querySelector('body');
+
+        function changeBackground(color) {
+            let c = color.getAttribute('data-colore');
+            body.style.backgroundColor = c;
+        }
+    </script>
+</body>
+
+</html>

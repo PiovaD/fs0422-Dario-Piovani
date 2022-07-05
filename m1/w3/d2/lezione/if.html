@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        console.log(1 == 1);
+        console.log(1 === 1);
+        console.log(1 == '1');
+        console.log(1 === '1'); //=== confronta anche il tipo di dato strettamente uguali
+
+        let a = 'ciao';
+        let b = 'hi';
+
+        console.log(a == b);
+        console.log(a != b);
+        console.log(a !== b);
+
+        let n = 10;
+        console.log(n > 10);
+        console.log(n < 10);
+        console.log(n >= 10);
+        console.log(n <= 10);
+
+
+        console.log(!(n <= 10));
+
+
+        console.log(n > 10 || n == 10); //uno solo è vero
+        console.log(n > 10 && n == 10); // se entrambe sono vere
+
+        // if
+        let condizione = false;
+
+        if (!condizione) {
+
+        console.log('vero');
+
+        } else {
+
+            console.log('falso');
+        }
+
+        let numero = 29;
+        if (numero > 30){
+
+            console.log('sup');
+
+        } else if (numero == 30){
+
+            console.log('uguale');
+
+        }else{
+
+            console.log('min');
+
+        }
+
+        let h = 'Ciao';
+        let l = 'Ciao1';
+
+        if(h == l){
+            console.log('vero');
+        }else{
+            console.log('falso');
+        }
+
+        let num = 0;
+        if (num){
+            console.log('boo');
+        }else{
+            console.log('boo1');
+
+        }
+
+    </script>
+</body>
+
+</html>
