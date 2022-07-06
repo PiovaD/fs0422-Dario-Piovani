@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <input type="text" id="inizio" placeholder="prima data">
+    <input type="text" id="fine" placeholder="seconda data">
+    <button onclick="range()">calcola</button>
+    <div>La differenza è:</div>
+    <div class="data-risultato"></div>
+
+    <hr>
+
+    <!--terra sole-->
+
+    <input type="text" id="scala" placeholder="Inserisci velocià di rotazione">
+    <input type="text" id="giri" placeholder="Inserisci quantita di anni">
+    <div>1000 = 1 giorno al secondo</div>
+
+
+    <button id="start" onclick="start()">Inizia rotazione</button>
+    <button id="reset" onclick="reset()" class= "show">ferma rotazione</button>
+
+    <div id="sistema-solare">
+        <div id="sole"></div>
+        <section id="orbita-t">
+            <div id="terra">
+                <section id="orbita-l">
+                    <div id="luna"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
