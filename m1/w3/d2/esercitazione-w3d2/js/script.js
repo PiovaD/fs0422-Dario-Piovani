@@ -73,12 +73,14 @@ function reset() {
     cont = 1;
     document.querySelector('.messaggio').innerHTML = "tocca  a x";
 }
+
 stamp()
 
 function verifica() {
     if (!(win())) {
         let x = document.querySelector('#asse-x').value;
         let y = document.querySelector('#asse-y').value;
+        let messaggio = document.querySelector('.messaggio');
         x--;
         y--;
         if ((x >= 0 && x <= 3) && (y => 0 && y <= 3)) {
@@ -96,25 +98,25 @@ function verifica() {
                 cont++
 
             } else {
-                return document.querySelector('.messaggio').innerHTML = "cella occupata riprova";
+                return messaggio.innerHTML = "cella occupata riprova";
             }
 
             if (!(win())) {
                 if (!(cont % 2)) {
-                    return document.querySelector('.messaggio').innerHTML = "tocca  a o";
+                    return messaggio.innerHTML = "tocca  a o";
                 } else {
-                    return document.querySelector('.messaggio').innerHTML = "tocca  a x";
+                    return messaggio.innerHTML = "tocca  a x";
                 }
             } else {
-                return document.querySelector('.messaggio').innerHTML = (mat[x][y] + " hai vinto");
+                return messaggio.innerHTML = (mat[x][y] + " hai vinto, per una nuova partita premi reset");
             }
 
 
         } else {
-            return document.querySelector('.messaggio').innerHTML = "inserimento errato riprova";
+            return messaggio.innerHTML = "inserimento errato riprova";
         }
     } else {
-        return document.querySelector('.messaggio').innerHTML = "Resetta la partita";
+        return messaggio.innerHTML = "Resetta la partita";
     }
 }
 

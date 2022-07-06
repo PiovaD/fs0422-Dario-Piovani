@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
 
@@ -25,10 +27,10 @@
 
         console.log(pizzaMarg, pizzaDiav);
 
-        function Pizza(_tipo,_prezzo,_gusto){  //classe template
+        function Pizza(_tipo, _prezzo, _gusto) {  //classe template
             this.tipo = _tipo,
-            this.prezzo = _prezzo,
-            this.gusto = _gusto
+                this.prezzo = _prezzo,
+                this.gusto = _gusto
         }
 
         let margherita = new Pizza('Napoletana', 5, 'Margerita');
@@ -37,9 +39,12 @@
         console.log(margherita, diavola, mimosa);
 
         Pizza.prototype.disponibilita = true
-        
+
         console.log(margherita.disponibilita);
+
+
         
     </script>
 </body>
+
 </html>

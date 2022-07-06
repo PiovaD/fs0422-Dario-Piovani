@@ -92,6 +92,36 @@
         })();
 
 
+        //closure
+
+        function primaFn() {
+            let dato = 10
+            function secondaFn() {
+                //let datoInterno = 0;// non esce da seconda fn
+                return dato * 2;
+            }
+
+            let datoUltimo = secondaFn()
+
+            return datoUltimo;
+        }
+
+        console.log(primaFn());
+
+
+
+        function fnAnnidata(a) {
+            return function (b) {
+                return function (c) {
+                    return a + b + c;
+                }
+            }
+        }
+
+        console.log(fnAnnidata(5)(4)(7));
+
+
+
     </script>
 
 </body>

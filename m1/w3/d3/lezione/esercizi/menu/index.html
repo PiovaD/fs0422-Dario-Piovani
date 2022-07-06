@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    
+    <header id="main-header">
+        <nav>
+            
+            <button onclick="toggleMenu('#menu')">Menu</button> <!--on+ altor fa cose esempio onmouseover-->
+            <ul id="menu">
+                <li><a href="#">pagina</a></li>
+                <li><a href="#">pagina</a></li>
+                <li><a href="#">pagina</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+
+    <script>
+
+        function toggleMenu(elem) {
+
+            let menu = document.querySelector(elem);
+
+            menu.classList.toggle('open');
+
+            /*if( !menu.classList.contains('open')){    
+                
+                menu.classList.add('open', 'ciao');
+                
+            }else{               
+                menu.classList.remove('open');
+            }*/
+
+            /*if (menu.style.height != 'auto'){
+
+                menu.style.height = 'auto';
+
+            }else{
+
+                menu.style.height = '';
+            }*/
+
+        }
+
+    </script>
+
+</body>
+
+</html>
