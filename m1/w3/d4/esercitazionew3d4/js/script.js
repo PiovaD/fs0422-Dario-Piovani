@@ -20,17 +20,17 @@ console.log(stringaUnita);
 
 //----------------------------------------------------------------
 
-function persona(n, c, e) {
+function Persona(n, c, e) {
     this.nome = n,
         this.cognome = c,
         this.eta = e
 };
 
-let esempio = new persona('Mario', 'Rossi', 30);
+let esempio = new Persona('Mario', 'Rossi', 30);
 
 console.log(esempio);
 
-let coda = [new persona('Jhon', 'Doe', 70), new persona('Giacomo', 'Poretti', 66), new persona('Aldo', 'Baglio', 63), new persona('Giovanni', 'Storti', 65)]
+let coda = [new Persona('Jhon', 'Doe', 70), new Persona('Giacomo', 'Poretti', 66), new Persona('Aldo', 'Baglio', 63), new Persona('Giovanni', 'Storti', 65)]
 
 console.log(coda);
 console.log(coda[2]);
@@ -47,23 +47,51 @@ let shiftElim = coda.shift() //primo
 console.log(shiftElim);
 
 console.log(coda);
+//stampa(coda, coda.length);
 
 coda.unshift(shiftElim);
 console.log(coda);
+//stampa(coda, coda.length);
 
 let popElim = coda.pop() //ultimo
 console.log(popElim);
 
 console.log(coda);
+//stampa(coda, coda.length);
 
 coda.push(popElim);
 console.log(coda);
+//stampa(coda, coda.length);
 
-let coda2 = coda.splice(2,2); 
+let coda2 = coda.splice(2, 2);
 
-console.log(coda,coda2);
+console.log(coda, coda2);
 
-coda.splice(2,0,coda2[coda2.length - 1]);
+coda.splice(2, 0, coda2[coda2.length - 1]);
 
 console.log(coda);
 
+console.log(coda[rand(coda.length)].nome);
+
+
+/*function stampa(arr) {
+
+    for (let i = 0; i < arr.length; i++) {
+        console.log(stampaObj(arr[i]));
+    }
+
+}*/
+
+function stampa(arr, i) {
+    --i; 
+    if (i > 0) stampa(arr, i);
+
+    return console.log(`Elem ${i+1}: ${stampaObj(arr[i])}`);
+}
+
+function stampaObj(obj) {
+    return `nome: ${obj.nome}, cognome:${obj.cognome}, età:${obj.eta}\n`
+}
+
+//stampa(coda);
+stampa(coda, coda.length);
