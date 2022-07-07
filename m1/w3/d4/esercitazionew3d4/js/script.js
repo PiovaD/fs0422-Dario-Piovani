@@ -4,7 +4,7 @@ let string = 'Lorem ipsum dolor sit amet, consect'
 console.log(string.toUpperCase());
 console.log(string.toLowerCase());
 
-let stringaScomposta = string.split(/[ ,-]+/);
+let stringaScomposta = string.split(/[ ,]+/);
 
 console.log(stringaScomposta);
 
