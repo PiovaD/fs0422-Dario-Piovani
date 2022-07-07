@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="display" type="text" placeholder="0">
+
+    <hr>
+
+    <button data-simbolo="0" onclick="aggiungisimbolo(this)">0</button><br>
+    <button data-simbolo="1" onclick="aggiungisimbolo(this)">1</button>
+    <button data-simbolo="2" onclick="aggiungisimbolo(this)">2</button>
+    <button data-simbolo="3" onclick="aggiungisimbolo(this)">3</button><br>
+    <button data-simbolo="4" onclick="aggiungisimbolo(this)">4</button>
+    <button data-simbolo="5" onclick="aggiungisimbolo(this)">5</button>
+    <button data-simbolo="6" onclick="aggiungisimbolo(this)">6</button><br>
+    <button data-simbolo="7" onclick="aggiungisimbolo(this)">7</button>
+    <button data-simbolo="8" onclick="aggiungisimbolo(this)">8</button>
+    <button data-simbolo="9" onclick="aggiungisimbolo(this)">9</button><br>
+    <button data-simbolo="*" onclick="aggiungisimbolo(this)">X</button>
+    <button data-simbolo="/" onclick="aggiungisimbolo(this)">/</button>
+    <button data-simbolo="+" onclick="aggiungisimbolo(this)">+</button>
+    <button data-simbolo="-" onclick="aggiungisimbolo(this)">-</button><br><br>
+    <button onclick="calcola()">totale</button>
+
+    <script>
+
+        let calcolo = '2 + 3';
+
+        console.log(calcolo);
+        console.log(eval(calcolo));
+        //eval('alert("ciao")'); 
+
+        /*
+        eval permette di lanciare codice java in input estremamente pericoloso
+        */
+
+        function calcola() {
+            let display = document.getElementById('display');
+            let totale = eval(display.value);
+            display.value = totale;
+        }
+
+        function aggiungisimbolo(bottone) {
+
+            let display = document.getElementById('display');
+
+            console.log(bottone.innerHTML)
+
+            console.log(bottone.getAttribute('data-simbolo'))
+
+            //if (!isSymbol(bottone)) {
+                display.value += bottone.getAttribute('data-simbolo');
+            /*}else{
+                display.value.replace(display[display.length - 1], bottone.getAttribute('data-simbolo'));
+            }*/
+
+        }
+
+        function isSymbol(carattere) {
+            const simboli = ['*', '/', '+', '-'];
+            if (simboli.includes(carattere)) {
+                return true;
+            }
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>
