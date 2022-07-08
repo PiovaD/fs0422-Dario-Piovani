@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="container">
+
+    <div id="theme">
+        <button id="set-theme" onclick="changeTheme()"></button>
+        <div id="sun"></div>
+        <div id="moon"></div>
+    </div>
+
+    <div id="calcolatrice">
+
+        <div class="schermo">
+            <input id="display" type="text" readonly>
+        </div>
+
+        <div class="pulsanti">
+
+            <button class="num" data-elem="7" onclick="addElem(this)">7</button>
+            <button class="num" data-elem="8" onclick="addElem(this)">8</button>
+            <button class="num" data-elem="9" onclick="addElem(this)">9</button>
+            <button class="operator" data-elem="/" onclick="addElem(this)">/</button>
+
+            <button class="num" data-elem="4" onclick="addElem(this)">4</button>
+            <button class="num" data-elem="5" onclick="addElem(this)">5</button>
+            <button class="num" data-elem="6" onclick="addElem(this)">6</button>
+            <button class="operator" data-elem="*" onclick="addElem(this)">x</button>
+
+            <button class="num" data-elem="1" onclick="addElem(this)">1</button>
+            <button class="num" data-elem="2" onclick="addElem(this)">2</button>
+            <button class="num" data-elem="3" onclick="addElem(this)">3</button>
+            <button class="operator" data-elem="-" onclick="addElem(this)">-</button>
+
+            <button class="reset" onclick="reset()">C</button>
+            <button class="num" data-elem="0" onclick="addElem(this)">0</button>
+            <button class="operator" data-elem="." onclick="addElem(this)">.</button>
+            <button class="operator" data-elem="+" onclick="addElem(this)">+</button>
+
+        </div>
+
+        <button class="equal" onclick="calcola()">=</button>
+
+    </div>
+
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

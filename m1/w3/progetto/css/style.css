@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=ZCOOL+QingKe+HuangYou&display=swap');
+
+#calcolatrice {
+    position: relative;
+    top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 400px;
+
+    background-color: rgb(204, 204, 204);
+
+    padding: 30px;
+    border-radius: 10px;
+
+    box-shadow: 2px 3px 8px rgb(27, 27, 27);
+}
+
+#calcolatrice .pulsanti {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+#calcolatrice button,
+#calcolatrice input {
+    padding: 0;
+    width: 100%;
+}
+
+#calcolatrice input {
+    border: none;
+    text-align: right;
+}
+
+#calcolatrice button {
+
+    cursor: pointer;
+    font-family: 'Righteous', cursive;
+
+    height: 100px;
+    border: none;
+    box-sizing: inherit;
+    border-radius: 8px;
+
+    text-align: center;
+
+    box-shadow: 2px 3px 1px rgb(153, 153, 153);
+
+}
+
+.dark {
+    color: rgb(242, 242, 242);
+}
+
+#calcolatrice .schermo,
+#calcolatrice #display {
+
+    background-color: rgb(242, 242, 242);
+
+    width: 360px;
+
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 2.1rem;
+}
+
+#calcolatrice .schermo {
+    box-shadow: inset 0 0 5px rgb(66, 66, 66);
+    padding: 30px 20px;
+
+    border-radius: 5px;
+
+    margin-bottom: 50px;
+}
+
+#calcolatrice .num {
+    background-color: rgb(170, 170, 170);
+
+    font-size: 2.5rem;
+}
+
+#calcolatrice .operator {
+    background-color: rgb(136, 150, 170);
+    font-size: 3rem;
+}
+
+#calcolatrice .reset {
+    background-color: rgb(255, 123, 75);
+    font-size: 2.5rem;
+}
+
+#calcolatrice .equal {
+    margin-top: 20px;
+    background-color: rgb(80, 120, 169);
+    font-size: 3rem;
+}
+
+#calcolatrice button:hover {
+    opacity: 0.8;
+}
+
+#calcolatrice button:active {
+    box-shadow: inset 2px 3px 2px rgb(66, 66, 66);
+
+    transform: translate(2px, 3px)
+}
+
+/*dark*/
+
+#calcolatrice.dark {
+    background-color: rgb(37, 37, 38);
+}
+
+#calcolatrice .num.dark {
+    background-color: rgb(74, 74, 76);
+}
+
+#calcolatrice .operator.dark {
+    background-color: rgb(111, 111, 114);
+}
+
+#calcolatrice .reset.dark {
+    background-color: rgb(148, 148, 152);
+}
+
+
+#calcolatrice .equal.dark {
+    background-color: rgb(45, 70, 100);
+}
+
+#calcolatrice button.dark {
+
+    box-shadow: 2px 3px 1px rgb(24, 24, 24);
+}
+
+#container.dark {
+    background-color: rgb(27, 27, 27)
+}
+
+/* tema */
+
+#theme {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    left: 20px;
+    border-radius: 30%;
+    overflow: hidden;
+}
+
+#set-theme,
+#sun,
+#moon {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+}
+
+#set-theme {
+    z-index: 5;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+#sun {
+    background-color: rgb(255, 196, 0);
+}
+
+#moon {
+    background-color: rgb(27, 27, 27);
+    top: -55px;
+    left: 55px;
+    transition-duration: 0.5s;
+}
+
+.animation {
+    transform: translate(-45px, 45px)
+}
