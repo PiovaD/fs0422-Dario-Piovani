@@ -5,6 +5,8 @@ reset();
 function addElem(elem) {
     let display = document.querySelector('#display');
     let symbol = elem.getAttribute('data-elem');
+    let actualString = display.value;
+    let lastAdd = display.value.length - 1;
     const OPERATOR = ['*', '/', '+', '.'];
     const MINUS = ['-'];
 
@@ -12,11 +14,11 @@ function addElem(elem) {
 
         display.value = symbol;
 
-    } else if ((MINUS.includes(symbol) || OPERATOR.includes(symbol))
-        && (OPERATOR.includes(display.value[display.value.length - 1]) || MINUS.includes(display.value[display.value.length - 1]))) 
-        {
+    } else if ((OPERATOR.includes(symbol) && OPERATOR.includes(actualString[lastAdd]) || (MINUS.includes(symbol) && MINUS.includes(actualString[lastAdd])))) {
 
-        display.value = display.value.replace(display.value[display.value.length - 1], symbol);
+        actualString = actualString.replace(actualString[lastAdd], symbol);
+
+        display.value = actualString;
 
     } else {
 
