@@ -16,7 +16,7 @@ function addElem(elem) {
 
     } else if ((OPERATOR.includes(symbol) && OPERATOR.includes(actualString[lastAdd]) || (MINUS.includes(symbol) && MINUS.includes(actualString[lastAdd])))) {
 
-        actualString = actualString.replace(actualString[lastAdd], symbol);
+        actualString = actualString.slice(0, -1) + symbol;
 
         display.value = actualString;
 
