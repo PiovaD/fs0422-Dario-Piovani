@@ -1,0 +1,116 @@
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        #container{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-image: url("https://i.pinimg.com/474x/a2/aa/bb/a2aabba2c1c71f1cd1b7901b9f671d2c.jpg");
+            border-radius: 50%;
+            background-size: 200px;
+            background-position: center center;
+        }
+
+        .lancet{
+            position: absolute;
+            width: 3px;
+            height: 50px;
+            background-color: red;
+            left: 50%;
+            bottom: 50%;
+            border-radius: 5px;
+            
+            transform-origin: bottom;
+        }
+
+        #second{
+            height: 90px;
+        }
+
+        #minute{
+            height: 80px;
+        }
+
+        #hour{
+            height: 60px;
+        }
+
+        
+    </style>
+
+    <h1>Ora attuale</h1>
+    <div id="clock"></div>
+
+    <div id="container">
+        
+        <div class = 'lancet' id="hour"></div>
+        <div class = 'lancet' id="minute"></div>
+        <div class = 'lancet' id="second"></div>
+
+    </div>
+
+    <script>
+
+        let now = new Date();
+        console.log(now);
+        console.log(now.getDate());
+        console.log(now.getMonth());
+        console.log(now.getFullYear());
+        console.log(now.getTime());
+
+        let milliseconds = now.getTime()
+        console.log(milliseconds, new Date(milliseconds))
+
+        //metodi set
+
+        now.setFullYear(2021)
+        console.log(now);
+
+        //esercizio
+
+        let fouture =  new Date() 
+
+        fouture.setMonth(fouture.getMonth() +1)
+        console.log(fouture);
+
+
+        
+
+        setInterval(function(){
+            
+            let actualTime = new Date()
+          
+            document.querySelector('#clock').innerHTML = actualTime.toLocaleTimeString();
+
+
+            let ora = document.querySelector('#hour');
+            let minute = document.querySelector('#minute');
+            let second = document.querySelector('#second');
+
+            let sRot =(actualTime.getSeconds()/60)*360;
+            
+            let mRot =(actualTime.getMinutes()/60)*360;
+            
+            let hRot =(actualTime.getHours()/12)*360;
+
+            ora.style.transform = 'rotate('+hRot+'deg)'
+            minute.style.transform = 'rotate('+mRot+'deg)'
+            second.style.transform = 'rotate('+ sRot +'deg)'
+        
+        }, 1000)
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="start">Avvia timer</button>
+    <button id="reset">Reset timer</button>
+
+    <div id="display"></div>
+
+
+    <script>
+
+        let timerStart = document.querySelector('#start');
+        let timerReset = document.querySelector('#reset');
+
+        let display = document.querySelector('#display');
+
+
+        timerStart.addEventListener('click', start);
+        timerReset.addEventListener('click', res);
+        /* 
+        
+        function start() {
+             let startTime = new Date();
+ 
+             startTime.setSeconds(0);
+             startTime.setMinutes(0)
+             startTime.setHours(0);
+ 
+            setInterval(() => {
+ 
+             startTime.setSeconds(startTime.getSeconds() + 1)
+             
+                display.innerHTML = startTime.toLocaleTimeString();
+                
+             }, 1000);
+ 
+         }*/
+
+         let onGo;
+
+
+        function start() {
+
+            let startTime = new Date();
+
+            onGo = setInterval(() => {
+
+                let actuTime = new Date();
+                actuTime.setTime(Date.now() - startTime.getTime());
+
+                actuTime.setHours(0)
+
+                display.innerHTML = actuTime.toLocaleTimeString();
+
+            }, 1000);
+
+        }
+
+        function res() {
+            stop();
+
+            let timeRes = new Date();
+            timeRes.setTime(0)
+            
+            timeRes.setHours(0)
+            display.innerHTML = timeRes.toLocaleTimeString();
+
+        }
+
+        function stop() {
+            clearInterval(onGo);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+lazy loading permette che js mostra le img solo allo scroll

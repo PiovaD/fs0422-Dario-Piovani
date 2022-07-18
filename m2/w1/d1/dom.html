@@ -1,0 +1,50 @@
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="html"></div>
+    <div id="html2"></div>
+    <script>
+
+
+        //ez
+        let html = document.querySelector('#html');
+        let html2 = document.querySelector('#html2');
+
+        let h1 = document.createElement('h1');
+        h1.style.color = 'red'
+        h1.innerHTML = 'Titolo';
+
+        html.appendChild(h1);
+        html.append
+
+        //norm
+        let dom = [
+            {
+                tag: 'h1',
+                html: 'Hello',
+                class: 'classe 1 classe 2'
+            },
+            {
+                tag: 'h2',
+                html: 'world',
+                class: 'classe2'
+            }
+        ]
+
+        dom.forEach(function(el){
+
+            let element = document.createElement(el.tag);
+            element.innerHTML = el.html;
+            element.className = el.class;
+            html2.append(element);
+        })
+
+    </script>
+</body>
+</html>
