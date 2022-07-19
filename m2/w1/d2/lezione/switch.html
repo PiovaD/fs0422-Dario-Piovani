@@ -1,0 +1,50 @@
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select id="frutta">
+        <option value="">Scegli il frutto</option>
+        <option value="Pere">Pere</option>
+        <option value="Mele">Mele</option>
+        <option value="Banane">Banane</option>
+        <option value="Ciliege">Ciliege</option>
+        <option value="Angurie">Angurie</option>
+        <option value="Ananas">Ananas</option>
+    </select>
+
+    <h3 id = 'prezzo'></h3>
+    <hr>
+
+    <script>
+
+        let frutta = document.getElementById("frutta");
+
+        frutta.addEventListener('change',function(){
+            let prezzo = document.querySelector('#prezzo');
+            let frutto = frutta.value
+
+            switch (frutto) {
+                case 'Pere':
+                    prezzo.innerHTML = 'le pere costano 0.50€'
+                    break
+                case 'Mele':
+                    prezzo.innerHTML = 'le mele costano 0.80€'
+                    break;
+                default:
+                    prezzo.innerHTML = `${frutto} non è presente`
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>

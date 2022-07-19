@@ -1,0 +1,147 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //forEach
+        let pizze = ['Margherita', 'Diavola', 'Capricciosa'];
+
+        pizze.forEach((pizza, indice) => {
+
+            document.write(indice + ' ' + pizza + '<br>');
+
+        })
+
+        //map
+
+        let pizzeBold = pizze.map(pizza => `<b>${pizza}<b><br>`)
+
+        document.write(pizzeBold)
+
+
+        let numeri = [41, 25, 32, 24, 54];
+
+        let numMoltipl = numeri.map(numero => numero * 2)
+        document.write(numMoltipl);
+
+        document.write('<br>');
+
+        //filter e find
+
+        numeri = [12, 34, 56, 78, 90];
+
+        let numeriFiltrati = numeri.filter(numero => numero > 34);
+
+        document.write(numeriFiltrati)
+
+        document.write('<br>');
+
+        let numeriTrovato = numeri.find(numero => numero > 34);
+
+
+        document.write(numeriTrovato)
+        document.write('<br>');
+
+        // esempio con oggetti
+
+        let menu = [
+            {
+                gusto: 'Margherita',
+                tipo: 'Napoletana',
+                prezzo: 5
+            },
+
+            {
+                gusto: 'Diavola',
+                tipo: 'Napoletana',
+                prezzo: 1
+            },
+
+            {
+                gusto: 'Cacio e pepe',
+                tipo: 'Romana',
+                prezzo: 8
+            }
+        ]
+
+        let pizzaEconomica = menu.find(pizza => pizza.prezzo < 5)
+
+        document.write(pizzaEconomica.gusto)
+        document.write('<br>');
+
+        let pizzeNapoletane = menu.filter(pizza => pizza.tipo == 'Napoletana')
+
+        document.write(pizzeNapoletane)
+        document.write('<br>');
+
+        //reduce 
+
+        numeri = [12, 34, 56, 10, 78, 90];
+
+        let sommaNumeri = numeri.reduce((p, c) => p + c);
+
+        document.write(sommaNumeri)
+        document.write('<br>');
+
+        let numeriPiccoli = numeri.reduce((p, c) => p < c ? p : c)
+
+        document.write(numeriPiccoli)
+        document.write('<br>');
+
+
+        //somma pro
+
+        function sommaPro(...numbers) {// ... operatore di spread uniscw tutti i parametri passati in un array
+            return numbers.reduce((p, c) => p + c)
+        }
+
+        document.write(sommaPro(2, 8, 96, 87, 54))
+        document.write('<br>');
+        //esercizio
+
+        menu = [
+            {
+                gusto: 'Margherita',
+                tipo: 'Napoletana',
+                prezzo: 5
+            },
+
+            {
+                gusto: 'Diavola',
+                tipo: 'Napoletana',
+                prezzo: 1
+            },
+
+            {
+                gusto: 'Cacio e pepe',
+                tipo: 'Romana',
+                prezzo: 8
+            }
+        ]
+
+        menu = menu.reduce((p, c) => {
+            if (p[c.tipo]) {
+                p[c.tipo].push(c);
+            } else {
+                p[c.tipo] = [c];
+            }
+            return p
+        }, {})//graffe permerttono la partenza da oggetto vuoto
+
+        console.log(menu)
+
+
+    </script>
+
+</body>
+
+</html>

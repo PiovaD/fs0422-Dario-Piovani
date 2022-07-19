@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table id="lista"></table>
+
+
+
+
+    <script>
+        //esercizio
+        let lista = document.querySelector('#lista');
+
+        let menu = [
+            {
+                gusto: 'Margherita',
+                tipo: 'Napoletana',
+                prezzo: 5
+            },
+
+            {
+                gusto: 'Diavola',
+                tipo: 'Napoletana',
+                prezzo: 1
+            },
+
+            {
+                gusto: 'Cacio e pepe',
+                tipo: 'Romana',
+                prezzo: 8
+            }
+        ]
+
+        for (let pizza of menu) {
+
+            let tr = document.createElement('tr')
+
+            for (let prop in pizza) {
+
+                let td = document.createElement('td')
+                td.innerHTML = pizza[prop];
+
+                tr.appendChild(td)
+            }
+            
+            lista.appendChild(tr)
+        }
+
+    </script>
+</body>
+
+</html>
