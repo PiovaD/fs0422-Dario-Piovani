@@ -50,14 +50,6 @@
     transform-style: preserve-3d ;
 }
 
-.arrow-right:hover #container{
-    transform: rotateY(45deg);
-}
-
-.arrow-left:hover #container{
-    transform: rotateY(-45deg);
-}
-
 i{
     font-size: 2rem;
     bottom:150px;
