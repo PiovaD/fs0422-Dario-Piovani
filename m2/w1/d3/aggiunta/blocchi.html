@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .quadrato{
+            height: 100px;
+            width: 100px;
+            border: 1px solid #000
+        }
+    </style>
+
+    <div class = "quadrato" data-color = "red"></div>
+    <div class = "quadrato" data-color = "blue"></div>
+    <div class = "quadrato" data-color = "yellow"></div>
+    <div class = "quadrato" data-color = "purple"></div>
+
+    <script>
+
+        document.querySelectorAll(".quadrato").forEach(quadrato =>{
+            quadrato.addEventListener('click', function() {
+
+                let color = quadrato.getAttribute('data-color')
+                quadrato.style.backgroundColor = color
+            })
+        })
+
+    </script>
+    
+</body>
+</html>

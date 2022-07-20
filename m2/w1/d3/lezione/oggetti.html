@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let obj = {};
+
+        let pizza = {
+            gusto: 'Margherita',
+            tipo: 'Napoletana',
+            prezzo: 5,
+
+            mostraPrezzo: function() {
+                console.log(`il prezzo della  pizza ${this.gusto} è di ${this.prezzo}€`);
+            } 
+        }
+
+        pizza.mostraPrezzo();
+
+        //interagire con le proprietazione 
+
+        console.log(pizza.gusto);
+        pizza.gusto = 'Diavola';
+        console.log(pizza);
+
+        pizza['disponibilita'] = true ;
+        console.log(pizza);
+
+    </script>
+</body>
+</html>
