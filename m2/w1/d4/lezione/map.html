@@ -7,11 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    
-
     <script>
-        //vedi michele
-    </script>
+        
+        let persona = new Map();
 
+        persona.set('name','Jhon')
+        persona.set('age',20)
+
+        console.log(persona)
+
+        if(persona.has('name')){
+            console.log(persona.get('name'))
+        }
+
+    </script>
 </body>
 </html>
