@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        #myForm input,
+        #myForm select {
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+    <form id="myForm">
+        
+        <div>
+
+            <input class="valida" type="text" id="nome" data-error = "devi inserire il nome" placeholder="nome">
+            <span></span>
+        </div>
+        
+        <div>
+
+            <input class="valida" type="email" id="email" data-error = "devi inserire la mail" placeholder="email">
+            <span></span>
+        </div>
+        
+        
+        <div>
+
+            <input class="valida" type="password" id="password" data-error = "devi inserire password" placeholder="password">
+            <span></span>
+        </div>
+        
+        <div>
+
+            <input class="valida" type="password" id="conferma-password" data-error = "devi reinserire la password" placeholder="conferma-password">
+            <span></span>
+        </div>
+
+        <div>
+
+            <select id="citta">
+                <option value="">Seleziona città</option>
+                <option value="roma">Roma</option>
+                <option value="milano">Milano</option>
+                <option value="napoli">Napoli</option>
+                
+            </select>
+            <span></span>
+        </div>
+
+        <button>Registrati</button>
+    </form>
+
+    <script>
+
+        let formButton = document.querySelector('#myForm button')
+
+        formButton.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            let valid = true;
+
+            //let campi = document.querySelectorAll('#myForm input, #myForm select')
+            let campi = document.querySelectorAll('.valida')
+
+            let [, , password, conferma] = campi
+
+            for (let campo of campi) {
+                if (!campo.value) {
+                    campo.style.border = '1px solid red';
+                    valid = false;
+                    let error = campo.getAttribute('data-error')
+                    let span = document.createElement('span')
+                    
+                    campo.nextElementSibling.innerHTML = error
+                } else {
+                    campo.style.border = ''
+                    campo.nextElementSibling.innerHTML = ''
+                }
+            }
+
+            /*
+            let nome = document.querySelector('#nome');
+            let mail = document.querySelector('#email');
+            let password = document.querySelector('#password');
+            let conferma = document.querySelector('#conferma-password');
+            let citta = document.querySelector('#citta');
+            
+            if (!nome.value) {
+                nome.style.border = '1px solid red';
+                valid = false;
+            } else {
+                nome.style.border = ''
+            }
+
+            if (!mail.value) {
+                mail.style.border = '1px solid red';
+                valid = false;
+            } else {
+                mail.style.border = ''
+            }
+
+            if (!password.value) {
+                password.style.border = '1px solid red';
+                valid = false;
+            } else {
+                password.style.border = ''
+            }
+
+            if (!conferma.value) {
+                conferma.style.border = '1px solid red';
+                valid = false;
+            } else {
+                conferma.style.border = ''
+            }
+
+            if (!citta.value) {
+                citta.style.border = '1px solid red';
+                valid = false;
+            } else {
+                citta.style.border = ''
+            }*/
+
+            if (password.value != conferma.value) {
+                password.style.border = '1px solid red';
+                conferma.style.border = '1px solid red';
+                valid = false;
+
+            }
+
+
+            if (valid) {
+                console.log('inviato');
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>
