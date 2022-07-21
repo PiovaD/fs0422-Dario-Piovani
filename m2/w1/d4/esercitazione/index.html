@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,27 +11,28 @@
     <link rel="stylesheet" href="assets/style.css">
 
 </head>
+
 <body>
-    <section id = "esercizio">
+    <section id="esercizio">
 
-    <div class="dropdown">
-        <button class="dropbtn">Menu</button>
-        <div id="myDropdown">
-            
-            <div class="formattazione" data-style="">Normale</div>
-            <div class="formattazione" data-style="italic">Corsivo</div>
-            <div class="formattazione" data-style="bold">Grassetto</div>
-            <div class="formattazione" data-style="underline">Sottolineato</div>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="myDropdown">
+                <div class="formattazione" data-style="italic">Corsivo</div>
+                <div class="formattazione" data-style="bold">Grassetto</div>
+                <div class="formattazione" data-style="underline">Sottolineato</div>
+            </div>
         </div>
-    </div>
 
-    <button id="create-list" class="dropbtn">Genera lista</button>
-    <article id="to-do">
-        <input id='insert' type="text" placeholder="inserisci impegno">
-        <ul id = "lista"></ul>
-    </article>
+        <article id="to-do">
+            <button id="create-list" class="dropbtn">Genera lista</button>
+            <button id="destroy-list" class="dropbtn">Distruggi lista</button>
+            <input id='insert' type="text" placeholder="inserisci impegno">
+            <ul id="lista"></ul>
+        </article>
 
     </section>
     <script src="assets/script.js"></script>
 </body>
+
 </html>
