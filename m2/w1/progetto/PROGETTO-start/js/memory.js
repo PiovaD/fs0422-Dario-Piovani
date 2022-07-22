@@ -1,5 +1,5 @@
 let arrayAnimali = ['🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐰', '🐯', '🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐯', '🐰'];
-//let arrayAnimali = ['🐱','🐱']
+//let arrayAnimali = ['🐱', '🐱','🦉','🦉']
 //libreria per icone
 //https://html-css-js.com/html/character-codes/
 
@@ -84,7 +84,7 @@ function displayIcon() {
     //se nel confronto ci sono due elementi
     if (len === 2) {
         //se sono uguali aggiunge la classe find
-        if (arrayComparison[0].innerHTML === arrayComparison[1].innerHTML && 
+        if (arrayComparison[0].innerHTML === arrayComparison[1].innerHTML &&
             clickError(arrayComparison)) {
 
             arrayComparison[0].classList.add("find", "disabled");
@@ -126,8 +126,8 @@ function displayIcon() {
 // risolve problema al click sulla stessa icona
 function clickError(list) {
 
-    if(list[0].offsetTop == list[1].offsetTop && list[0].offsetLeft == list[1].offsetLeft){
-        
+    if (list[0].offsetTop == list[1].offsetTop && list[0].offsetLeft == list[1].offsetLeft) {
+
         return false
     }
 
@@ -152,29 +152,19 @@ function completeGame() {
 
         span.innerHTML = printTime() + " e " + clickCount + " click";
 
-        switch(clickCount){
-            case (clickCount < arrayAnimali.length):
-                span.innerHTML += ' hai imbrogliato'
-            break
-
-            case (clickCount = arrayAnimali.length):                
-                span.innerHTML += ' al primo colpo'
-
-            break
-
-            case (clickCount > (arrayAnimali.length * 2)):
-                span.innerHTML += ' potevi fare meglio'
-
-            break
-
-            default:
-                
-                span.innerHTML += ' bravo'
-
+        if (clickCount < arrayAnimali.length) {
+            span.innerHTML += ' hai imbrogliato';
+        } else if (clickCount == arrayAnimali.length) {
+            span.innerHTML += ' al primo colpo';
+        } else if (clickCount > arrayAnimali.length * 2) {
+            span.innerHTML += ' potevi fare meglio';
+        } else {
+            span.innerHTML += ' bravo';
         }
-
     }
 }
+
+
 
 // una funzione che nasconde la modale alla fine e riavvia il gioco
 
