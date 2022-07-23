@@ -1,5 +1,5 @@
-//let arrayAnimali = ['🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐰', '🐯', '🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐯', '🐰'];
-let arrayAnimali = ['🐱', '🐱', '🦉', '🦉']
+let arrayAnimali = ['🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐰', '🐯', '🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐯', '🐰'];
+//let arrayAnimali = ['🐱', '🐱', '🦉', '🦉']
 //libreria per icone
 //https://html-css-js.com/html/character-codes/
 
@@ -163,7 +163,7 @@ function completeGame() {
                 span.innerHTML += "<br>Complimenti al primo colpo"
                 break;
 
-            case (score <= iconsFind.length * 400):
+            case (score <= iconsFind.length * 350):
                 span.innerHTML += "<br>Potevi fare di meglio"
                 break;
 
