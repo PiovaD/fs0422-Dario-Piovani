@@ -5,6 +5,19 @@ let arrayAnimali = ['🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '�
 
 let arrayComparison = [];
 
+//leaderboard salvata nel locale storage
+let top5 = JSON.parse(localStorage.getItem("leaderboard") || "[]");
+
+class User {
+    name = ''
+    score = ''
+}
+
+document.querySelector('.reset').addEventListener('click', removeTop)
+let save = document.querySelector('.save')
+
+
+//memory
 let click = document.querySelector(".click")
 let clickCount = 0;
 
@@ -37,10 +50,14 @@ function shuffle(a) {
 
 function startGame() {
 
+    save.addEventListener('click', saveElement)
+
     clickCount = 0;
     score = 0;
 
-    resetTimer()
+    printTop();
+
+    resetTimer();
 
     myInterval = setInterval(myTimer, refresh);
 
@@ -173,6 +190,7 @@ function completeGame() {
 
         }
     }
+
 }
 
 // una funzione che nasconde la modale alla fine e riavvia il gioco
@@ -182,6 +200,7 @@ function playAgain() {
     let modal = document.querySelector('#modal');
 
     modal.classList.remove('active');
+    save.classList.remove('disabled')
 
     startGame();
 }
@@ -220,4 +239,95 @@ function updateScore(bool) {
     bool ? score += 1000 : score -= 200
 
     score -= timer / 1000
+}
+
+
+//funzioni gestione della del leaderboard
+function saveElement() {
+
+    save.removeEventListener('click', saveElement)
+    save.classList.add('disabled')
+
+    let nameDisplay = document.querySelector('.name')
+
+    let name = nameDisplay.value
+
+    nameDisplay.value = '';
+
+    addTop(name)
+
+    printTop();
+
+}
+
+function addTop(name) {
+
+    let user = new User
+    user.name = name
+    user.score = score
+
+    if (top5.length == 0) {
+
+        top5.push(user);
+
+    } else {
+
+        insert(user)
+
+    }
+
+    localStorage.setItem('leaderboard', JSON.stringify(top5))
+
+}
+
+function insert(user) {
+
+    for (let i = 0; i < top5.length; i++) {
+
+        if (i == 0) {
+
+            if (user.score >= top5[i].score) {
+                top5.unshift(user);
+                break;
+            }
+
+        } else {
+
+            if (user.score >= top5[i].score) {
+                top5.splice(i, 0, user);
+                break;
+            }
+        }
+
+        if (top5.length - 1 == i) {
+            top5.push(user);
+            break;
+        }
+    }
+
+    top5.length > 5 && top5.pop();
+
+}
+
+function printTop() {
+
+    let board = document.querySelector('#leaderboard')
+
+    board.innerHTML = 'Classifica: '
+
+    for (let i = 0; i < top5.length; i++) {
+
+        let p = document.createElement('p')
+
+        p.innerHTML = `${i + 1}°- Name: ${top5[i].name}, Point: ${top5[i].score}`
+
+        board.append(p)
+
+    }
+
+}
+
+function removeTop() {
+    localStorage.removeItem('leaderboard');
+    location.reload();
 }

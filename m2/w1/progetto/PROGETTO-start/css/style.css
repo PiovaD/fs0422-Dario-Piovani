@@ -49,6 +49,10 @@
     cursor: wait;
 }
 
+.save.disabled {
+    background-color: #666;
+}
+
 .show {
     animation-name: rotazione-carta;
     animation-duration: .5s;
@@ -104,7 +108,7 @@
     margin-top: 20px;
 }
 
-.click{
+.click {
     padding-bottom: 15px;
 }
 
@@ -147,7 +151,7 @@
         transform: scale(1);
         animation-timing-function: ease-in-out;
     }
-    
+
     50% {
         transform: scale(1.5) rotateY(270deg);
         perspective: 100px;
