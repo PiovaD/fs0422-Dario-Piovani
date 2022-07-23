@@ -1,5 +1,5 @@
-let arrayAnimali = ['🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐰', '🐯', '🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐯', '🐰'];
-//let arrayAnimali = ['🐱', '🐱','🦉','🦉']
+//let arrayAnimali = ['🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐰', '🐯', '🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐯', '🐰'];
+let arrayAnimali = ['🐱', '🐱', '🦉', '🦉']
 //libreria per icone
 //https://html-css-js.com/html/character-codes/
 
@@ -11,11 +11,13 @@ let clickCount = 0;
 let display = document.querySelector('.timer')
 let printTime = () => `${timer.getMinutes()} min ${zero(timer.getSeconds())} sec`
 
+let refresh = 500;
 let timer = new Date()
 let myInterval;
 
 timer.setTime(0);
-timer.setHours(0)
+
+let score = 0;
 
 document.body.onload = startGame();
 
@@ -36,10 +38,11 @@ function shuffle(a) {
 function startGame() {
 
     clickCount = 0;
+    score = 0;
 
     resetTimer()
 
-    myInterval = setInterval(myTimer, 1000);
+    myInterval = setInterval(myTimer, refresh);
 
     let griglia = document.querySelector('#griglia');
 
@@ -62,7 +65,7 @@ function startGame() {
         griglia.append(card)
     }
 
-    click.innerHTML = 'Click totali: ' + clickCount;
+    click.innerHTML = `Click totali: ${clickCount}, Punteggio: ${score}`
 }
 
 function displayIcon() {
@@ -91,6 +94,7 @@ function displayIcon() {
             arrayComparison[1].classList.add("find", "disabled");
             arrayComparison = [];
 
+            updateScore(true);
             completeGame();
 
         } else {
@@ -118,9 +122,11 @@ function displayIcon() {
                 arrayComparison = [];
 
             }, 700);
+
+            updateScore(false);
         }
     }
-    click.innerHTML = 'Click totali: ' + clickCount;
+    click.innerHTML = `Click totali: ${clickCount}, Punteggio: ${score}`
 }
 
 // risolve problema al click sulla stessa icona
@@ -150,21 +156,24 @@ function completeGame() {
 
         modal.classList.add('active');
 
-        span.innerHTML = printTime() + " e " + clickCount + " click";
+        span.innerHTML = `${printTime()} e ${clickCount} click, hai fatto: ${score} punti.`;
 
-        if (clickCount < arrayAnimali.length) {
-            span.innerHTML += ' hai imbrogliato';
-        } else if (clickCount == arrayAnimali.length) {
-            span.innerHTML += ' al primo colpo';
-        } else if (clickCount > arrayAnimali.length * 2) {
-            span.innerHTML += ' potevi fare meglio';
-        } else {
-            span.innerHTML += ' bravo';
+        switch (true) {
+            case (clickCount == iconsFind.length):
+                span.innerHTML += "<br>Complimenti al primo colpo"
+                break;
+
+            case (score <= iconsFind.length * 400):
+                span.innerHTML += "<br>Potevi fare di meglio"
+                break;
+
+            case (score < iconsFind.length * 500):
+                span.innerHTML += "<br>Bravo"
+                break;
+
         }
     }
 }
-
-
 
 // una funzione che nasconde la modale alla fine e riavvia il gioco
 
@@ -182,7 +191,7 @@ function playAgain() {
 function myTimer() {
 
 
-    timer.setSeconds(timer.getSeconds() + 1)
+    timer.setMilliseconds(timer.getMilliseconds() + refresh)
 
     display.innerHTML = "Tempo: " + printTime()
 
@@ -202,10 +211,13 @@ function resetTimer() {
     stop()
 
     timer.setTime(0);
-    timer.setHours(0);
 
     display.innerHTML = "Tempo: " + printTime()
 
 }
 
+function updateScore(bool) {
+    bool ? score += 1000 : score -= 200
 
+    score -= timer / 1000
+}
