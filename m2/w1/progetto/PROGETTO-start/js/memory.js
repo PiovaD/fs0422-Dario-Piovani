@@ -163,7 +163,7 @@ function completeGame() {
                 span.innerHTML += "<br>Complimenti al primo colpo"
                 break;
 
-            case (score <= iconsFind.length * 350):
+            case (score <= iconsFind.length * 300):
                 span.innerHTML += "<br>Potevi fare di meglio"
                 break;
 
