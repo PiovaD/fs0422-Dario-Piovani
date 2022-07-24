@@ -1,5 +1,5 @@
-let arrayAnimali = ['🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐰', '🐯', '🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐯', '🐰'];
-//let arrayAnimali = ['🐱', '🐱', '🦉', '🦉']
+//let arrayAnimali = ['🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐰', '🐯', '🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐯', '🐰'];
+let arrayAnimali = ['🐱', '🐱', '🦉', '🦉']
 //libreria per icone
 //https://html-css-js.com/html/character-codes/
 
@@ -13,9 +13,12 @@ class User {
     score = ''
 }
 
-document.querySelector('.reset').addEventListener('click', removeTop)
 let save = document.querySelector('.save')
+save.addEventListener('click', saveElement)
+let userName = document.querySelector('.name')
+userName.addEventListener('keypress', (event) => event.keyCode === 13 && saveElement());
 
+document.querySelector('.reset').addEventListener('click', removeTop)
 
 //memory
 let click = document.querySelector(".click")
@@ -50,7 +53,8 @@ function shuffle(a) {
 
 function startGame() {
 
-    save.addEventListener('click', saveElement)
+    userName.disabled = false;
+    document.querySelector('.name').value = '';
 
     clickCount = 0;
     score = 0;
@@ -245,25 +249,36 @@ function updateScore(bool) {
 //funzioni gestione della del leaderboard
 function saveElement() {
 
-    save.removeEventListener('click', saveElement)
-    save.classList.add('disabled')
-
     let nameDisplay = document.querySelector('.name')
 
     let name = nameDisplay.value
 
-    nameDisplay.value = '';
+    if (!name) {
 
-    addTop(name)
+        nameDisplay.style.border = '3px solid red';
+        nameDisplay.style.background = 'yellow'
 
-    printTop();
+    } else {
 
+        userName.disabled = true
+
+        save.classList.add('disabled')
+
+        nameDisplay.style.border = '';
+        nameDisplay.style.background = ''
+
+        nameDisplay.value = '';
+
+        addTop(name)
+
+        printTop();
+    }
 }
 
 function addTop(name) {
 
     let user = new User
-    user.name = name
+    user.name = tagManagement(name)
     user.score = score
 
     if (top5.length == 0) {
@@ -278,6 +293,11 @@ function addTop(name) {
 
     localStorage.setItem('leaderboard', JSON.stringify(top5))
 
+}
+
+function tagManagement(text) {
+    return text.replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
 }
 
 function insert(user) {

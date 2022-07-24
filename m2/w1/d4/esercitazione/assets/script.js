@@ -127,7 +127,7 @@ function add() {
         }
 
         li.addEventListener('click', () => toggle(div));
-        li.innerHTML = '🔶 ' + String(impegno);
+        li.innerHTML = '🔶 ' + tagManagement(impegno);
         li.append(div);
         toDoList.append(li);
     }
@@ -135,3 +135,7 @@ function add() {
     insert.value = '';
 }
 
+function tagManagement(text) {
+    return text.replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+}
