@@ -1,0 +1,21 @@
+:root {
+    --colore-primario: #970000;
+}
+
+.btn-danger{
+    --bs-btn-bg: #009708;
+}
+
+.container.container-diverso{
+    background-color: blue;
+}
+
+.btn-primary{
+    background-color: var(--colore-primario)
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #5f0404;
+    border-color: var( --colore-primario) ;
+}
