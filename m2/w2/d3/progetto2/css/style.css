@@ -1,0 +1,29 @@
+header ul {
+  display: flex; }
+  header ul a {
+    color: white; }
+  header ul li {
+    padding: 20px;
+    background-color: blue; }
+    header ul li:hover {
+      background-color: #9999ff; }
+    header ul li:hover a {
+      color: black; }
+
+h1 {
+  background-color: red; }
+
+p {
+  background-color: red;
+  font-size: 2rem;
+  font-family: "Arial"; }
+
+.blocco {
+  background-color: green;
+  width: 100px;
+  height: 100px; }
+
+.quadrato {
+  background-color: blue;
+  width: 200px;
+  height: 200px; }

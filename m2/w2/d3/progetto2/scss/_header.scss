@@ -1,0 +1,25 @@
+@import 'variables';
+
+header {
+    ul {
+        display: flex;
+
+        a {
+            color: $colore_header_link;
+        }
+
+        li {
+            padding: 20px;
+            background-color: $colore_header;
+
+            &:hover{
+                background-color: lighten($colore_header, 30%);
+            }
+
+            &:hover a{
+                color: $colore_header_link_hover;
+            }
+        }
+    }
+
+}

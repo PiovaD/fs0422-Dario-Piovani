@@ -1,0 +1,37 @@
+@import 'variables';
+
+@import 'header';
+
+@mixin font($prop,$val) {
+    font-#{$prop} : $val;
+}
+
+h1 {
+    background-color: $colore_primario;
+}
+
+p {
+    background-color: $colore_primario;
+    @include font('size',2rem);
+    
+    @include font('family','Arial');
+}
+
+
+@mixin quadrato ($quadrato) {
+    width: $quadrato;
+    height: $quadrato;
+}
+
+
+.blocco {
+    background-color: green;
+    @include quadrato(100px);
+}
+
+.quadrato {
+    background-color: blue;
+    @include quadrato(200px);
+}
+
+@import 'footer';

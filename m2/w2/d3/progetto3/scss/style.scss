@@ -1,0 +1,36 @@
+@import 'variables';
+@import 'functions';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+.bg-primary{
+    color: contrast($primary);
+}
+
+.bg-warning{
+    color: contrast($warning);
+}
+
+.standard-section{
+    height:200px;
+    border-top:1px solid #000;
+
+    @media screen and (max-width: 768px){ 
+        background-color: red
+    }
+}
+
+.special-section{
+    @extend .standard-section;
+
+    background-color: $purple
+
+}
+
+$misure: 40, 50, 80;
+
+@each $misura in $misure{
+    .quadrato-#{$misura}{
+        height: $misura + px;
+        width: $misura + px;
+    }
+}
