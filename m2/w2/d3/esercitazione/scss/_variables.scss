@@ -1,1 +1,48 @@
 $bg-header: rgb(0, 150, 220);
+$bg-body: rgb(232, 232, 214);
+$head-text: #000;
+
+@function textShowUp($color, $isBW) {
+
+    @if($isBW) {
+        @if(lightness($color) > 50) {
+
+            @return darken($color, 100%);
+
+        }
+
+        @else {
+
+            @return lighten($color, 100%);
+        }
+    }
+
+    @else {
+        @if(lightness($color) > 50) {
+
+            @return darken($color, 25%);
+
+        }
+
+        @else {
+
+            @return lighten($color, 25%);
+
+        }
+    }
+
+}
+
+@function borderColor($color) {
+
+    @return darken($color, 25%);
+
+}
+
+$bg-btn: textShowUp($bg-header, false);
+$border-btn: borderColor($bg-header);
+$hover-btn-text: textShowUp($head-text, true);
+
+@mixin font($prop, $val) {
+    font-#{$prop}: $val;
+}

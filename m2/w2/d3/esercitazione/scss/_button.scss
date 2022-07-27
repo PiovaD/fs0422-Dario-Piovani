@@ -1,0 +1,20 @@
+@import 'variables';
+
+.btn {
+    cursor: pointer;
+
+    padding: 10px;
+    margin: 0 10px;
+
+    background: $bg-btn;
+    border-radius: 5px;
+    border: 2px solid $border-btn;
+    
+    transition: all 0.3s ease-in;
+    &:hover{
+
+        background: $border-btn;
+        color: $hover-btn-text;
+        transform: scale(1.3);
+    }
+}

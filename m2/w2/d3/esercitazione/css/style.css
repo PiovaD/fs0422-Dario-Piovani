@@ -1,4 +1,41 @@
-header {
+.banner-header {
   width: 100%;
-  height: 50px;
-  background-color: #0096dc; }
+  height: max-content;
+  background-color: #0096dc;
+  position: sticky;
+  top: 0;
+  font-family: Arial;
+  font-size: 1.5rem; }
+  .banner-header a {
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    margin: auto 0; }
+  .banner-header .container, .banner-header .container-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between; }
+  .banner-header .container-menu {
+    padding: 10px; }
+
+.btn {
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 10px;
+  background: #5dcbff;
+  border-radius: 5px;
+  border: 2px solid #003f5d;
+  transition: all 0.3s ease-in; }
+  .btn:hover {
+    background: #003f5d;
+    color: white;
+    transform: scale(1.3); }
+
+body {
+  background-color: #e8e8d6; }
+
+.photo {
+  margin: 0 auto;
+  margin-top: 15px;
+  display: block; }

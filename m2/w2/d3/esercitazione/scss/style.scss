@@ -1,3 +1,14 @@
 @import 'variables';
-@import 'buttons';
 @import 'header';
+@import 'button';
+
+
+body {
+    background-color: $bg-body;
+}
+
+.photo {
+    margin: 0 auto;
+    margin-top: 15px;
+    display: block;
+}
