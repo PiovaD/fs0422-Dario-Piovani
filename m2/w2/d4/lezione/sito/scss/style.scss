@@ -1,0 +1,37 @@
+$bg-scuro: rgb(49, 49, 49);
+$bg-chiaro: rgb(216, 216, 216);
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'functions';
+
+$txt-scuro: contarst($bg-scuro); 
+$txt-chiaro: contarst($bg-chiaro);
+
+.height-100px {
+    height: 100px
+}
+
+.clamp {
+    @extend .height-100px;
+    width: clamp(500px, 100%, 800px);
+}
+
+.min {
+    @extend .height-100px;
+
+    margin-top: max(800px);
+    margin-bottom: min(25px);
+
+}
+
+.bg-scuro {
+    @extend .height-100px;
+    background-color: $bg-scuro;
+    color: $txt-scuro;
+}
+
+.bg-chiaro {
+    @extend .height-100px;
+    background-color: $bg-chiaro;
+    color:$txt-chiaro;
+}
