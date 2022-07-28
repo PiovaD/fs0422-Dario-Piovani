@@ -1,0 +1,73 @@
+@import 'variables';
+
+.sidebar {
+    position: fixed;
+
+    left:-60px;
+
+    height: 100%;
+
+    width: 0;
+    
+    top: 0;
+    background-color: $bg-sidebar;
+    text-align: center;
+    
+    @include font('size', 1.5rem);
+    cursor: pointer;
+    
+    .items {
+
+        margin-top: 100px;
+
+        overflow: hidden;
+
+        padding-top: 15%;
+
+        div {
+            padding: 40px 60px;
+
+            a{
+                text-decoration: none;
+                color: $text-sidebar;
+                
+            }
+
+            &:hover {
+                background-color: $bg-sidebar-hover;
+            }
+        }
+    }
+
+    .bar-container{
+        cursor: pointer;
+
+        position: absolute;
+
+        left:110px;
+        top:35px;
+
+
+        .bar {
+
+            background-color: $text-sidebar;
+            width: 30px;
+            height: 3px;
+            margin: 6px 0;
+        }
+    }
+
+    
+}
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=checkbox]:checked~.sidebar{
+    width: max-content;
+    left:0;
+}
+
+input[type=checkbox]:checked~.sidebar.bar-container{
+    left:110px;
+}

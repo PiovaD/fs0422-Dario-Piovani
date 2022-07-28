@@ -1,0 +1,20 @@
+$bg-sidebar: rgb(21, 126, 155);
+$bg-header: lighten($bg-sidebar, 8%);
+
+$bg-sidebar-hover : darken($bg-sidebar, 8%);
+
+$text-sidebar: showupText($bg-header);
+
+$bg-bar: white;
+
+@mixin font($prop, $val) {
+    font-#{$prop} : $val;
+}
+
+@function showupText ($color){
+    @if (lightness($color) > 50){
+        @return darken($color, 40%);
+    } @else {
+        @return lighten($color, 40%);
+    }
+}
