@@ -1,0 +1,17 @@
+@import 'function';
+
+$offcanvas-horizontal-width: max-content;
+$bg-card: rgb(255, 251, 209);
+$box-shadow: darken($bg-card,20%);
+
+$primary: rgb(157, 102, 0);
+$secondary: $bg-card;
+
+$info: purple;
+
+$navbar-light-color: textShowUp($primary,true);
+$bg-primary: $navbar-light-color;
+
+$arrow-filter: filter($primary);
+
+$bady-color: textShowUp($bg-card,true);

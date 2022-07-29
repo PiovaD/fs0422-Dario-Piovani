@@ -1,0 +1,40 @@
+@import 'variable';
+@import 'function';
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+.text-bg-primary {
+    color: $bg-primary !important;
+}
+
+body{
+
+    background-color: $bg-card;
+
+    .card{
+        box-shadow: 0px -10px 0px $box-shadow;
+        background: $bg-card;
+    }
+    
+    .about-us{
+        background-image: url('https://picsum.photos/id/1031/1920/1080');
+        background-repeat: no-repeat;
+        background-position: center top;
+    
+        p{
+            text-shadow: 0px 0px 4px #fff;
+        }
+    
+    }
+
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    filter: $arrow-filter
+}
+
+.carousel-indicators [data-bs-target]{
+    background-color: $navbar-light-color;
+}

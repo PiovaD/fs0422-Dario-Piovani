@@ -1,0 +1,40 @@
+@function textShowUp($color, $isBW) {
+
+    @if(lightness($color) > 50) {
+
+        @if ($isBW) {
+            @return darken($color, 100%);
+        }
+
+        @else {
+            @return darken($color, 25%);
+        }
+
+    }
+
+    @else {
+        @if ($isBW) {
+            @return lighten($color, 100%);
+        }
+
+        @else {
+            @return lighten($color, 25%);
+        }
+    }
+}
+
+@function filter($color) {
+
+    @if(lightness($color) > 50) {
+
+        @return invert(1) grayscale(100);
+
+    }
+
+    @else {
+
+        @return invert(0) grayscale(0);
+
+    }
+
+}
