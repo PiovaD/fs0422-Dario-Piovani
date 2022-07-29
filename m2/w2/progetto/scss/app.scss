@@ -10,11 +10,12 @@
 
 body{
 
-    background-color: $bg-card;
+    background-color: $bg-body;
 
     .card{
         box-shadow: 0px -10px 0px $box-shadow;
         background: $bg-card;
+        color: $card-text;
     }
     
     .about-us{

@@ -13,35 +13,38 @@
 <body>
     <header class="sticky-top">
 
-        <nav class="navbar navbar-expand-md navbar-light bg-primary p-2" aria-label="Offcanvas navbar large">
+        <nav class="navbar navbar-expand-md navbar-primary bg-primary p-2" aria-label="Offcanvas navbar large">
 
             <div class="container">
                 <a class="navbar-brand text-bg-primary " href="#">Sito web</a>
 
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+                    data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="offcanvas offcanvas-end text-bg-primary p-3" tabindex="-1" id="offcanvasNavbar2"
-                    aria-labelledby="offcanvasNavbar2Label">
+                <div class="offcanvas offcanvas-end text-bg-primary p-3" tabindex="-1" id="navbarOffcanvas"
+                    aria-labelledby="navbarOffcanvasLable">
                     <div class="offcanvas-header">
 
-                        <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
+                        <h5 class="offcanvas-title" id="navbarOffcanvasLable">Menu</h5>
 
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body ">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
+
                             <li class="nav-item">
-                                <a class="nav-link active text-bg-primary" aria-current="page" href="#">Home</a>
+                                <a class="nav-link text-bg-primary " href="#home">Home</a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link text-bg-primary" href="#">Partenrship</a>
+                                <a class="nav-link text-bg-primary " href="#partner">Partnership</a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link text-bg-primary" href="#">Testimonianze</a>
+                                <a class="nav-link text-bg-primary " href="#testimonial">Testimonianze</a>
                             </li>
                         </ul>
                     </div>
@@ -55,11 +58,11 @@
 
     <main class="flex-shrink-0 pt-2 pt-sm-4">
 
-        <div class="container about-us p-4 my-4 bg-light rounded-3">
+        <div class="container about-us p-4 my-4 bg-light rounded-3 text-dark" id="home" >
 
             <div class="py-4 ">
 
-                <h1 class="display-5 fw-bold text-center text-md-start mb-4">Chi siamo</h1>
+                <h1 class="display-5 fw-bold text-center text-md-start mb-4 ">Chi siamo</h1>
 
                 <p class="col-md-8 fs-4 text-center text-md-start">Lorem ipsum dolor sit amet consectetur adipisicing
                     elit. Dignissimos magnam
@@ -70,13 +73,13 @@
                     asperiores quo.</p>
 
                 <div class="d-flex justify-content-center justify-content-md-start pt-3">
-                    <button class="btn btn-info btn-lg" type="button">Contattaci</button>
+                    <a class="btn btn-info btn-lg" type="button" href="#contact">Contattaci</a>
                 </div>
             </div>
 
         </div>
 
-        <div class="container px-4">
+        <div id="partner" class="container px-4">
 
             <h2 class="pb-2 border-bottom text-center text-md-start">I nostri partner</h2>
 
@@ -121,7 +124,7 @@
 
         <div id="myCarousel" class="container carousel slide bg-primary rounded" data-bs-ride="carousel">
 
-            <div class="carousel-indicators">
+            <div id="testimonial" class="carousel-indicators">
 
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
@@ -247,17 +250,17 @@
 
     </main>
 
-    <footer class="py-sm-2 mt-5 bg-light text-bg-light">
+    <footer class="py-sm-2 mt-5 bg-dark text-bg-dark">
 
         <div class="row m-4">
 
-            <div class="offset-lg-2 col-lg-3 col-sm-6 mb-3 text-center">
+            <div id="contact" class="offset-lg-1 col-lg-4 col-sm-6 mb-3 text-center">
                 <h5>Contatti</h5>
                 <ul class="nav row ">
                     <li class="nav-item col-md mb-2">
                         <p>
                             Telefono:
-                            <a href="tel:+39 000 1234567" target="_blank" class="d-block text-bg-light">
+                            <a href="tel:+39 000 1234567" target="_blank" class="d-block text-bg-dark">
                                 +39 000 1234567
                             </a>
                         </p>
@@ -265,7 +268,7 @@
                     <li class="nav-item col-md mb-2">
                         <p>
                             Email:
-                            <a href="#" class='d-block text-bg-light'>
+                            <a href="#" class='d-block text-bg-dark'>
                                 lorem@ipsum.placeholder
                             </a>
                         </p>
@@ -274,7 +277,7 @@
                         <p>
                             Inirizzo:
                             <a href="https://www.google.com/maps/place/Via+Appia+Nuova,+1,+00182+Roma+RM"
-                                target="_blank" class='d-block text-bg-light'>Via Appia 1
+                                target="_blank" class='d-block text-bg-dark'>Via Appia 1
                                 00100 Roma(RM)
                             </a>
                         </p>
@@ -283,28 +286,25 @@
             </div>
 
 
-            <div class="offset-lg-2 col-lg-3 col-sm-6  mb-1 text-center">
+            <div class="offset-lg-1 col-lg-4 col-sm-6  mb-1 text-center">
 
-                <form class="needs-validation has-validated" novalidate>
+                <form class="requires-validation" novalidate>
 
-                    <label for="validationCustomUsername" class="form-label h5">Contattaci</label>
+                    <label for="validationCustomUsername" class="form-label h5">Newsletter</label>
 
-                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-
+                    <div class="d-flex flex-column  w-100 gap-2">
 
                         <div class="input-group">
                             <span class="input-group-text" id="inputGroupPrepend">Email</span>
+                            <input  id="validationCustomUsername" class="form-control" type="email" name="email" placeholder="E-mail Address" aria-describedby="inputGroupPrepend" required>
 
-                            <input type="text" class="form-control" id="validationCustomUsername"
-                                aria-describedby="inputGroupPrepend" required />
-
-
+                            <div class="invalid-feedback">Email non valida</div>
                         </div>
-
-                        <button class="btn btn-info" type="submit">Invia</button>
-
+                        
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-info">Iscriviti</button>
+                        </div>
                     </div>
-
                 </form>
 
             </div>
@@ -332,6 +332,7 @@
     </footer>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

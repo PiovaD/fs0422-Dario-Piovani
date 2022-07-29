@@ -1,17 +1,23 @@
 @import 'function';
 
 $offcanvas-horizontal-width: max-content;
-$bg-card: rgb(255, 251, 209);
-$box-shadow: darken($bg-card,20%);
 
-$primary: rgb(157, 102, 0);
-$secondary: $bg-card;
+$primary: rgb(119, 123, 133);
+$bg-card: rgb(103, 112, 135);
+$bg-body: rgb(229, 226, 222) ;
+$info: rgb(170, 171, 173);
 
-$info: purple;
+$secondary: $bg-body;
+
+$box-shadow: textShowUp($primary,false);
 
 $navbar-light-color: textShowUp($primary,true);
 $bg-primary: $navbar-light-color;
 
 $arrow-filter: filter($primary);
 
-$bady-color: textShowUp($bg-card,true);
+$body-color: textShowUp($bg-body,true);
+$border-color: $body-color;
+
+$card-text: $box-shadow;
+
