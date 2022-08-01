@@ -55,7 +55,7 @@ class Form {
     };
 
     formCreation() {
-        let form = this.elementCreation('div', 'form');
+        let form = this.elementCreation('form', 'form');
 
         let inputName = this.elementCreation('input', 'name');
         let inputLastName = this.elementCreation('input', 'last-name');
@@ -78,7 +78,10 @@ class Form {
 
         this.target.append(form);
 
-        button.addEventListener('click', () => this.createUser(inputName, inputLastName, inputBirth));
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.createUser(inputName, inputLastName, inputBirth)
+        });
     };
 
     createUser(name, lastName, birth) {
