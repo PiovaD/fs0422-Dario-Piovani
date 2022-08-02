@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class Person{
+
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+
+            isOlder (person){
+
+                //console.log(this, person);
+
+                if(this.age > person.age){
+                    return console.log(this.name + " è più vecchio di " + person.name)
+                }
+
+                if(this.age < person.age){
+                    return console.log(person.name + " è più vecchio di " + this.name)
+                }
+
+                return console.log(this.name + " e " + person.name + " hanno la stessa età ")
+            }
+
+
+        }    
+
+        let p1 = new Person("Alessia", 20)
+        let p2 = new Person("Dario", 26)
+        let p3 = new Person("Gurvir", 20)
+
+        p1.isOlder(p2)
+        p2.isOlder(p3)
+        p3.isOlder(p1)
+        
+    </script>
+    
+</body>
+</html>
