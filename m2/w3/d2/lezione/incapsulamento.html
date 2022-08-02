@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        
+        //repo mick
+
+        let app = {
+            input: '',
+            button: '',
+            list: '',
+            target: document.querySelector(target),
+            init: function (target) {
+
+                this.createBaseHTML()
+
+
+
+            },
+
+            createInput: function () {
+                let input = this.createElementWithClass('input', 'form-control')
+                input.type = 'text';
+
+                this.input = input;
+            },
+
+            createButton: function () {
+                let button = this.createElementWithClass('button', 'btn btn-primary');
+                button.classList.add('btn', 'btn-primary');
+                button.innerHTML = 'Save';
+
+                button.addEventListener('click', () => this.addTodo())
+
+                this.button = button;
+            },
+
+            addTodo: function () {
+                let div = this.createElementWithClass('div', 'alert alert-success');
+                div.innerHTML = this.input.value;
+
+                this.list.append(div);
+
+                div.addEventListener('click', () => {
+                    div.remove();
+                })
+
+                this.input.value = '';
+
+            },
+
+            createBaseHTML: function () {
+
+                let formContainer = this.createElementWithClass('div', 'container');
+                let listaContainer = this.createElementWithClass('div', 'container');
+                let list = this.createElementWithClass('div', 'row');
+
+                this.list = list;
+
+                this.createInput();
+
+                this.createButton();
+
+                formContainer.append(this.input, this.button);
+                listaContainer.append(list);
+
+                this.target.append(formContainer, listaContainer);
+            },
+
+            createElementWithClass: function (tag, className) {
+                let element = document.createElement(tag);
+                element.className = className;
+                return element;
+            }
+        }
+
+
+        let todo = new Todo('#todo1');
+        let todo2 = new Todo('#todo2');
+
+    </script>
+
+</body>
+
+</html>

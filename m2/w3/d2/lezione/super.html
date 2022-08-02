@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class Genitore{
+            constructor(){
+                this.nome = 'mario';
+                this.cognome = 'rossi';
+            };
+
+            prova(){
+                return this.nome + ' ' + this.cognome + ' genitore';
+            }
+        }
+
+        class Figlio extends Genitore{
+            prova(){
+                return super.prova() + ' figlio'
+            }
+        }
+
+        let gen = new Genitore();
+        let figl = new Figlio();
+
+        console.log(gen.prova());
+
+        console.log(figl.prova());
+
+    </script>
+</body>
+
+</html>

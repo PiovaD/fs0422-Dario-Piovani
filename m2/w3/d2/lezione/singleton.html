@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let singleton = (function () {
+            let counter = 0;
+            let app = {
+                incrementCounter: function () {
+                    return counter++;
+                },
+                resetCounter: function () {
+                    console.log("counter " + counter);
+                    counter = 0;
+                }
+            }
+
+            return app;
+        })();
+
+        console.log(singleton)
+
+        singleton.incrementCounter();
+        singleton.incrementCounter();
+        singleton.incrementCounter();
+        singleton.incrementCounter();
+        singleton.incrementCounter();
+
+        singleton.resetCounter();
+
+
+        let singletonBasket = (function () {
+            let basket = [];
+            return {
+                addItem: function (val) {
+                    basket.push(val);
+                },
+
+                getItemCount: function () {return basket.length}
+            }
+        })()
+
+        singletonBasket.addItem('ciao');
+        singletonBasket.addItem('dad');
+        singletonBasket.addItem('bob');
+        singletonBasket.addItem('sas');
+
+        console.log(singletonBasket.getItemCount());
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class Veicolo {
+            constructor(marca, tipo, colore, maxVel, ruote = 2) {
+                this.marca = marca;
+                this.tipo = tipo;
+                this.colore = colore
+                this.maxVel = maxVel
+                this.ruote = ruote;
+                this.vel = 0;
+
+            }
+
+            accelera(n = 1) {
+                if ((this.vel + n) <= this.maxVel) this.vel += n;
+            }
+
+            frena(n = 1) {
+                if ((this.vel - n) >= 0) this.vel -= n;
+            }
+            
+            setData(obj) {
+
+                for (let prop in obj) {
+                    this[prop] = obj[prop];
+                }
+                return this;
+            }
+
+        }
+        
+
+        let skate = new Veicolo('BillaBong', 'skateboard', 'giallo', 20, 4);
+
+        console.table(skate);
+
+        skate.accelera(5);
+
+        skate.frena(2)
+
+        console.log(skate);
+
+        class Skateboard extends Veicolo {
+
+            constructor(marca, colore, variant) {
+                super(marca, 'skateboard', colore, 25, 4);
+                this.variant = variant;
+            }
+
+            flip() {
+                // si possono creare delle funzioni per le classi figli
+            }
+
+        }
+
+        let skateProva = new Skateboard('BillaBong', 'giallo', 'longboard')
+
+        skateProva.accelera(5);
+
+        console.log(skateProva);
+
+        let skateVuoto = new Skateboard().setData({
+            colore: 'misto',
+            marca: 'BillaBong',
+            variant: 'longboard',
+            vel: 10
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
