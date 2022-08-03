@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        const UserApi = 'http://localhost:3000/users';
+
+        fetch(UserApi,{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: 'Maria',
+                cognome: 'Bianchi'
+            })
+        })
+        .then(res => res.json())
+        .then(user => {
+            
+            console.log(user)
+        })
+        
+
+
+        fetch(UserApi)
+        .then(res => res.json())
+        .then(user => {
+
+            console.log(user)
+        })
+
+    </script>
+</body>
+</html>
