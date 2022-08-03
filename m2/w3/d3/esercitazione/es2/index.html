@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="tempo"></div>
+
+    <script>
+
+        let display = document.querySelector("#tempo")
+
+        //continua a contare il tempo passato
+
+        let timerStart = parseInt(sessionStorage.getItem("timer")) || (Date.now().valueOf());
+        setInterval(() => {
+
+            let time = new Date(Date.now().valueOf() - timerStart);
+
+            display.innerHTML = `${zero(time.getUTCHours())} : ${zero(time.getUTCMinutes())} : ${zero(time.getUTCSeconds())}`
+
+            sessionStorage.setItem("timer", timerStart)
+
+        }, 500)
+
+
+        // durante il caricamento il tempo non scorre
+/*
+        let timerStart = parseInt(sessionStorage.getItem("timer")) || 0;
+        setInterval(() => {
+            timerStart += 1000;
+
+            let time = new Date(timerStart);
+
+            display.innerHTML = `${zero(time.getUTCHours())} : ${zero(time.getUTCMinutes())} : ${zero(time.getUTCSeconds())}`
+
+            sessionStorage.setItem("timer", timerStart)
+        }, 1000)
+*/
+        function zero(num) {
+            num < 10 && (num = '0' + num);
+            return num
+        }
+
+    </script>
+
+</body>
+
+</html>
