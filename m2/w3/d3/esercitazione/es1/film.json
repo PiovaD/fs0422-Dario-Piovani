@@ -1,0 +1,74 @@
+[
+        {
+            "titolo" : "Harry Potter - La pietra filosofale",
+            "anno" : "2001",
+            "genere" : "fantasy"
+        },
+
+        {
+            "titolo" : "Arrival",
+            "anno" : "2016",
+            "genere" : "fantascienza"
+        },
+        
+        {
+            "titolo" : "Spider-man",
+            "anno" : "2002",
+            "genere" : "azione"
+        },
+
+        {
+            "titolo" : "Iron-man",
+            "anno" : "2008",
+            "genere" : "azione"
+        },
+        
+        {
+            "titolo" : "Il Gladiatore",
+            "anno" : "2000",
+            "genere" : "azione/avventura"
+        },
+
+        {
+            "titolo" : "Scary Movie",
+            "anno" : "2000",
+            "genere" : "comedy"
+        },
+        
+        {
+            "titolo" : "Twilight",
+            "anno" : "2008",
+            "genere" : "fantasy/romantico"
+        },
+
+        {
+            "titolo" : "50 sfumature di grigio",
+            "anno" : "2015",
+            "genere" : "romantico"
+        },
+               
+        {
+            "titolo" : "Star Wars - episodio IV",
+            "anno" : "1977",
+            "genere" : "fantascienza"
+        },
+                
+        {
+            "titolo" : "Terminator",
+            "anno" : "1984",
+            "genere" : "azione"
+        },   
+             
+        {
+            "titolo" : "After",
+            "anno" : "2019",
+            "genere" : "romantico"
+        },
+                
+        {
+            "titolo" : "Ted",
+            "anno" : "2012",
+            "genere" : "commedia"
+        }
+
+]

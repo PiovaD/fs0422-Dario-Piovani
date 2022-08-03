@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="target"></div>
+
+    <script>
+
+        class Films {
+            constructor(dataJson) {
+
+                fetch(dataJson)
+                    .then(res => res.json())
+                    .then(lista => {
+                        console.log(lista)
+
+                        this.filmList = lista.sort(function (a, b) {
+                            return a.anno - b.anno;
+                        });
+
+                        this.printTable(document.querySelector('#target'))
+
+                    })
+            }
+
+            printTable(target) {
+
+                let table = document.createElement('table')
+
+                table.append(this.newRow('th', 'Titolo', 'Genere', 'Anno'))
+
+                for (let film of this.filmList) {
+
+                    table.append(this.newRow('td', film.titolo, film.genere, film.anno))
+
+                }
+
+                target.append(table);
+
+            }
+
+            newRow(tag, ...elem) {
+
+                let tr = document.createElement("tr");
+
+                for (let content of elem) {
+
+                    let tc = document.createElement(tag);
+
+                    tc.innerHTML = content;
+
+                    tr.append(tc);
+
+                }
+
+                return tr;
+
+            }
+
+        }
+
+        let x = new Films('film.json');
+
+
+    </script>
+
+</body>
+
+</html>
