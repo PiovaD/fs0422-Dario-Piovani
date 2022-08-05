@@ -26,7 +26,12 @@ class CardPro extends Card {
 
 //CRUD
 
-homePage()
+/*
+disabilitato per permettere la visualizzazione del esercizio base
+se si vuole abilitare commentare la fetch nel file script.js
+*/
+
+//homePage() 
 
 //create user 
 
@@ -40,7 +45,7 @@ document.querySelector('#new').addEventListener('click', () => {
 
 function homePage() {
 
-    target.innerHTML ='';
+    target.innerHTML = '';
 
     fetch(apiUsersPro)
         .then(res => res.json())
@@ -64,5 +69,5 @@ function createPage() {
     let createForm = new Form()
 
     target.append(createForm.form)
-    
+
 };

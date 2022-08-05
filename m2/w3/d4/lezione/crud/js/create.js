@@ -15,6 +15,7 @@ button.addEventListener('click', function (e) {
         cognome: cognome.value,
         eta: eta.value
     }
+    
     nome.value = ''
     cognome.value = ''
     eta.value = ''

@@ -13,17 +13,25 @@
 
     <header class="d-flex justify-content-center py-3 shadow">
         <ul class="nav nav-pills">
-            <li class="nav-item"><button id="home" class="nav-link bg-primary text-bg-primary mx-2 mx-sm-5">Home</button></li>
-            <li class="nav-item"><button id="new" class="nav-link bg-success text-bg-success mx-2 mx-sm-5">Nuovo</button></li>
+            <li class="nav-item mx-3 mx-sm-5">
+                <button id="home" class="nav-link bg-primary text-bg-primary">Home</button>
+            </li>
+            <li class="nav-item mx-3 mx-sm-5">
+                <button id="new" class="nav-link bg-success text-bg-success">Nuovo</button>
+            </li>
         </ul>
     </header>
+
+    <!-- l'esercizio parte con la versione base che utilizza solo script.js,
+         ma cliccando su home si passa alla versione che utilizza i metodi crud -->
 
     <div id="target" class="container-fluid row m-auto mt-3 gap-sm-3 justify-content-center"></div>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/form.js"></script>
-    <script src="assets/js/card-pro.js"></script>    
+    <script src="assets/js/card-pro.js"></script>
+
 </body>
 
 </html>

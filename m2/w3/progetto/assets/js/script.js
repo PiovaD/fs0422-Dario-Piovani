@@ -63,7 +63,7 @@ class Card {
     }
 }
 
-/*fetch(apiUsers)
+fetch(apiUsers)
 .then(res => res.json())
 .then(users => {
     
@@ -72,9 +72,8 @@ class Card {
         let card = new Card(user);
         
         target.append(card.div);
-        
     }
 
-})*/
+})
 
 

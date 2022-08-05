@@ -26,6 +26,7 @@ class Form {
         if (tag == 'input') {
             let div = document.createElement('div');
             let label = document.createElement('label');
+            label.className = 'form-label'
             label.innerHTML = placeholder + ':';
 
             element.placeholder = placeholder;
@@ -60,11 +61,11 @@ class Form {
 
         /*button.addEventListener('click', (e) => {
             e.preventDefault();
-            this.createUser(inputName, inputLastName, inputBirth)
+            this.createUser()
         });*/
     };
 
-    /*createUser(name, lastName, birth) {
+    /*createUser() {
         let user = new User(name.value, lastName.value, birth.value);
 
         name.value = '';
