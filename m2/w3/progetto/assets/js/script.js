@@ -64,16 +64,16 @@ class Card {
 }
 
 fetch(apiUsers)
-.then(res => res.json())
-.then(users => {
-    
-    for (let user of users) {
-        
-        let card = new Card(user);
-        
-        target.append(card.div);
-    }
+    .then(res => res.json())
+    .then(users => {
 
-})
+        for (let user of users) {
+
+            let card = new Card(user);
+
+            target.append(card.div);
+        }
+
+    })
 
 
