@@ -87,22 +87,11 @@ class Form {
 
             e.preventDefault();
 
-            let isValid = true
+            this.form.classList = 'was-validated'
 
-            //work around per il submit non valido dovuto al non funzionamento del 
-            //preventDefault() in caso di event listener 'submit'
-            //così facendo disattivo il controllo della validità degli input
+            let isInvalid = this.form.querySelectorAll('.form-control:invalid')
 
-            for (let input of this.inputs) {
-                if (!input.value) {
-                    input.classList.add('is-invalid');
-                    isValid = false
-                } else {
-                    input.classList.add('is-valid')
-                }
-            }
-
-            isValid && this.createUser(this.inputs)
+            isInvalid.length == 0 && this.createUser(this.inputs) 
 
         });
     };
@@ -170,6 +159,8 @@ class Form {
     }
 
     updateForm(user) {
+
+        this.form.classList = 'was-validated'
 
         for (let input of this.inputs) {
             input.value = user[input.id]
