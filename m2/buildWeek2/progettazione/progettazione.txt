@@ -1,0 +1,47 @@
+API : https://62ebe240705264f263e2c5b2.mockapi.io/api/1/usersBW
+
+sezione presentazione con 5  voci scelte a caso : 
+
+catch phrase (compito nella azienda)
+name (compagnia) + bs(diploma)
+
+
+form con: 
+
+name: nome + cognome 
+username :
+email: 
+phone: 
+
+
+modifica form profilo : 
+address: {
+    street
+    suite
+    city
+    zipcode
+}
+
+companu : {
+    name 
+    catch phrase
+    bs
+}
+
+pagina admin accessible con pass la modale compare direttamente nella pagina admin cosi da avere sicurezza maggiore
+vede una tabella di tutti gli utenti 
+cliccando su di essi accede alla possibile modifica e/o eliminazione
+
+
+pagina utente accessibile dopo essersi registrati ed aver effettuato il login.
+all'interno della pagina è possibile modificare i propri dati ed eventualmente eliminare il proprio profilo
+
+jwt
+
+
+inserire dati utente nella sezione utente 
+collegare i bottoni di modifica utente
+
+collegare i post
+fare la home
+
