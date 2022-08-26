@@ -1,0 +1,68 @@
+body {
+    background-image: url(../img/sfondo.jpg);
+    padding: 1rem
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #00ff;
+}
+
+h5 {
+    font-size: 1.3rem;
+}
+
+article::after {
+    content: "";
+    display: block;
+
+    position: relative;
+    bottom: 20px;
+
+    background-image: url(../img/Feather.jpg);
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+p,
+article h5 {
+    padding-bottom: 8px;
+    word-break: break-word;
+}
+
+article p:first-of-type {
+    font-size: 1.4rem;
+}
+
+article p:last-of-type {
+    font-size: 0.9rem;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    margin-bottom: 5px;
+    display: block;
+
+    width: 100%;
+
+    border: 1.5px solid black;
+
+    padding: 5px 0;
+}
+
+input {
+    height: 1.8rem;
+}
+
+form {
+    margin: 20px 0;
+    width: 100%;
+}
