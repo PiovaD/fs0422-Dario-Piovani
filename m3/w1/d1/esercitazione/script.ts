@@ -25,14 +25,14 @@ function win(diffG1: number, diffG2: number): string {
 if (BTN) BTN.addEventListener('click', (): void => {
 
     let random: number = genNum()
-    if (RAND) RAND.innerHTML = 'Il numero estratto è: ' + random;
-
+    
     let giocatore1: number = Number(G1?.value);
     let giocatore2: number = Number(G2?.value)
-
+    
     let diffG1: number = Math.abs(random - giocatore1);
     let diffG2: number = Math.abs(random - giocatore2);
-
+    
+    if (RAND) RAND.innerHTML = 'Il numero estratto è: ' + random;
     if (WINNER) WINNER.innerHTML = (giocatore1 && giocatore2) ? win(diffG1, diffG2) : 'Valori inseriti errati'
 
 })
