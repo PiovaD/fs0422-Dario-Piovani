@@ -12,11 +12,15 @@ export class Smart implements Sim.ISmartphone {
         this.tariffe = tariffe
     }
 
-    ricarica(unaRicarica: number): void {
-        this.carica += unaRicarica;
+    ricarica(unaRicarica: number): boolean {
+        if (unaRicarica >= 0) {
+            this.carica += unaRicarica
+            return true
+        }
+        return false
     }
-    
-    chiamata(minutiDurata: number): void {
+
+    chiamata(minutiDurata: number): boolean {
 
         if (this.carica > 0) {
 
@@ -30,15 +34,29 @@ export class Smart implements Sim.ISmartphone {
 
             } else {
 
-                console.log(`Credito esaurito. Chimata conclusa al ${(this.carica / this.tariffe.costoChiamata).toFixed(2)} minuto `)
-
                 this.carica = 0;
             }
 
-        } else {
-            console.log('Credito insufficente')
+            return true
         }
 
+        return false
+
+
+    }
+
+    messaggio(text: string):boolean {
+
+        if(this.carica > this.tariffe.costoMessaggio && text.length > 0) {
+
+            let costo:number = Math.ceil(text.length / 200)
+
+            this.carica -= (costo * this.tariffe.costoMessaggio)
+
+            return true;
+        }
+
+        return false
     }
 
     azzeraChiamate(): void {

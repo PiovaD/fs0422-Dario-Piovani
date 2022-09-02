@@ -4,8 +4,8 @@ export interface ISmartphone {
     tariffe: IPianoTariffe;
     
 
-    ricarica(unaRicarica: number): void
-    chiamata(minutiDurata: number): void;
+    ricarica(unaRicarica: number): boolean
+    chiamata(minutiDurata: number): boolean;
     azzeraChiamate(): void
     get numero404(): number
     get getNumeroChiamate(): number

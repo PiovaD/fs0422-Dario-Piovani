@@ -6,7 +6,11 @@ var Smart = /** @class */ (function () {
         this.tariffe = tariffe;
     }
     Smart.prototype.ricarica = function (unaRicarica) {
-        this.carica += unaRicarica;
+        if (unaRicarica >= 0) {
+            this.carica += unaRicarica;
+            return true;
+        }
+        return false;
     };
     Smart.prototype.chiamata = function (minutiDurata) {
         if (this.carica > 0) {
@@ -16,13 +20,19 @@ var Smart = /** @class */ (function () {
                 this.carica -= costoTot;
             }
             else {
-                console.log("Credito esaurito. Chimata conclusa al ".concat((this.carica / this.tariffe.costoChiamata).toFixed(2), " minuto "));
                 this.carica = 0;
             }
+            return true;
         }
-        else {
-            console.log('Credito insufficente');
+        return false;
+    };
+    Smart.prototype.messaggio = function (text) {
+        if (this.carica > this.tariffe.costoMessaggio && text.length > 0) {
+            var costo = Math.ceil(text.length / 200);
+            this.carica -= (costo * this.tariffe.costoMessaggio);
+            return true;
         }
+        return false;
     };
     Smart.prototype.azzeraChiamate = function () {
         this.numeroChiamate = 0;
