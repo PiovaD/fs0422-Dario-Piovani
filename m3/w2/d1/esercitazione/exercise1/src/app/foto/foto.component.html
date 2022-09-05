@@ -5,7 +5,7 @@
 
     <div *ngFor="let foto of arrFoto" class="card col-2 m-2">
 
-        <img src={{foto.url}} class="card-img-top" alt={{foto.title}}>
+        <img [src]="foto.url" class="card-img-top" [alt]="foto.title">
 
         <div class="card-body">
             <h5 class="card-title">{{foto.title}}</h5>
