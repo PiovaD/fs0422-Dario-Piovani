@@ -1,0 +1,7 @@
+<button (click)="mostra = !mostra" class="btn btn-primary"
+[innerText]= "mostra ? 'Nascondi' : 'Mostra'"> </button>
+
+<div *ngIf="mostra">
+  prova
+</div>
+
