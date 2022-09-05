@@ -26,21 +26,21 @@ export class FotoComponent implements OnInit {
   }
 
   deletePhoto(id: string): void {
-    let index = this.arrFoto?.findIndex((foto) => foto.id === id)
+    let index = this.arrFoto.findIndex((foto) => foto.id === id)
     this.arrFoto.splice(index, 1)
 
-    let likeIndex = this.arrLike?.findIndex((like) => like === id)
+    let likeIndex = this.arrLike.findIndex((like) => like === id)
     if(likeIndex >= 0) this.removeLike(likeIndex)
   }
 
   likePhoto(id: string): void {
-    
+
     let index:number | undefined = this.arrLike.findIndex((elem) => elem === id)
 
     console.log(index);
 
     if (index >= 0) {
- 
+
         this.removeLike(index)
 
     } else {
