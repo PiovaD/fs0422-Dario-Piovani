@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './foto.component.html',
   styleUrls: ['./foto.component.css']
 })
+
 export class FotoComponent implements OnInit {
 
   constructor() { }
@@ -39,13 +40,11 @@ export class FotoComponent implements OnInit {
 
     console.log(index);
 
-    if (index >= 0) {
+    if (index > -1) {
 
         this.removeLike(index)
 
     } else {
-
-      this.like++
 
       this.arrLike.push(id)
 
@@ -54,7 +53,7 @@ export class FotoComponent implements OnInit {
   }
 
   removeLike(index:number): void{
-      this.like--
+
       this.arrLike.splice(index,1);
   }
 
