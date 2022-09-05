@@ -31,20 +31,22 @@ export class FotoComponent implements OnInit {
     this.arrFoto.splice(index, 1)
 
     let likeIndex = this.arrLike.findIndex((like) => like === id)
-    if(likeIndex >= 0) this.removeLike(likeIndex)
+    if (likeIndex >= 0) this.removeLike(likeIndex)
   }
 
-  likePhoto(id: string): void {
+  likePhoto(id: string, event: Event): void {
 
-    let index:number | undefined = this.arrLike.findIndex((elem) => elem === id)
-
-    console.log(index);
+    let index: number | undefined = this.arrLike.findIndex((elem) => elem === id)
 
     if (index > -1) {
 
-        this.removeLike(index)
+      (event!.target as HTMLElement).classList.replace('btn-warning', 'btn-success')
+
+      this.removeLike(index)
 
     } else {
+
+      (event!.target as HTMLElement).classList.replace('btn-success', 'btn-warning')
 
       this.arrLike.push(id)
 
@@ -52,9 +54,9 @@ export class FotoComponent implements OnInit {
 
   }
 
-  removeLike(index:number): void{
+  removeLike(index: number): void {
 
-      this.arrLike.splice(index,1);
+    this.arrLike.splice(index, 1);
   }
 
 }
