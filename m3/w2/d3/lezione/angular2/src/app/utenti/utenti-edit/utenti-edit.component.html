@@ -1,0 +1,13 @@
+<form>
+  <input class="form-control" type="text"
+   [(ngModel)]="user.name" name="name"
+    placeholder="Nome">
+  <input class="form-control" type="text"
+   [(ngModel)]="user.lastName" name="lastName"
+   placeholder="Cognome">
+  <input id="active" type="checkbox"
+  [(ngModel)]="user.active" name="active">
+  <label for="active">Active</label>
+
+  <button (click)="save()" class="btn btn-primary">Salva</button>
+</form>

@@ -1,0 +1,13 @@
+<form>
+  <input type="text"
+  [(ngModel)]="newUser.name"
+   class="form-control" placeholder="Nome"
+   name="name">
+
+  <input type="text"
+  [(ngModel)]="newUser.lastName"
+   class="form-control" placeholder="Cognome"
+   name="lastName">
+
+  <button (click)=" sendDataToParent()" class="btn btn-primary">Invia</button>
+</form>

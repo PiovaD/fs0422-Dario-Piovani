@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+
+      <app-form (onNewUserCreated)="addUser($event)"></app-form>
+
+    </div>
+
+    <div class="col-6">
+
+      <app-table [allUsers]="allUsers"></app-table>
+
+    </div>
+
+  </div>
+</div>
+
+<hr>
+
+<button (click)="visible=!visible">Crea/Distruggi</button>
+<button (click)="visibleCss=!visibleCss">Mostra/Nascondi</button>
+
+<app-prova-destroy *ngIf="visible" [style.visibility]="visibleCss? 'visible' : 'hidden'"></app-prova-destroy>
+
+<hr>
+
+<h1>Content projection</h1>
+
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+        aria-expanded="true" aria-controls="collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body accordion-body-component">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds
+        the appropriate classes that we use to style each element. These classes control the overall appearance, as well
+        as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our
+        default variables. It's also worth noting that just about any HTML can go within the
+        <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+        aria-expanded="true" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body accordion-body-component">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin
+        adds the appropriate classes that we use to style each element. These classes control the overall appearance, as
+        well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our
+        default variables. It's also worth noting that just about any HTML can go within the
+        <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+        aria-expanded="true" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body accordion-body-component">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin
+        adds the appropriate classes that we use to style each element. These classes control the overall appearance, as
+        well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our
+        default variables. It's also worth noting that just about any HTML can go within the
+        <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<h1>Cotent projctions multipla </h1>
+
+<div class="accordion" id="accordionExample">
+
+  <app-accordion-section [itemId]="'elemet1'">
+
+    <div titolo>Accordion item 1</div>
+    <div corpo>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sed maxime fugiat tempora totam, pariatur natus
+      incidunt molestias, unde similique necessitatibus quam ullam quo eius rerum aperiam odit inventore animi?
+    </div>
+  </app-accordion-section>
+
+  <app-accordion-section [itemId]="'elemet2'">
+    <div titolo>Accordion item 2</div>
+    <div corpo>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sed maxime fugiat tempora totam, pariatur natus
+      incidunt molestias
+    </div>
+  </app-accordion-section>
+</div>
+
+<hr>
+
+<button (click)="log()">Fai log</button>
+<div #pippo>lorem ipsum dolor sit amet</div>
+
