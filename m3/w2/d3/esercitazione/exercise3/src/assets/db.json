@@ -1,0 +1,46 @@
+{
+  "post": [
+    {
+      "body": "Beatae earum eius qu",
+      "title": "Perspiciatis aliqua",
+      "type": "news",
+      "active": true,
+      "id": 1
+    },
+    {
+      "body": "Non cum praesentium ",
+      "title": "Eu placeat esse ma",
+      "type": "politic",
+      "active": false,
+      "id": 2
+    },
+    {
+      "body": "Aliqua Qui expedita",
+      "title": "Optio nihil fugiat ",
+      "type": "education",
+      "active": false,
+      "id": 3
+    },
+    {
+      "body": "Laboris tempora cum ",
+      "title": "Ex recusandae Moles",
+      "type": "education",
+      "active": true,
+      "id": 4
+    },
+    {
+      "body": "Cupiditate vitae et ",
+      "title": "Saepe natus voluptat",
+      "type": "politic",
+      "active": true,
+      "id": 5
+    },
+    {
+      "body": "Velit quis quia nos",
+      "title": "Ipsum sunt rerum an",
+      "type": "politic",
+      "active": true,
+      "id": 6
+    }
+  ]
+}

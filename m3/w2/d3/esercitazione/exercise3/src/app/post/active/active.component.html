@@ -1,0 +1,9 @@
+<app-post-card *ngFor="let post of allPost" [itemClass]="styleByType(post.type)">
+
+  <h5 title>{{post.title}}</h5>
+  <p body>{{post.body}}</p>
+
+  <button active
+  (click)="changeActive(post.id)"
+   class="btn btn-primary">Disattiva</button>
+</app-post-card>

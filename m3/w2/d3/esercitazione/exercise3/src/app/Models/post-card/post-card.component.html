@@ -1,0 +1,20 @@
+
+<div class="card" [class]="itemClass">
+
+  <div class="card-title" >
+    <ng-content select="[title]"></ng-content>
+  </div>
+
+  <div class="card-body">
+
+    <p class="card-text">
+      <ng-content select="[body]"></ng-content>
+    </p>
+
+  </div>
+
+  <div class="card-footer">
+    <ng-content select="[active]"></ng-content>
+  </div>
+
+</div>
