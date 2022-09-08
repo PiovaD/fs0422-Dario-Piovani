@@ -1,0 +1,84 @@
+{
+  "post": [
+    {
+      "body": "Sit non laboriosam",
+      "title": "Modi in rerum nostru",
+      "type": "politic",
+      "active": false,
+      "author": "Robert Holden",
+      "id": 1
+    },
+    {
+      "body": "Aliquam fugiat vel n",
+      "title": "Iusto eu aut sed fug",
+      "type": "education",
+      "active": false,
+      "author": "Sloane Robbins",
+      "id": 2
+    },
+    {
+      "body": "Est in in nostrum no",
+      "title": "Est beatae quis exer",
+      "type": "news",
+      "active": false,
+      "author": "Eagan Sampson",
+      "id": 3
+    },
+    {
+      "body": "Dolorem consectetur",
+      "title": "Quas duis impedit e",
+      "type": "news",
+      "active": false,
+      "author": "Willa Nicholson",
+      "id": 4
+    },
+    {
+      "body": "Voluptatem id sint ",
+      "title": "Explicabo Sequi tem",
+      "type": "education",
+      "active": true,
+      "author": "Prescott Morin",
+      "id": 5
+    },
+    {
+      "body": "Corporis duis quis v",
+      "title": "Officia qui autem in",
+      "type": "politic",
+      "active": true,
+      "author": "Rudyard Conway",
+      "id": 6
+    },
+    {
+      "body": "Quam explicabo Dolo",
+      "title": "Molestiae qui quo te",
+      "type": "politic",
+      "active": true,
+      "author": "Hollee May",
+      "id": 7
+    },
+    {
+      "body": "Autem natus qui tota",
+      "title": "Libero exercitatione",
+      "type": "news",
+      "active": true,
+      "author": "Cecilia Ashley",
+      "id": 8
+    },
+    {
+      "body": "Placeat dolor paria",
+      "title": "Maiores error ut omn",
+      "type": "politic",
+      "active": false,
+      "author": "Kirestin Cleveland",
+      "id": 9
+    },
+    {
+      "body": "Velit dolore pariatu",
+      "title": "Nesciunt aut corrup",
+      "type": "education",
+      "active": true,
+      "author": "Meredith Hancock",
+      "id": 10
+    }
+  ]
+}

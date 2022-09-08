@@ -1,0 +1,11 @@
+<app-post-card *ngFor="let post of allPost" [itemClass]="styleByType(post.type)">
+
+  <h5 title>{{post.title | txtMaiusc }}</h5>
+  <p body>{{post.body}}</p>
+
+  <button active (click)="changeActive(post.id)" class="btn btn-primary"
+    [innerText]="isActive ? 'Disattiva' : 'Attiva'"></button>
+
+  <a active [routerLink]="['/post', 'dettagli', post.id]" class="btn btn-primary ms-3">Dettagli</a>
+
+</app-post-card>
