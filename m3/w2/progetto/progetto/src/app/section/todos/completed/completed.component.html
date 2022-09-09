@@ -1,0 +1,17 @@
+<div class="todos">
+
+  <div *ngIf="isFetching">
+
+    <h3>{{fetchingTxt}}</h3>
+
+  </div>
+
+  <div *ngIf="!isFetching">
+
+    <section *ngIf="todos.length != 0" class="app-todo-list" [todos]="todos"></section>
+
+    <h3 *ngIf="todos.length == 0"> {{arrEmptyTxt}}</h3>
+
+  </div>
+
+</div>

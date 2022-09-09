@@ -1,0 +1,22 @@
+<div class="todos">
+
+  <div *ngIf="isFetching">
+
+    <h3>{{fetchingTxt}}</h3>
+
+  </div>
+
+  <div *ngIf="!isFetching">
+
+    <section *ngIf="todos.length != 0" class="app-todo-list" [todos]="todos"></section>
+
+    <h3 *ngIf="todos.length == 0"> {{arrEmptyTxt}}</h3>
+
+    <form>
+      <input [(ngModel)]="newTodo.title" type="text" name="title" placeholder="Inserisci Task">
+      <button (click)="saveTodo()">📌</button>
+    </form>
+
+  </div>
+
+</div>

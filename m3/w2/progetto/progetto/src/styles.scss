@@ -1,0 +1,36 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import 'app/Model/scss/variables';
+
+body{
+  background-color: lighten($background, 10%);
+
+  font-family: 'Roboto', sans-serif;
+}
+
+button{
+  font-size: 1.5rem;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.todos{
+  text-align: center;
+
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+h3{
+  margin-top: 30vh;
+  font-size: 2rem;
+}
+
+.app-todo-list{
+  margin-top: 2rem;
+}
+
+

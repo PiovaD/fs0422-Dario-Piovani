@@ -1,0 +1,38 @@
+@import '../../Model/scss/variables';
+
+h4 {
+  display: inline;
+
+  font-weight: bold;
+  font-size: 2rem;
+
+  color: $header-txt;
+
+  cursor: pointer;
+  padding: 1.5rem;
+
+  &:hover {
+    color: darken($selected, 15%);
+  }
+
+  &.active {
+    color: $selected;
+
+    &:hover {
+      color: darken($selected, 15%);
+
+    }
+  }
+}
+
+  div {
+
+    text-align: center;
+
+    width: 100%;
+    box-shadow: 0 0 4px black;
+
+    padding: 1.2rem;
+
+    background-color: $background
+  }
