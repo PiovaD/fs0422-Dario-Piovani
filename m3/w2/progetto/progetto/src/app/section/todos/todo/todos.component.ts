@@ -34,10 +34,15 @@ export class TodosComponent implements OnInit {
 
   }
 
-  saveTodo() {
-    this.todoSvc.addTodo(this.newTodo)
-      .then(res => this.todos.push(res));
-    this.newTodo.title = ''
+  saveTodo(): void {
+
+    if (this.newTodo.title != '') {
+
+      this.todoSvc.addTodo(this.newTodo)
+        .then(res => this.todos.push(res));
+
+      this.newTodo.title = ''
+    }
   }
 
 }
