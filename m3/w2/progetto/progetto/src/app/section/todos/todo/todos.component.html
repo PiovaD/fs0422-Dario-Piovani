@@ -4,6 +4,8 @@
 
     <h3>{{fetchingTxt}}</h3>
 
+    <span class="app-loader"></span>
+
   </div>
 
   <div *ngIf="!isFetching">
@@ -13,8 +15,8 @@
     <h3 *ngIf="todos.length == 0"> {{arrEmptyTxt}}</h3>
 
     <form>
-      <input [(ngModel)]="newTodo.title" type="text" name="title" placeholder="Inserisci Task">
       <button (click)="saveTodo()">📌</button>
+      <input [(ngModel)]="newTodo.title" type="text" name="title" placeholder="Inserisci Task">
     </form>
 
   </div>

@@ -8,6 +8,7 @@ import { TodosComponent } from './section/todos/todo/todos.component';
 import { CompletedComponent } from './section/todos/completed/completed.component';
 import { TodoListComponent } from './Model/todo-list/todo-list.component';
 import { FormsModule } from '@angular/forms';
+import { LoaderComponent } from './Model/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     TodosComponent,
     CompletedComponent,
-    TodoListComponent
+    TodoListComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

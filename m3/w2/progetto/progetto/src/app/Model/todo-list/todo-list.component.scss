@@ -1,2 +1,18 @@
 @import '../scss/_variables.scss';
 
+ul{
+  text-align:start;
+  margin: 0 10vw;
+}
+
+li{
+  margin-bottom: 1.2rem;
+}
+
+.btn-container{
+  display: inline;
+  float: right;
+
+  margin-right: 1rem;
+
+}

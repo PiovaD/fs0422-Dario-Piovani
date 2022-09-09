@@ -9,7 +9,7 @@ import { TodosService } from 'src/app/Model/todos.service';
 })
 export class TodosComponent implements OnInit {
 
-  arrEmptyTxt: string = "Ops, non ci sono Task";
+  arrEmptyTxt: string = "Non hai Task";
   fetchingTxt: string = "Recupero Task..."
 
   isFetching: boolean = true;

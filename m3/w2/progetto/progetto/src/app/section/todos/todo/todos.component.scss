@@ -1,6 +1,17 @@
 @import '../../../Model/scss/variables';
 
-.todos input{
+.todos input {
   font-size: 1.2rem;
+  width: 80%;
+
+  border: 2px solid $loader;
+  border-radius: 3px;
+
+  padding: 8px 3px
 }
 
+form {
+  text-align: start;
+  margin: 0 10vw;
+  margin-top: 1rem;
+}

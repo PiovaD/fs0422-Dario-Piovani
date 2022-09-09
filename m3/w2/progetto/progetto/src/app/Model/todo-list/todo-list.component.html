@@ -1,11 +1,17 @@
 <ul>
-  <li *ngFor="let todo of todos">{{todo.title}}
+  <li *ngFor="let todo of todos">
 
-    <button id="change"  class="list-btn" [innerText]="todo.completed ? '↩️' : '✅'"
-    (click)="isCompleted(todo)"></button>
+    📌: {{todo.title}}
 
-    <button id="delete" class="list-btn" [innerText]="'❌'"
-    (click)="deleteTodo(todo)"></button>
+    <div class="btn-container">
+
+      <button id="change"  class="list-btn" [innerText]="todo.completed ? '↩️' : '✅'"
+      (click)="isCompleted(todo)"></button>
+
+      <button id="delete" class="list-btn" [innerText]="'❌'"
+      (click)="deleteTodo(todo)"></button>
+
+    </div>
 
   </li>
 </ul>
