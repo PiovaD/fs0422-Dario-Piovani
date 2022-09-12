@@ -27,7 +27,7 @@ export class CardComponent implements OnInit {
       .subscribe(res => this.photos = res)
 
     this.likeSbj.subscribe({
-      next: () => this.allLike++
+      next: (n) => this.allLike += n,
     })
   }
 

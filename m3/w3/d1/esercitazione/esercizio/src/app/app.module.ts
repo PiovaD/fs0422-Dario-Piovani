@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorHttpInterceptor } from './error-http.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,11 +18,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    /*     {
+        {
           provide:HTTP_INTERCEPTORS,
-          useClass:,
+          useClass:ErrorHttpInterceptor,
           multi: true
-        } */
+        }
   ],
   bootstrap: [AppComponent]
 })
