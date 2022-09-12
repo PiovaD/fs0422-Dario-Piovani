@@ -1,0 +1,17 @@
+
+<h2>Mi piace totali: {{allLike}}</h2>
+
+<section class="container row">
+
+  <div *ngFor="let photo of photos" class="card col-3">
+    <img [src]="photo.thumbnailUrl" class="card-img-top">
+    <div class="card-body">
+      <p class="card-text">{{photo.title}}</p>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-danger" (click)="deletePhoto(photo)">Elimina</button>
+      <button class="btn btn-success" (click)="like(photo)">Mi piace</button>
+    </div>
+  </div>
+
+</section>
