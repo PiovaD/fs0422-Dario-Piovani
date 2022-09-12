@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "title": "Voluptatum vel est expedita cu",
+      "content": "Exercitationem corporis",
+      "date": "2022-09-12T10:38:16.232Z",
+      "id": 1
+    },
+    {
+      "title": "Reprehenderit accusantium labo",
+      "content": "Maiores accusamus aut illum e",
+      "date": "2022-09-12T10:39:15.017Z",
+      "id": 2
+    },
+    {
+      "title": "Laboris ut dolore unde numquam",
+      "content": "Nihil quam non id animi conse",
+      "date": "2022-09-12T10:39:21.639Z",
+      "id": 3
+    },
+    {
+      "title": "Nulla dolore ullamco id ut ips",
+      "content": "Mollitia earum eos ducimus de",
+      "date": "2022-09-12T10:57:47.067Z",
+      "id": 4
+    },
+    {
+      "title": "Aliquip deserunt in est incidi",
+      "content": "Aliquam voluptatem non rerum e",
+      "date": "2022-09-12T11:00:04.760Z",
+      "id": 5
+    }
+  ]
+}
