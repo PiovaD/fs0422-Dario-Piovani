@@ -20,19 +20,28 @@ export class ReactiveFormComponent implements OnInit {
       alterEgo: new FormControl(null, [Validators.required]),
       enemy: new FormControl(null, [Validators.maxLength(10)]),
       planet: new FormControl(null, [Validators.required, Validators.minLength(5)]),
-      superPower: new FormArray([],[Validators.required]),
+      superPower: new FormArray([], [Validators.required]),
       weakness: new FormArray([])
     })
   }
 
   submit() {
 
-    if(this.form.valid){
-      console.log(this.form)
+    if (this.form.valid) {
 
-      this.form.reset()
+      this.arrHeros.push(this.form.value)
+
+      this.form.reset();
+
+      let sP = <FormArray>this.form.get('superPower')
+      sP.clear()
+
+      let weak = <FormArray>this.form.get('weakness')
+      weak.clear()
+
+      console.log(this.arrHeros)
+
     }
-
   }
 
   getControl(name: string) {
@@ -43,17 +52,17 @@ export class ReactiveFormComponent implements OnInit {
     return this.getControl(field)?.invalid && (this.getControl(field)?.touched || this.getControl(field)?.dirty)
   }
 
-  addElement(name: string){
-    let control:FormControl = new FormControl(null,[Validators.required]);
+  addElement(name: string) {
+    let control: FormControl = new FormControl(null, [Validators.required]);
     let newElement = <FormArray>this.form.get(name);
     newElement.push(control)
   }
 
-  getElement(name: string){
+  getElement(name: string) {
     return (this.form.get(name) as FormArray).controls
   }
 
-  removeElement(name:string, index : number){
+  removeElement(name: string, index: number) {
     let element = <FormArray>this.form.get(name);
     element.removeAt(index);
   }
