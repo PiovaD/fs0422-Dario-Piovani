@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="form" class="col" (ngSubmit)="submit()">
+      <h1>Reactive from hero</h1>
+
+      <label for="name">Nome</label>
+      <input type="text" formControlName="name" id="name" class="form-control" placeholder="Nome">
+      <p *ngIf="isValid('name')" class="alert alert-danger mt-2">Campo obbligatorio</p>
+
+      <label for="alterEgo">Alter Ego</label>
+      <input type="text" formControlName="alterEgo" id="alter-ego" class="form-control" placeholder="Alter Ego">
+      <p *ngIf="isValid('alterEgo')" class="alert alert-danger mt-2">Campo obbligatorio</p>
+
+      <div formArrayName="superPower">
+
+        <a (click)="addElement('superPower')" class="btn btn-success my-2">Aggiungi potere</a>
+
+        <div *ngFor="let sport of getElement('superPower'); let i = index" class="input-group">
+
+          <input type="text" [formControlName]="i" class="form-control" placeholder="Potere">
+          <a class="btn btn-outline-danger" type="button" (click)="removeElement('superPower', i)">Cancel</a>
+
+        </div>
+
+      </div>
+
+      <label for="enemy">Nemico</label>
+      <input type="text" formControlName="enemy"
+       id="enemy" class="form-control"
+       placeholder="Nemico">
+
+      <p *ngIf="isValid('enemy')" class="alert alert-danger mt-2">Nome cattivo troppo lungo</p>
+
+      <label for="planet">Pianeta</label>
+      <input type="text" formControlName="planet"
+      id="planet" class="form-control"
+       placeholder="Pianeta">
+      <p *ngIf="isValid('planet')" class="alert alert-danger mt-2">Campo obbligatorio min 5 caratteri</p>
+
+      <div formArrayName="weakness" >
+
+        <a  (click)="addElement('weakness')" class="btn btn-success my-2">Aggiungi Debolezza</a>
+
+         <div *ngFor="let sport of getElement('weakness'); let i = index" class="input-group">
+
+          <input type="text" [formControlName]="i" class="form-control" placeholder="Debolezza">
+          <a class="btn btn-outline-danger" type="button" (click)="removeElement('weakness', i)">Cancel</a>
+
+        </div>
+
+      </div>
+
+      <button class="btn btn-primary mt-3 form-control">Crea</button>
+    </form>
+  </div>
+</div>

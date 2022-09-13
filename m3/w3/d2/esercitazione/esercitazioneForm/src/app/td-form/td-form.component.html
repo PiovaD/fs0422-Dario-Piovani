@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <form class="col" (ngSubmit)="submit(form)" #form="ngForm">
+
+      <label for="name">Nome</label>
+      <input #n="ngModel" type="text" name="name" id="name" class="form-control" placeholder="Nome" ngModel required>
+      <p class="alert alert-danger mt-2" *ngIf="isValid(n)" >Campo obbligatorio</p>
+
+      <label for="alterEgo">Alter Ego</label>
+      <input #ego="ngModel" type="text" name="alter-ego" id="alter-ego" class="form-control" placeholder="Alter Ego" ngModel required>
+      <p class="alert alert-danger mt-2" *ngIf="isValid(ego)" >Campo obbligatorio</p>
+
+      <label for="supe-power">Super Potere</label>
+      <select #sp="ngModel" name="supePower" id="supe-power" class="form-control" ngModel required>
+        <option value="super-forza">Super Forza</option>
+        <option value="super-velocità">Super Velocità</option>
+        <option value="volo">Volo</option>
+        <option value="Sfiga-perpetua">Sfiga Perpetua</option>
+        <option value="rigenerazione">Rigenerazione</option>
+      </select>
+      <p class="alert alert-danger mt-2" *ngIf="isValid(sp)" >Campo obbligatorio</p>
+
+      <label for="enemy">Nemico</label>
+      <input #e="ngModel" type="text" name="enemy" id="enemy" class="form-control" placeholder="Nemico" ngModel maxlength="10">
+      <p class="alert alert-danger mt-2" *ngIf="isValid(e)" >Nome cattivo troppo lungo</p>
+
+      <label for="planet">Pianeta</label>
+      <input #p="ngModel" type="text" name="planet" id="planet" class="form-control" placeholder="Pianeta" ngModel required minlength="5">
+      <p class="alert alert-danger mt-2" *ngIf="isValid(p)" >Campo obbligatorio min 5 caratteri</p>
+
+      <label for="weakness">Debolezza</label>
+      <input type="text" name="weakness" id="weakness" class="form-control" placeholder="Debolezza" ngModel>
+
+      <button class="btn btn-primary mt-3 form-control">Crea</button>
+    </form>
+  </div>
+</div>
