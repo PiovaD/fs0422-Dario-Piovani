@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <form action="" class="col" (ngSubmit)="submit(form)" #form="ngForm">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input
+         type="text" name="name" id="name"
+         class="form-control" placeholder="Nome"
+         [(ngModel)]="userForm.name">
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Cognome</label>
+        <input
+         type="text" name="lastName" id="lastName"
+         class="form-control" placeholder="Cognome"
+         [(ngModel)]="userForm.lastName" required>
+      </div>
+
+      <div ngModelGroup="userAddres"  #g="ngModelGroup">
+        <div class="form-group">
+          <label for="street">street</label>
+          <input
+          type="text" name="street" id="street"
+          class="form-control" placeholder="street"
+          [(ngModel)]="userForm.street" required>
+        </div>
+
+        <div class="form-group">
+          <label for="city">city</label>
+          <input
+          type="text" name="city" id="city"
+          class="form-control" placeholder="city"
+          [(ngModel)]="userForm.city" required>
+        </div>
+
+        <div class="form-group">
+          <label for="zipcode">zipcode</label>
+          <input
+          type="text" name="zipcode" id="zipcode"
+          class="form-control" placeholder="zipcode"
+          [(ngModel)]="userForm.zipcode" required>
+        </div>
+
+        <p *ngIf="g.invalid && g.dirty"> Errore nel gruppo compila correttamente i campi relativi</p>
+      </div>
+      <button class="btn btn-primary">Invia</button>
+    </form>
+  </div>
+</div>
+
+
+<button class="btn btn-success" (click)="riempi()">Riempi form</button>
+
+
+<button class="btn btn-success" (click)="aggiorna()">Aggiorna form</button>

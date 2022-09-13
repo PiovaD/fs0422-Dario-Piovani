@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+
+    <form [formGroup]="form" class="col" (ngSubmit)="submit()">
+      <h3>Dati</h3>
+      <input class="form-control" type="text" placeholder="name" formControlName="name">
+      <p *ngIf="checkFullValidity('name')" >Il campo e name non è completato in modo corretto</p>
+
+      <input class="form-control" type="text" placeholder="lastname" formControlName="lastname">
+      <p *ngIf="checkFullValidity('lastname')" >Il campo e lastname non è completato in modo corretto</p>
+
+      <input class="form-control" type="text" placeholder="email" formControlName="email">
+      <p *ngIf="checkFullValidity('email')" >Il campo e mail non è completato in modo corretto</p>
+
+       <div formGroupName="userAddress">
+        <h3>indirizzo</h3>
+        <input class="form-control" type="text" placeholder="address" formControlName="address">
+        <input class="form-control" type="text" placeholder="city" formControlName="city">
+        <input class="form-control" type="text" placeholder="zipcode" formControlName="zipcode">
+      </div>
+
+        <div formArrayName="sports">
+          <h3>Sports</h3>
+          <button (click)="addSport()" class="btn btn-success">+</button>
+          <input *ngFor="let sport of getSports(); let i = index" [formControlName]="i" class="form-control" type="text" placeholder="Inserisci sport">
+        </div>
+
+        <button class="btn btn-primary">Invia</button>
+
+    </form>
+  </div>
+</div>

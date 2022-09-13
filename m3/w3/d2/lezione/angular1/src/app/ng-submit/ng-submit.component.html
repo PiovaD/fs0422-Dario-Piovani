@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <form class="col" (ngSubmit)="submit(form)" #form="ngForm">
+      <div class="form-group">
+        <label for="username" >Username</label>
+        <input #u="ngModel"
+         id="username" type="text"
+         class="form-control" ngModel
+          name="username" required>
+         <p *ngIf="u.invalid && (u.touched || u.dirty)">Devi riempire il campo</p>
+      </div>
+      <div class="form-group">
+        <label for="email" >Email</label>
+        <input #e="ngModel"
+        [ngClass]="{'magic':true}"
+         id="email" type="email"
+        class="form-control" ngModel
+        name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Scegli il genere</label>
+        <select name="gender" id="gender" class="form-control" ngModel>
+          <option value="">Non definito</option>
+          <option value="male">Maschio</option>
+          <option value="female">Femmina</option>
+        </select>
+      </div>
+
+      <button [disabled]="form.invalid" class="btn btn-primary">Invia</button>
+
+    </form>
+  </div>
+</div>

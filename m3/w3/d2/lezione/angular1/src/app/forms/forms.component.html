@@ -1,0 +1,10 @@
+<h1>Template driven forms</h1>
+
+<form>
+  <input [(ngModel)]="userData.name" [id]="true ? 'ciao' : ''" name="name" type="text" class="form-control" placeholder="name">
+
+  <input [(ngModel)]="userData.lastName" name="lastName" type="text" class="form-control" placeholder="last name">
+
+  <button class="btn btn-primary">Salva</button>
+
+</form>
