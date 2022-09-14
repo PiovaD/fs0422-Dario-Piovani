@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "email": "wanajovab@mailinator.com",
+      "password": "$2a$10$FRw06hctre3e7LGnhjzkOeu3MPfJDMa0Thk52CYOHZKQMBAjWd3De",
+      "id": 1
+    },
+    {
+      "email": "nafaqaxur@mailinator.com",
+      "password": "$2a$10$kreSiZpIm9gUhL051w68/uEZs/jbcRm4gMf3h3OGcmz40U91kHNQS",
+      "id": 2
+    },
+    {
+      "email": "wozuko@mailinator.com",
+      "password": "$2a$10$1QtPUgOD1fvVCF23XxmbBuKQW8IyxxIYcsoTMAjlkiXgQxtMW0ylW",
+      "id": 3
+    }
+  ]
+}

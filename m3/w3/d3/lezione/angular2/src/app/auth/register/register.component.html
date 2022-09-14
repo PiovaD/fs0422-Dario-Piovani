@@ -1,0 +1,12 @@
+<h2>Registrati</h2>
+
+<form>
+  <input class="form-control" type="email" [(ngModel)]="registerData.email" name="email" placeholder="email">
+
+  <input class="form-control" type="password" [(ngModel)]="registerData.password" name="password" placeholder="password">
+
+  <button class="btn btn-primary" (click)="save()">Registrati</button>
+
+</form>
+
+<a class="btn btn-warning"[routerLink]="'/'">Sono già registrato</a>
