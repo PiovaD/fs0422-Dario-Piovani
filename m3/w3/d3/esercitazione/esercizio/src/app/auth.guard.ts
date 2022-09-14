@@ -1,15 +1,30 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, UrlTree } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { ActivatedRouteSnapshot, CanActivate, CanDeactivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginService } from './auth/login.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate, CanDeactivate<unknown>{
 
   constructor(private loginSvc: LoginService) {
 
+  }
+
+  canDeactivate(
+    component: any,
+    currentRoute: ActivatedRouteSnapshot
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+
+    let form: NgForm = component.form
+
+    let exit: boolean = true
+
+    if (form.dirty) exit = confirm("Sicuro di lasciare la pagina?")
+
+    return exit;
   }
 
   canActivate(

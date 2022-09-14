@@ -29,7 +29,8 @@ const routes:Route[] = [
   },
   {
     path:'form',
-    component: FormNewUserComponent
+    component: FormNewUserComponent,
+    canDeactivate: [AuthGuard]
   },
   {
     path:"**",
