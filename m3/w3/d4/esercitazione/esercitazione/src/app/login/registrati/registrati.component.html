@@ -1,0 +1,21 @@
+<form class="container" (ngSubmit)="onSubmit(form)" #form="ngForm">
+
+  <label for="name">Nome</label>
+  <input type="text" class="form-control" id="name" placeholder="name" name="name" required ngModel>
+
+
+  <label for="email">Email</label>
+  <input type="email" class="form-control" id="email" placeholder="email@example.com" name="email" required ngModel>
+
+
+  <label for="password">Password</label>
+  <input type="password" class="form-control" id="password" placeholder="Password" name="password" required ngModel>
+
+
+  <button type="submit" class="btn btn-primary mt-3">Registrati</button>
+
+</form>
+
+<section class="container mt-5">
+  <h6>Se sei già registrato <a [routerLink]="'/login'">clicca qui</a></h6>
+</section>

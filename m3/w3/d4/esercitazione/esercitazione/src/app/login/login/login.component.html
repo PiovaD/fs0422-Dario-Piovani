@@ -1,0 +1,18 @@
+<form class="container" (ngSubmit)="onSubmit(form)" #form="ngForm">
+
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="email@example.com" ngModel name="email" required>
+
+
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password" ngModel name="password" required>
+
+
+      <button type="submit" class="btn btn-primary mb-3 mt-2">Accedi</button>
+
+  </form>
+
+  <section class="container">
+    <h6>Non sei registrato? <a [routerLink]="'/'">clicca qui</a></h6>
+  </section>
+

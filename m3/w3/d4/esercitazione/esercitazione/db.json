@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "email": "sihozo@mailinator.com",
+      "password": "$2a$10$T4x5/TQFe1KtkSdINc0UiutRh4Po1Tb888p7G/IRLWOgLjnSjj6O6",
+      "name": "Chelsea Lloyd",
+      "id": 1
+    },
+    {
+      "email": "gywoxikosy@mailinator.com",
+      "password": "$2a$10$hK6AbE78rUd2kGDZjQ9AdeFE41W5adOGSQexvFD6jSylPvjgVtcuu",
+      "name": "Palmer Riddle",
+      "id": 2
+    },
+    {
+      "email": "nyru@mailinator.com",
+      "password": "$2a$10$X4J6J4MR0pNNF92VY7rXKuE7Jou2XUm2/hCwfBo/NwgHrHEKGFxLi",
+      "name": "Merrill Price",
+      "id": 3
+    },
+    {
+      "email": "bydo@mailinator.com",
+      "password": "$2a$10$dyeQu3uwwFrQHMiBXrBZSu3yZVahWTm4EwJ3nSfCbFTiQG54NzkeK",
+      "name": "Risa Banks",
+      "id": 4
+    },
+    {
+      "email": "zuti@mailinator.com",
+      "password": "$2a$10$JjMmufB0vyyGOaTKTnqALu0gOEf.PyW1Uk14vlyRf5wvoEww5wZ06",
+      "name": "Lacy Cross",
+      "id": 5
+    },
+    {
+      "email": "gejozi@mailinator.com",
+      "password": "$2a$10$Zzp3RxIcmePjETWS4c3pn.Tj41D0tNh3/HCjKRX7clsoiibLIkrTq",
+      "name": "Edward Mccray",
+      "id": 6
+    },
+    {
+      "email": "jecedi@mailinator.com",
+      "password": "$2a$10$4Yt6Thotn8tbT96oPvAw8.PAVte/6c6BMv1XlJxiCqrxXDDff1FXm",
+      "name": "Gastani Frinzi",
+      "id": 7
+    },
+    {
+      "email": "pegyxumaq@mailinator.com",
+      "password": "$2a$10$yvXVoEs5VimFYJBuxATIguW8WY0LljdcVwDUvzIFQ.wee2kqcVQSG",
+      "name": "Imogene Osborn",
+      "id": 8
+    }
+  ]
+}
