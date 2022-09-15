@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown" ngbDropdown>
+          <a href="#" class="nav-link dropdown-toggle" ngbDropdownToggle id="dropdownBasic1">
+            Dropdown link
+          </a>
+          <ul ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu">
+            <li><a ngbDropdownItem>Action</a></li>
+            <li><a ngbDropdownItem>Another action</a></li>
+            <li><a ngbDropdownItem>Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

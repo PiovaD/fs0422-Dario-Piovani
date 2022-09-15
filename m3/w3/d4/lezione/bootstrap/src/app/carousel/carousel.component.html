@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div class="row">
+
+    <ngb-carousel class="col-9 mx-auto"   *ngIf="images">
+      <ng-template *ngFor="let image of images" ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="mx-auto d-block" [src]="'https://picsum.photos/id/'+ image.image +'/900/500'" [alt]="image.title">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{image.title}}</h3>
+          <p>{{image.body}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+  </div>
+
+</div>
