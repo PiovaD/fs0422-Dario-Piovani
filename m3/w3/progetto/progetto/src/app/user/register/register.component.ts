@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
-
-import { NzFormTooltipIcon } from 'ng-zorro-antd/form';
+import { AbstractControl, FormGroup, FormBuilder, ValidationErrors, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -10,15 +10,26 @@ import { NzFormTooltipIcon } from 'ng-zorro-antd/form';
 })
 export class RegisterComponent implements OnInit {
 
-  validateForm!: UntypedFormGroup;
-  captchaTooltipIcon: NzFormTooltipIcon = {
-    type: 'info-circle',
-    theme: 'twotone'
-  };
+  validateForm!: FormGroup;
+
+  constructor(private fb: FormBuilder, private router: Router, private authSvc: AuthService) { }
+
+  ngOnInit(): void {
+    this.validateForm = this.fb.group({
+      name: [null, [Validators.required]],
+      username: [null, [Validators.required], this.usernameValidator],
+      email: [null, [Validators.email, Validators.required], this.emailValidator],
+      password: [null, [Validators.required]]
+    });
+  }
 
   submitForm(): void {
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
+
+      this.validateForm.reset();
+      this.router.navigate(['/login'])
+
     } else {
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {
@@ -29,27 +40,34 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  confirmationValidator = (control: UntypedFormControl): { [s: string]: boolean } => {
-    if (!control.value) {
-      return { required: true };
-    } else if (control.value !== this.validateForm.controls['password'].value) {
-      return { confirm: true, error: true };
-    }
-    return {};
-  };
+  emailValidator = (control: AbstractControl) => {
 
-  getCaptcha(e: MouseEvent): void {
-    e.preventDefault();
+    return new Promise<ValidationErrors | null>((resolve) => {
+      this.authSvc.getAllUser()
+        .subscribe(res => {
+          if (res.find(user => user.email == control.value)) {
+            resolve({ prohibitedData: true, warning:true  })
+          } else {
+            resolve(null)
+          }
+        })
+    })
   }
 
-  constructor(private fb: UntypedFormBuilder) {}
+  usernameValidator = (control: AbstractControl) => {
 
-  ngOnInit(): void {
-    this.validateForm = this.fb.group({
-      name: [null, [Validators.required]],
-      username: [null, [Validators.required]],
-      email: [null, [Validators.email, Validators.required]],
-      password: [null, [Validators.required]]
-    });
+    return new Promise<ValidationErrors | null>((resolve) => {
+      this.authSvc.getAllUser()
+        .subscribe(res => {
+          if (res.find(user => user.username == control.value)) {
+            resolve({ prohibitedData: true, warning:true })
+          } else {
+            resolve(null)
+          }
+        })
+    })
   }
+
 }
+
+

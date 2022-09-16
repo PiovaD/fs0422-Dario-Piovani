@@ -2,7 +2,7 @@
   <form class="register-form" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
 
     <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your Name!">
+      <nz-form-control nzErrorTip="Please input your Name!" nzValidateStatus="" nzHasFeedback>
         <nz-input-group nzPrefixIcon="user">
           <input nz-input id="name" formControlName="name" placeholder="Name*" />
         </nz-input-group>
@@ -10,7 +10,13 @@
     </nz-form-item>
 
     <nz-form-item>
-        <nz-form-control nzValidateStatus="validating" nzHasFeedback nzValidatingTip="I'm validating the content">
+        <nz-form-control
+        nzValidateStatus=""
+        nzHasFeedback
+        nzValidatingTip="Verifico Username"
+        nzWarningTip="Username già in uso"
+        nzErrorTip="Inserire un Username"
+        >
           <nz-input-group nzPrefixIcon="user">
             <input nz-input id="username" formControlName="username" placeholder="Username*" />
           </nz-input-group>
@@ -18,7 +24,12 @@
     </nz-form-item>
 
     <nz-form-item>
-      <nz-form-control nzErrorTip="The input is not valid E-mail!">
+      <nz-form-control
+      nzValidateStatus=""
+      nzHasFeedback
+      nzValidatingTip="Verifico Email"
+      nzWarningTip="Email già in uso"
+      nzErrorTip="Inserire un Email valida">
         <nz-input-group nzPrefixIcon="mail">
           <input nz-input formControlName="email" id="email" placeholder="Email*" />
         </nz-input-group>
@@ -26,7 +37,7 @@
     </nz-form-item>
 
     <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your password!">
+      <nz-form-control nzErrorTip="Please input your password!" nzValidateStatus="" nzHasFeedback>
         <nz-input-group nzPrefixIcon="lock">
           <input nz-input type="password" id="password" formControlName="password" placeholder="Password*" />
         </nz-input-group>
