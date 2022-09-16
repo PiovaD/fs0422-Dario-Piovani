@@ -1,6 +1,26 @@
 {
   "users": [
-    {"name": "Murphy Norman", "username": "qyquwopyb", "email": "mavysote@mailinator.com", "password": "Pa$$w0rd!"}
+    {
+      "email": "zasehydojy@mailinator.com",
+      "password": "$2a$10$iD5NrAiYvmTNHoFCt72O.eRoGJ975LeFQC3uiUREWwDDGoxtqYQH6",
+      "name": "Kiona Cook",
+      "username": "dyvex",
+      "id": 1
+    },
+    {
+      "email": "vule@mailinator.com",
+      "password": "$2a$10$U0ehD2hXmC1kX61pokEJaee1FwJny8kbT1UCpmTXW/WxI2FG7iKwO",
+      "name": "Hilary Burton",
+      "username": "vehorul",
+      "id": 2
+    },
+    {
+      "email": "muda@mailinator.com",
+      "password": "$2a$10$1ZkLb5hCmFEchBS9ar8NvuI/8R3H9/A1VJYINsogEku0ECg6FiU0i",
+      "name": "Arsenio Hewitt",
+      "username": "walitugeki",
+      "id": 3
+    }
   ],
   "posts": []
 }

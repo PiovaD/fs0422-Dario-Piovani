@@ -16,19 +16,24 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
-      name: [null, [Validators.required]],
-      username: [null, [Validators.required], this.usernameValidator],
+      name: [null, [Validators.required, Validators.minLength(3)]],
+      username: [null, [Validators.required, Validators.pattern('[^ ]*'), Validators.minLength(3)], this.usernameValidator],
       email: [null, [Validators.email, Validators.required], this.emailValidator],
-      password: [null, [Validators.required]]
+      password: [null, [Validators.required, Validators.minLength(5)]]
     });
   }
 
   submitForm(): void {
     if (this.validateForm.valid) {
-      console.log('submit', this.validateForm.value);
 
-      this.validateForm.reset();
-      this.router.navigate(['/login'])
+      this.authSvc.register(this.validateForm.value)
+        .subscribe(
+          res => console.log('HTTP response', res),
+          err => console.log('HTTP Error', err),
+          () => this.router.navigate(['/login'])
+
+
+        )
 
     } else {
       Object.values(this.validateForm.controls).forEach(control => {
@@ -41,12 +46,11 @@ export class RegisterComponent implements OnInit {
   }
 
   emailValidator = (control: AbstractControl) => {
-
     return new Promise<ValidationErrors | null>((resolve) => {
       this.authSvc.getAllUser()
         .subscribe(res => {
           if (res.find(user => user.email == control.value)) {
-            resolve({ prohibitedData: true, warning:true  })
+            resolve({ prohibitedData: true, warning: true })
           } else {
             resolve(null)
           }
@@ -55,12 +59,11 @@ export class RegisterComponent implements OnInit {
   }
 
   usernameValidator = (control: AbstractControl) => {
-
     return new Promise<ValidationErrors | null>((resolve) => {
       this.authSvc.getAllUser()
         .subscribe(res => {
-          if (res.find(user => user.username == control.value)) {
-            resolve({ prohibitedData: true, warning:true })
+          if (res.find(user => user.username.toUpperCase() == control.value.toUpperCase())) {
+            resolve({ prohibitedData: true, warning: true })
           } else {
             resolve(null)
           }

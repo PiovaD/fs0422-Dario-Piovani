@@ -2,7 +2,7 @@
   <form class="register-form" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
 
     <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your Name!" nzValidateStatus="" nzHasFeedback>
+      <nz-form-control nzErrorTip="Inserisci un nome di almeno 3 caratteri" nzValidateStatus="" nzHasFeedback>
         <nz-input-group nzPrefixIcon="user">
           <input nz-input id="name" formControlName="name" placeholder="Name*" />
         </nz-input-group>
@@ -15,7 +15,7 @@
         nzHasFeedback
         nzValidatingTip="Verifico Username"
         nzWarningTip="Username già in uso"
-        nzErrorTip="Inserire un Username"
+        nzErrorTip="Username di almeno 3 caratteri, niente spazi"
         >
           <nz-input-group nzPrefixIcon="user">
             <input nz-input id="username" formControlName="username" placeholder="Username*" />
@@ -37,7 +37,7 @@
     </nz-form-item>
 
     <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your password!" nzValidateStatus="" nzHasFeedback>
+      <nz-form-control nzErrorTip="Inserisci password di almeno 5 caratteri" nzValidateStatus="" nzHasFeedback>
         <nz-input-group nzPrefixIcon="lock">
           <input nz-input type="password" id="password" formControlName="password" placeholder="Password*" />
         </nz-input-group>
