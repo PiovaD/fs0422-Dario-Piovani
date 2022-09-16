@@ -1,0 +1,17 @@
+<nz-header>
+  <div nz-row nzJustify="space-between" nzAlign="middle">
+
+    <ul nz-menu nzTheme="dark" nzMode="horizontal" class="nz-col" [nzSelectable]="false">
+      <li nz-menu-item [routerLink]="'/posts'">Post</li>
+      <li nz-menu-item [nzMatchRouter]="'true'" [nzDisabled]="true"><a>Users</a></li>
+    </ul>
+
+    <div class="nz-col">
+      <a nz-button nzType="primary" [nzSize]="size" nzShape="round" [routerLink]="'/login'">
+        <span nz-icon nzType="user" nzTheme="outline"></span>
+        Login
+      </a>
+    </div>
+  </div>
+
+</nz-header>

@@ -1,0 +1,43 @@
+<nz-content>
+  <form class="register-form" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Name!">
+        <nz-input-group nzPrefixIcon="user">
+          <input nz-input id="name" formControlName="name" placeholder="Name*" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-control nzValidateStatus="validating" nzHasFeedback nzValidatingTip="I'm validating the content">
+          <nz-input-group nzPrefixIcon="user">
+            <input nz-input id="username" formControlName="username" placeholder="Username*" />
+          </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control nzErrorTip="The input is not valid E-mail!">
+        <nz-input-group nzPrefixIcon="mail">
+          <input nz-input formControlName="email" id="email" placeholder="Email*" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input nz-input type="password" id="password" formControlName="password" placeholder="Password*" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item class="register-area">
+      <nz-form-control>
+        <button class="register-form-button" nz-button nzType="primary">Registrati</button>
+        <p>Se sei già registrato <a [routerLink]="'/login'">Clicca qui!</a></p>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-content>
