@@ -28,12 +28,16 @@ export class AuthService {
     return this.http.post<AuthData>(this.API + '/login', userData)
   }
 
-  saveAccess(data: AuthData){
-    localStorage.setItem('access',JSON.stringify(data))
+  saveAccess(data: AuthData, rememberMe: boolean):void {
+
+    rememberMe && localStorage.setItem('access',JSON.stringify(data))
+
+    sessionStorage.setItem('access',JSON.stringify(data))
+
   }
 
   getLoggedUser(): AuthData | null{
-    let db = localStorage.getItem('access')
+    let db = sessionStorage.getItem('access')
     return db ? JSON.parse(db) : null
   }
 
