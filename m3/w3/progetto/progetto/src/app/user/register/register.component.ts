@@ -11,6 +11,8 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class RegisterComponent implements OnInit {
 
   validateForm!: FormGroup;
+  isLoading = false;
+  errorMsg = false;
 
   constructor(private fb: FormBuilder, private router: Router, private authSvc: AuthService) { }
 
@@ -24,16 +26,21 @@ export class RegisterComponent implements OnInit {
   }
 
   submitForm(): void {
+    this.errorMsg = false
+
     if (this.validateForm.valid) {
+      this.isLoading = true;
 
       this.authSvc.register(this.validateForm.value)
-        .subscribe(
-          res => console.log('HTTP response', res),
-          err => console.log('HTTP Error', err),
-          () => this.router.navigate(['/login'])
-
-
-        )
+        .subscribe({
+          next: (res) => console.log('HTTP response', res),
+          complete: () => this.router.navigate(['/login']),
+          error: (err) => {
+            this.errorMsg = true
+            this.isLoading = false;
+            console.log('HTTP Error', err)
+          }
+        })
 
     } else {
       Object.values(this.validateForm.controls).forEach(control => {

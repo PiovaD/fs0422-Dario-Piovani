@@ -10,26 +10,17 @@
     </nz-form-item>
 
     <nz-form-item>
-        <nz-form-control
-        nzValidateStatus=""
-        nzHasFeedback
-        nzValidatingTip="Verifico Username"
-        nzWarningTip="Username già in uso"
-        nzErrorTip="Username di almeno 3 caratteri, niente spazi"
-        >
-          <nz-input-group nzPrefixIcon="user">
-            <input nz-input id="username" formControlName="username" placeholder="Username*" />
-          </nz-input-group>
-        </nz-form-control>
+      <nz-form-control nzValidateStatus="" nzHasFeedback nzValidatingTip="Verifico Username"
+        nzWarningTip="Username già in uso" nzErrorTip="Username di almeno 3 caratteri, niente spazi">
+        <nz-input-group nzPrefixIcon="user">
+          <input nz-input id="username" formControlName="username" placeholder="Username*" />
+        </nz-input-group>
+      </nz-form-control>
     </nz-form-item>
 
     <nz-form-item>
-      <nz-form-control
-      nzValidateStatus=""
-      nzHasFeedback
-      nzValidatingTip="Verifico Email"
-      nzWarningTip="Email già in uso"
-      nzErrorTip="Inserire un Email valida">
+      <nz-form-control nzValidateStatus="" nzHasFeedback nzValidatingTip="Verifico Email"
+        nzWarningTip="Email già in uso" nzErrorTip="Inserire un Email valida">
         <nz-input-group nzPrefixIcon="mail">
           <input nz-input formControlName="email" id="email" placeholder="Email*" />
         </nz-input-group>
@@ -46,7 +37,13 @@
 
     <nz-form-item class="register-area">
       <nz-form-control>
-        <button class="register-form-button" nz-button nzType="primary">Registrati</button>
+        <nz-alert *ngIf="errorMsg"
+        nzType="error"
+        nzMessage="Errore nel invio dati"
+        nzDescription="Riprova tra qualche minuto."
+        nzShowIcon>
+        </nz-alert>
+        <button class="register-form-button" nz-button nzType="primary" [nzLoading]="isLoading">Registrati</button>
         <p>Se sei già registrato <a [routerLink]="'/login'">Clicca qui!</a></p>
       </nz-form-control>
     </nz-form-item>
