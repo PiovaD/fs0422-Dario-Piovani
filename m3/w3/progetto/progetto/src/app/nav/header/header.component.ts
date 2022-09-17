@@ -8,8 +8,6 @@ import { NzButtonSize } from 'ng-zorro-antd/button';
 })
 export class HeaderComponent implements OnInit {
 
-  size: NzButtonSize = 'large';
-
   constructor() { }
 
   ngOnInit(): void {

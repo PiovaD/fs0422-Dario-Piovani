@@ -16,13 +16,15 @@ import { HeaderComponent } from './nav/header/header.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { PostsComponent } from './pages/posts/posts.component';
+import { LoginButtonComponent } from './nav/login-button/login-button.component';
 registerLocaleData(it);
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PostsComponent
+    PostsComponent,
+    LoginButtonComponent
   ],
   imports: [
     BrowserModule,
