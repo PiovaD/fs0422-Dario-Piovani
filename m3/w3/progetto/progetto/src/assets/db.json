@@ -72,10 +72,17 @@
     },
     {
       "email": "xyku@mailinator.com",
-      "password": "$2a$10$3MKQm1y32UOaiwId/42ULeRjEO.tNmXzGIoV7Rkoq5hvEc4eLdY4a",
+      "password": "$2a$10$5RrzUW7M98G1TCUuIDZ4V.GxpHi2AohadB9psQLRnnyTCwDExsXEm",
       "name": "Urielle Finley",
-      "username": "Amonsus",
+      "username": "Amongsus",
       "id": 11
+    },
+    {
+      "email": "mywocic@mailinator.com",
+      "password": "$2a$10$g4.8WwFfsscfEKejmhojP.5Bfo21dcB1mT2By9mMXVGji2PAGi.Eq",
+      "name": "Flynn Nichols",
+      "username": "Pyno42",
+      "id": 12
     }
   ],
   "posts": []

@@ -7,7 +7,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { UserFormComponent } from '../user/user-form/user-form.component';
+import { UserFormComponent } from './user-form.component';
 
 
 
@@ -40,4 +40,4 @@ import { UserFormComponent } from '../user/user-form/user-form.component';
     UserFormComponent
   ]
 })
-export class SharedNzFormModule { }
+export class UserFormModule { }

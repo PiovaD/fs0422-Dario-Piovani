@@ -3,19 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
-import { SharedNzFormModule } from 'src/app/shared/shared-nz-form.module';
-import { MyUserComponent } from './my-user/my-user.component';
+import { UserFormModule } from 'src/app/Model/user-form/user-form.module';
 
 
 @NgModule({
   declarations: [
     UsersComponent,
-    MyUserComponent,
   ],
   imports: [
     CommonModule,
     UsersRoutingModule,
-    SharedNzFormModule
+    UserFormModule
   ]
 })
 export class UsersModule { }

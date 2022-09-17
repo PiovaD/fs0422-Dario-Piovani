@@ -1,0 +1,12 @@
+$logout-color:rgb(129 6 6);
+
+.btn {
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+  &.btn-logout{
+    background-color: $logout-color;
+    border-color: $logout-color;
+
+  }
+}

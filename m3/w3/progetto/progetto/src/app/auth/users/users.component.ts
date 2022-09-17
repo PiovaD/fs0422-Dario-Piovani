@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
-  selector: 'app-my-user',
-  templateUrl: './my-user.component.html',
-  styleUrls: ['./my-user.component.scss']
+  selector: 'app-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.scss']
 })
-export class MyUserComponent implements OnInit {
+export class UsersComponent implements OnInit {
 
   isLoading:boolean = false;
 
@@ -20,5 +20,7 @@ export class MyUserComponent implements OnInit {
     this.authSvc.removeAccess()
     this.router.navigate(['/login'])
   }
+
+  deleteUser(){}
 
 }

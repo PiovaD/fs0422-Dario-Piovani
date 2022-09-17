@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
+import { UserFormModule } from 'src/app/Model/user-form/user-form.module';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
-import { SharedNzFormModule } from 'src/app/shared/shared-nz-form.module';
 
 
 @NgModule({
@@ -11,7 +11,7 @@ import { SharedNzFormModule } from 'src/app/shared/shared-nz-form.module';
   ],
   imports: [
     LoginRoutingModule,
-    SharedNzFormModule
+    UserFormModule
   ]
 })
 export class LoginModule { }
