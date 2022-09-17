@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NzButtonSize } from 'ng-zorro-antd/button';
 import { AuthService, AuthData } from 'src/app/auth/auth.service';
 
 @Component({
@@ -9,9 +8,7 @@ import { AuthService, AuthData } from 'src/app/auth/auth.service';
 })
 export class LoginButtonComponent implements OnInit {
 
-  size: NzButtonSize = 'large';
-
-  user?: AuthData;
+  user?: any;
 
 
   constructor(private authSvc: AuthService) { }
@@ -21,10 +18,7 @@ export class LoginButtonComponent implements OnInit {
 
   ngDoCheck(){
     this.user = this.authSvc.getLoggedUser()
-    console.table(this.user)
   }
-
-  logout(){}
 
 
 }

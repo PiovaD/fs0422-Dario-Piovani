@@ -1,20 +1,8 @@
 <nz-content>
-  <form class="register-form" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
-    <h1>Registrati</h1>
-
-    <app-user-form></app-user-form>
-
-    <nz-form-item class="register-area">
-      <nz-form-control>
-        <nz-alert *ngIf="errorMsg"
-        nzType="error"
-        nzMessage="Errore nel invio dati"
-        nzDescription="Riprova tra qualche minuto."
-        nzShowIcon>
-        </nz-alert>
-        <button class="register-form-button" nz-button nzType="primary" [nzLoading]="isLoading">Registrati</button>
-        <p>Se sei già registrato <a [routerLink]="'/login'">Clicca qui!</a></p>
-      </nz-form-control>
-    </nz-form-item>
-  </form>
+  <app-user-form>
+    <ng-container button>
+      <button class="register-form-button" nz-button nzType="primary" [nzLoading]="isLoading">Registrati</button>
+      <p>Se sei già registrato <a [routerLink]="'/login'">Clicca qui!</a></p>
+    </ng-container>
+  </app-user-form>
 </nz-content>

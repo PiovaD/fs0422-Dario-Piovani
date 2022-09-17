@@ -1,33 +1,48 @@
-<nz-form-item>
-  <nz-form-control nzErrorTip="Inserisci un nome di almeno 3 caratteri" nzValidateStatus="" nzHasFeedback>
-    <nz-input-group nzPrefixIcon="user">
-      <input nz-input id="name" formControlName="name" placeholder="Name*" />
-    </nz-input-group>
-  </nz-form-control>
-</nz-form-item>
+<form class="register-form" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <h1>Registrati</h1>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Inserisci un nome di almeno 3 caratteri" nzValidateStatus="" nzHasFeedback>
+      <nz-input-group nzPrefixIcon="user">
+        <input nz-input id="name" formControlName="name" placeholder="Name*" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
 
-<nz-form-item>
-  <nz-form-control nzValidateStatus="" nzHasFeedback nzValidatingTip="Verifico Username"
-    nzWarningTip="Username già in uso" nzErrorTip="Username di almeno 3 caratteri, niente spazi">
-    <nz-input-group nzPrefixIcon="user">
-      <input nz-input id="username" formControlName="username" placeholder="Username*" />
-    </nz-input-group>
-  </nz-form-control>
-</nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzValidateStatus="" nzHasFeedback nzValidatingTip="Verifico Username"
+      nzWarningTip="Username già in uso" nzErrorTip="Username di almeno 3 caratteri, niente spazi">
+      <nz-input-group nzPrefixIcon="user">
+        <input nz-input id="username" formControlName="username" placeholder="Username*" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
 
-<nz-form-item>
-  <nz-form-control nzValidateStatus="" nzHasFeedback nzValidatingTip="Verifico Email"
-    nzWarningTip="Email già in uso" nzErrorTip="Inserire un Email valida">
-    <nz-input-group nzPrefixIcon="mail">
-      <input nz-input formControlName="email" id="email" placeholder="Email*" />
-    </nz-input-group>
-  </nz-form-control>
-</nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzValidateStatus="" nzHasFeedback nzValidatingTip="Verifico Email"
+      nzWarningTip="Email già in uso" nzErrorTip="Inserire un Email valida">
+      <nz-input-group nzPrefixIcon="mail">
+        <input nz-input formControlName="email" id="email" placeholder="Email*" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
 
-<nz-form-item>
-  <nz-form-control nzErrorTip="Inserisci password di almeno 5 caratteri" nzValidateStatus="" nzHasFeedback>
-    <nz-input-group nzPrefixIcon="lock">
-      <input nz-input type="password" id="password" formControlName="password" placeholder="Password*" />
-    </nz-input-group>
-  </nz-form-control>
-</nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Inserisci password di almeno 5 caratteri" nzValidateStatus="" nzHasFeedback>
+      <nz-input-group nzPrefixIcon="lock">
+        <input nz-input type="password" id="password" formControlName="password" placeholder="Password*" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item class="register-area">
+    <nz-form-control>
+      <nz-alert *ngIf="errorMsg"
+      nzType="error"
+      nzMessage="Errore nel invio dati"
+      nzDescription="Riprova tra qualche minuto."
+      nzShowIcon>
+      </nz-alert>
+      <ng-content select="[button]"></ng-content>
+    </nz-form-control>
+  </nz-form-item>
+</form>

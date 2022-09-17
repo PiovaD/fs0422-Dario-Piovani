@@ -1,9 +1,9 @@
-<a *ngIf="!user" nz-button nzType="primary" [nzSize]="size" nzShape="round" [routerLink]="'/login'">
+<a *ngIf="!user" nz-button nzType="primary" [nzSize]="'large'" nzShape="round" [routerLink]="'/login'">
   <span nz-icon nzType="user"></span>
   Login
 </a>
 
-<a *ngIf="user" nz-button nzType="primary" [nzSize]="size" nzShape="round" [routerLink]="'/users/' + user.user.id ">
+<a *ngIf="user" nz-button nzType="primary" [nzSize]="'large'" nzShape="round" [routerLink]="'/users/' + user.id ">
   <span nz-icon nzType="user"></span>
-  {{user.user.username}}
+  {{user.username}}
 </a>

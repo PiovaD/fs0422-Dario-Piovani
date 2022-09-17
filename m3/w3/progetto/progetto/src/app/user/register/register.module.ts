@@ -9,8 +9,7 @@ import { UserFormComponent } from '../user-form/user-form.component';
 
 @NgModule({
   declarations: [
-    RegisterComponent,
-    UserFormComponent
+    RegisterComponent
   ],
   imports: [
     CommonModule,

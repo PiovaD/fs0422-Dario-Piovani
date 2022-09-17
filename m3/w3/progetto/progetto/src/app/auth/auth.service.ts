@@ -8,7 +8,8 @@ export type AuthData = {
   user: {
     id: string,
     email: string,
-    username: string
+    username: string,
+    name: string
   }
 }
 
@@ -29,16 +30,32 @@ export class AuthService {
     return this.http.post<AuthData>(this.API + '/login', userData)
   }
 
-  saveAccess(data: AuthData, rememberMe: boolean): void {
+  updateUser(userData: IUser): Observable<IUser> {
+    return this.http.patch<IUser>(this.API + '/users/' + userData.id, userData);
+  }
 
+  saveAccess(data: AuthData, rememberMe: boolean): void {
     if (rememberMe) {
-      localStorage.setItem('access', JSON.stringify(data))
+      localStorage.setItem('token', JSON.stringify(data.accessToken))
+      localStorage.setItem('access', JSON.stringify(data.user))
     } else {
-      sessionStorage.setItem('access', JSON.stringify(data))
+      sessionStorage.setItem('token', JSON.stringify(data.accessToken))
+      sessionStorage.setItem('access', JSON.stringify(data.user))
     }
   }
 
-  getLoggedUser(): AuthData | undefined {
+  removeAccess() {
+    localStorage.removeItem('access')
+    localStorage.removeItem('token')
+    sessionStorage.removeItem('access')
+    sessionStorage.removeItem('token')
+  }
+
+  isLogged(): boolean {
+    return (localStorage.getItem('access') != null) || (sessionStorage.getItem('access') != null)
+  }
+
+  getLoggedUser(): IUser | undefined {
     let db = JSON.parse(String(localStorage.getItem('access')))
     if (!db) db = JSON.parse(String(sessionStorage.getItem('access')))
 
