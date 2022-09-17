@@ -1,88 +1,11 @@
 {
   "users": [
     {
-      "email": "zasehydojy@mailinator.com",
-      "password": "$2a$10$udd1qzKZ/n79YKZFNvLzRO8gZCHteJNJuQ0uO0KQZ17h9MjZt6CSS",
-      "name": "Kiona Cook",
-      "username": "dyvex42",
-      "id": 1
-    },
-    {
-      "email": "vule@mailinator.com",
-      "password": "$2a$10$YXXOoNiHWp8cgN5.BnZ2o.GU5s04/FvuAHaaXKEuqPsVrEsDqF2Jq",
-      "name": "Hilary Burton II",
-      "username": "vehorul",
-      "id": 2
-    },
-    {
-      "email": "muda@mailinator.com",
-      "password": "$2a$10$1ZkLb5hCmFEchBS9ar8NvuI/8R3H9/A1VJYINsogEku0ECg6FiU0i",
-      "name": "Arsenio Hewitt",
-      "username": "walitugeki",
-      "id": 3
-    },
-    {
-      "email": "wifotenud@mailinator.com",
-      "password": "$2a$10$1QbNEJu9oMBpw1X4RPzyw.21LxKXBjJbXOMQ.GdzzxWbG5q96/etu",
-      "name": "Regan Butler",
-      "username": "hymedag",
-      "id": 4
-    },
-    {
-      "email": "fycicizumi@mailinator.com",
-      "password": "$2a$10$/S5AV20EoSouJR5LrVFMd.a8IJlZh2GQtcy2zMv5lF4kVND5aeheW",
-      "name": "Jennifer Preston",
-      "username": "faquribu",
-      "id": 5
-    },
-    {
-      "email": "pozenuk@mailinator.com",
-      "password": "$2a$10$Q6AQCjrdj5BDvrQvjtqeVexg.yPjvvHZp8BXTTI0wNvA1eWJBf7vS",
-      "name": "Aidan Pratt",
-      "username": "sucino",
-      "id": 6
-    },
-    {
-      "email": "mijere@mailinator.com",
-      "password": "$2a$10$do0l6vLCEqo4.tz4b6R2hebCzjAeWmDKxh.rz.fG48IABryUTwQjC",
-      "name": "Linda Wells",
-      "username": "gufaceri",
-      "id": 7
-    },
-    {
-      "email": "tepowezuh@mailinator.com",
-      "password": "$2a$10$hCtfldLjGC8NndSmKny7be3KQpEdZxurORcKQNLfTSR5ErEehrfIy",
-      "name": "Nolan Barnett",
-      "username": "witigy",
-      "id": 8
-    },
-    {
-      "email": "zyqyko@mailinator.com",
-      "password": "$2a$10$iIYqZCZtuhiUEAXwnZQ.XuAqg/xaZsI7Ay1WC08WxlQnuOrAB1SDi",
-      "name": "Quail Harris",
-      "username": "xebevu",
-      "id": 9
-    },
-    {
-      "email": "hezofi@mailinator.com",
-      "password": "$2a$10$FM93VK451X93IzkPm7hyGe8ibSvOnJcf9Q/qTczf0tgHivC74mYey",
-      "name": "Galena Mercer",
-      "username": "cyropyx",
-      "id": 10
-    },
-    {
-      "email": "xyku@mailinator.com",
-      "password": "$2a$10$5RrzUW7M98G1TCUuIDZ4V.GxpHi2AohadB9psQLRnnyTCwDExsXEm",
-      "name": "Urielle Finley",
-      "username": "Amongsus",
-      "id": 11
-    },
-    {
-      "email": "mywocic@mailinator.com",
+      "email": "super@mailinator.com",
       "password": "$2a$10$g4.8WwFfsscfEKejmhojP.5Bfo21dcB1mT2By9mMXVGji2PAGi.Eq",
-      "name": "Flynn Nichols",
+      "name": "Test Testino",
       "username": "Pyno42",
-      "id": 12
+      "id": 1
     }
   ],
   "posts": []

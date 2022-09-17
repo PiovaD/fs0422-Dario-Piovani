@@ -34,6 +34,10 @@ export class AuthService {
     return this.http.patch<IUser>(this.API + '/users/' + userData.id, userData);
   }
 
+  deleteUser(userData: IUser): Observable<IUser> {
+    return this.http.delete<IUser>(this.API + '/users/' + userData.id);
+  }
+
   saveAccess(data: AuthData, rememberMe: boolean): void {
     if (rememberMe) {
       localStorage.setItem('token', JSON.stringify(data.accessToken))

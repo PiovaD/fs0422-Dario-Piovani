@@ -9,18 +9,32 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class UsersComponent implements OnInit {
 
-  isLoading:boolean = false;
+  isLoading: boolean = false;
 
-  constructor(private authSvc:AuthService,private router: Router) { }
+  constructor(private authSvc: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  logout(){
+  logout() {
     this.authSvc.removeAccess()
     this.router.navigate(['/login'])
   }
 
-  deleteUser(){}
+  deleteUser() {
+    let user = JSON.parse(String(sessionStorage.getItem('access'))) || JSON.parse(String(localStorage.getItem('access')))
+
+    this.authSvc.deleteUser(user)
+      .subscribe({
+        complete: () => {
+          this.authSvc.removeAccess()
+          this.router.navigate(['/posts'])
+        },
+        error: (err) => {
+          console.log('HTTP Error', err)
+        }
+
+      })
+  }
 
 }
