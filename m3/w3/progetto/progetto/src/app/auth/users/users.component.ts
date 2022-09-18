@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class UsersComponent implements OnInit {
 
   isLoading: boolean = false;
+  deleteLoading: boolean = false;
 
   constructor(private authSvc: AuthService, private router: Router) { }
 
@@ -23,7 +24,7 @@ export class UsersComponent implements OnInit {
 
   deleteUser() {
     let user = JSON.parse(String(sessionStorage.getItem('access'))) || JSON.parse(String(localStorage.getItem('access')))
-
+    this.deleteLoading = true
     this.authSvc.deleteUser(user)
       .subscribe({
         complete: () => {
@@ -31,10 +32,15 @@ export class UsersComponent implements OnInit {
           this.router.navigate(['/posts'])
         },
         error: (err) => {
-          console.log('HTTP Error', err)
+          console.log('HTTP Error', err);
+          this.deleteLoading = false
         }
 
       })
+  }
+
+  loading(isLoading: boolean) {
+    this.isLoading = isLoading;
   }
 
 }

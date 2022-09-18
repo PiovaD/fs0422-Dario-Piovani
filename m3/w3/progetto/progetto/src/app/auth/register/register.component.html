@@ -1,5 +1,5 @@
 <nz-content>
-  <app-user-form>
+  <app-user-form (isLoading)="loading($event)">
     <ng-container title><h2>Registrati</h2></ng-container>
     <ng-container button>
       <button class="register-form-button" nz-button nzType="primary" [nzLoading]="isLoading">Registrati</button>

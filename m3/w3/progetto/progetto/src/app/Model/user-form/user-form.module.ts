@@ -9,8 +9,6 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { UserFormComponent } from './user-form.component';
 
-
-
 @NgModule({
   declarations: [
     UserFormComponent

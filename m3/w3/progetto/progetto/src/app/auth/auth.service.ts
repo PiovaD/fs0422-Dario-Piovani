@@ -67,6 +67,13 @@ export class AuthService {
     return db
   }
 
+  getToken():string{
+    let token = JSON.parse(String(localStorage.getItem('token')))
+    if (!token) token = JSON.parse(String(sessionStorage.getItem('token')))
+
+    return token
+  }
+
   getAllUser(): Observable<IUser[]> {
     return this.http.get<IUser[]>(this.API + '/users')
   }

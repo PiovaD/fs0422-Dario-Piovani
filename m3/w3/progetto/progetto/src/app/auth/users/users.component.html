@@ -1,10 +1,10 @@
 <nz-content>
-  <app-user-form>
+  <app-user-form (isLoading)="loading($event)">
     <ng-container title><h3>Il tuo account:</h3></ng-container>
     <ng-container button >
       <button class="btn" nz-button nzType="primary" [nzLoading]="isLoading">Salva Modifiche</button>
       <a class="btn btn-logout" nz-button nzType="primary" (click)="logout()" nzDanger>Logout</a>
-      <a class="btn-delete" nz-button nzType="primary" [nzLoading]="isLoading" (click)="deleteUser()" nzDanger>Elimina Account</a>
+      <a class="btn-delete" nz-button nzType="primary" [nzLoading]="deleteLoading" (click)="deleteUser()" nzDanger>Elimina Account</a>
     </ng-container>
   </app-user-form>
 </nz-content>

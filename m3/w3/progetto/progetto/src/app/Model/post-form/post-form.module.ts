@@ -8,8 +8,6 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
-
-
 @NgModule({
   declarations: [
     PostFormComponent

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormGroup, FormBuilder, ValidationErrors, Validators, FormControl } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AbstractControl, FormGroup, FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class UserFormComponent implements OnInit {
   validateForm!: FormGroup;
-  isLoading = false;
+  @Output() isLoading = new EventEmitter<boolean>(false);
   errorMsg = false;
 
   constructor(private fb: FormBuilder, private router: Router, private authSvc: AuthService) { }
@@ -43,7 +43,7 @@ export class UserFormComponent implements OnInit {
     this.errorMsg = false
 
     if (this.validateForm.valid) {
-      this.isLoading = true;
+      this.isLoading.emit(true);
 
       if (this.authSvc.isLogged()) {
         this.updateUser()
@@ -68,7 +68,7 @@ export class UserFormComponent implements OnInit {
         complete: () => this.router.navigate(['/login']),
         error: (err) => {
           this.errorMsg = true
-          this.isLoading = false;
+          this.isLoading.emit(false);
           console.log('HTTP Error', err)
         }
       })
@@ -89,7 +89,7 @@ export class UserFormComponent implements OnInit {
         complete: () => this.router.navigate(['/']),
         error: (err) => {
           this.errorMsg = true
-          this.isLoading = false;
+          this.isLoading.emit(false);
           console.log('HTTP Error', err)
         }
       })
@@ -130,3 +130,4 @@ export class UserFormComponent implements OnInit {
   }
 
 }
+
