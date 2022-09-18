@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IPost } from './ipost';
 import { IUser } from './iuser';
 
 export type AuthData = {
@@ -69,4 +70,15 @@ export class AuthService {
   getAllUser(): Observable<IUser[]> {
     return this.http.get<IUser[]>(this.API + '/users')
   }
+
+  /*post*/
+
+  newPost(newPost: IPost): Observable<IPost> {
+    return this.http.post<IPost>(this.API + '/posts', newPost)
+  }
+
+  getAllPost(): Observable<IPost[]> {
+    return this.http.get<IPost[]>(this.API + '/posts')
+  }
+
 }

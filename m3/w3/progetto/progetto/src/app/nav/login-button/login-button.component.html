@@ -4,6 +4,6 @@
 </a>
 
 <a *ngIf="user" nz-button nzType="primary" [nzSize]="'large'" nzShape="round" [routerLink]="'/users/' + user.id ">
-  <span nz-icon nzType="user"></span>
+  <nz-avatar nzIcon="user" [nzSrc]="'https://i.pravatar.cc/150?img='+ user.id"></nz-avatar>
   {{user.username}}
 </a>

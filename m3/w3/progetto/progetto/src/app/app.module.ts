@@ -17,6 +17,14 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { PostsComponent } from './pages/posts/posts.component';
 import { LoginButtonComponent } from './nav/login-button/login-button.component';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { PostComponent } from './Model/post/post.component';
+import { NzCommentModule } from 'ng-zorro-antd/comment'
+import { NzListModule } from 'ng-zorro-antd/list';
+import { PostFormModule } from './Model/post-form/post-form.module';
+
 registerLocaleData(it);
 
 @NgModule({
@@ -24,7 +32,8 @@ registerLocaleData(it);
     AppComponent,
     HeaderComponent,
     PostsComponent,
-    LoginButtonComponent
+    LoginButtonComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +44,13 @@ registerLocaleData(it);
     NzMenuModule,
     NzButtonModule,
     NzIconModule,
-    NzGridModule
+    NzGridModule,
+    NzAvatarModule,
+    NzSkeletonModule,
+    NzEmptyModule,
+    NzCommentModule,
+    NzListModule,
+    PostFormModule
 
   ],
   providers: [

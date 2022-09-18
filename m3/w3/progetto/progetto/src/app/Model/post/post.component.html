@@ -1,0 +1,10 @@
+<nz-list [nzDataSource]="data" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+  <ng-template #item let-item>
+    <nz-comment [nzAuthor]="item.author" [nzDatetime]="passedDays(item.datetime)">
+      <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="'https://i.pravatar.cc/150?img='+ item.avatar"></nz-avatar>
+      <nz-comment-content>
+        <p>{{ item.content }}</p>
+      </nz-comment-content>
+    </nz-comment>
+  </ng-template>
+</nz-list>

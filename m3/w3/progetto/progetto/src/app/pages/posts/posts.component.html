@@ -1,4 +1,16 @@
 <nz-content>
-  <p>posts works!</p>
+
+  <app-post-form *ngIf="isLogged()" [data]="data" (newData)="update($event)"></app-post-form>
+
+  <nz-skeleton
+  [nzAvatar]="true"
+  [nzActive]="true"
+  [nzTitle]="true"
+  [nzLoading]="isLoading"
+></nz-skeleton>
+
+<app-post *ngIf="!isLoading" [data]="data"></app-post>
 
 </nz-content>
+
+

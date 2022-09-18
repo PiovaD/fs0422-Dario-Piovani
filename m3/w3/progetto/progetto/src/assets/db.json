@@ -6,7 +6,71 @@
       "name": "Test Testino",
       "username": "Pyno42",
       "id": 1
+    },
+    {
+      "email": "manoli@mailinator.com",
+      "password": "$2a$10$eC/ISpkH5udd0f4SZRKxK.1XXIu3P7kqfTiVz8B7HZLziHJzrv/TW",
+      "name": "Jillian Luna",
+      "username": "lydebyg",
+      "id": 2
+    },
+    {
+      "email": "mivuluv@mailinator.com",
+      "password": "$2a$10$K7sDInjPBq8xwcTclO5aIueKnZAchamInJEwaUrkB/xLcQYXFVxb.",
+      "name": "Willa Hahn",
+      "username": "tegenymih",
+      "id": 3
     }
   ],
-  "posts": []
+  "posts": [
+    {
+      "author": "Pyno42",
+      "avatar": 1,
+      "content": "Unde corporis omnis quo libero",
+      "datetime": "2022-09-18T16:46:01.717Z",
+      "id": 1
+    },
+    {
+      "author": "Pyno42",
+      "avatar": 1,
+      "content": "Optio ad facilis amet illo t",
+      "datetime": "2022-09-18T16:49:16.303Z",
+      "id": 2
+    },
+    {
+      "author": "Pyno42",
+      "avatar": 1,
+      "content": "Enim error quaerat facere accu",
+      "datetime": "2022-09-18T16:49:36.380Z",
+      "id": 3
+    },
+    {
+      "author": "Pyno42",
+      "avatar": 1,
+      "content": "Ex similique aliqua Fugit la",
+      "datetime": "2022-09-18T16:50:51.125Z",
+      "id": 4
+    },
+    {
+      "author": "vubyjoguse",
+      "avatar": 3,
+      "content": "Dolorem quia maiores tempora u",
+      "datetime": "2022-09-18T16:51:33.100Z",
+      "id": 5
+    },
+    {
+      "author": "tegenymih",
+      "avatar": 3,
+      "content": "Nostrud ut illum laborum Ame",
+      "datetime": "2022-09-18T16:54:18.385Z",
+      "id": 6
+    },
+    {
+      "author": "Pyno42",
+      "avatar": 1,
+      "content": "Aspernatur est rem non reprehe",
+      "datetime": "2022-09-18T16:57:43.357Z",
+      "id": 7
+    }
+  ]
 }
