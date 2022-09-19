@@ -1,5 +1,10 @@
-nz-header{
+nz-header {
   height: max-content;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 
 li {
