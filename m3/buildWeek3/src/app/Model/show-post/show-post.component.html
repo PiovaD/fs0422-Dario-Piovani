@@ -1,0 +1,70 @@
+<nz-list class="container" *ngIf="isLoading">
+
+  <nz-skeleton
+  [nzAvatar]="true"
+  [nzActive]="true"
+  [nzTitle]="true"
+  [nzLoading]="isLoading"
+></nz-skeleton>
+
+</nz-list>
+
+
+<nz-list *ngIf="!isLoading" class="container" [nzDataSource]="getParentPosts()" [nzRenderItem]="itemTemplate"
+  [nzItemLayout]="'horizontal'">
+
+  <ng-template  #itemTemplate let-item>
+    <nz-comment [nzAuthor]="getUsername(item)" [nzDatetime]="getTime(item)">
+
+      <nz-avatar [nzSize]="48" [routerLink]="['/user/', item.userId]" nz-comment-avatar nzIcon="user" [nzSrc]="getAvatar(item)">
+      </nz-avatar>
+
+      <nz-comment-content>
+        <h4>{{item.title}}</h4>
+        <p>{{ item.content }}</p>
+      </nz-comment-content>
+
+      <nz-comment-action>
+        <span nz-tooltip nzTitle="Like" nz-icon nzType="like"
+          [nzTheme]="iLikedOrNot(item, true) ? 'twotone' : 'outline'" (click)="likeOrDislike(item, true)"></span>
+        <span class="count like">{{item.allLikeId.length }}</span>
+      </nz-comment-action>
+
+      <nz-comment-action>
+        <span nz-tooltip nzTitle="Dislike" nz-icon nzType="dislike"
+          [nzTheme]="iLikedOrNot(item, false) ? 'twotone' : 'outline'" (click)="likeOrDislike(item, false)"></span>
+        <span class="count dislike">{{ item.allDislikeId.length }}</span>
+      </nz-comment-action>
+
+      <nz-comment-action>
+        <span *ngIf="userIsLogged()" (click)="item.replayForm = !item.replayForm">
+          Rispondi
+        </span>
+      </nz-comment-action>
+
+      <nz-comment-action>
+        <span *ngIf=" loggedUser && (loggedUser.user.id == item.userId)"
+        (click)="deletePost(item)"
+         nz-icon nzType="delete" nzTheme="outline"></span>
+      </nz-comment-action>
+
+      <app-show-post-form *ngIf="item.replayForm" [loggedUser]="loggedUser" [item]="item" (update)="newComment($event)">
+      </app-show-post-form>
+
+      <ng-container>
+
+        <nz-collapse [nzGhost]="true">
+          <nz-collapse-panel *ngIf="getChildrenPosts(item.id).length > 0"
+            [nzHeader]="'Mostra ' + getChildrenPosts(item.id).length +' commenti'" [nzShowArrow]="false">
+
+            <nz-list [nzNoResult]="' '" [nzDataSource]="getChildrenPosts(item.id)" [nzRenderItem]="itemTemplate"
+              [nzItemLayout]="'horizontal'">
+            </nz-list>
+
+          </nz-collapse-panel>
+        </nz-collapse>
+      </ng-container>
+
+    </nz-comment>
+  </ng-template>
+</nz-list>

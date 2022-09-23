@@ -1,0 +1,47 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+  <h3>Registrati</h3>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Nome</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="Nome di almeno 3 caratteri">
+      <input nz-input type="text" formControlName="name" id="name" placeholder="Inserisci Nome" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Username</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validating..."
+    nzWarningTip="Username già in uso" nzErrorTip="Username di almeno 3 caratteri">
+      <input nz-input type="text" formControlName="username" placeholder="Inserisci Username" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Email</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validating..."
+    nzWarningTip="Email già in uso" nzErrorTip="Inserire un Email valida">
+      <input nz-input formControlName="email" placeholder="Inserisci email" type="email" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Password</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="Please input your password!">
+      <input nz-input type="password" formControlName="password" placeholder="Inserisci password"/>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Confirm Password</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validating" nzErrorTip="Password diverse">
+      <input nz-input type="password" formControlName="confirm" placeholder="confirm your password" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control [nzOffset]="7" [nzSpan]="12">
+      <button  nz-button nzType="primary" [nzLoading]="isLoading" [disabled]="!validateForm.valid">Submit</button>
+      <a nz-button (click)="resetForm()">Reset</a>
+    </nz-form-control>
+  </nz-form-item>
+</form>

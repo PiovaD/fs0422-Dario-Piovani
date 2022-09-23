@@ -1,0 +1,261 @@
+{
+  "users": [
+    {
+      "email": "sergio@sergio.com",
+      "password": "$2a$10$rb0OwrSeAnUPZ9LOGLUgFO7ak9Pc8.R4J462prIiqwneqRQXHaEpS",
+      "name": "Sergio",
+      "username": "Sergio",
+      "id": 1
+    },
+    {
+      "email": "foqire@mailinator.com",
+      "password": "$2a$10$fZ8deeVe9.CHLCSylb./NuAVFBZ61RsfSG4cTK5ehkAVxHzbOxSaW",
+      "name": "Wylie Washington",
+      "username": "Zykigytipe",
+      "id": 2
+    },
+    {
+      "email": "sal97@scend.com",
+      "password": "$2a$10$yI3iDfrBLlPvIoPhwhd5UO9uv9OKJDQtsbl2oxOB668.z9ZuenQy2",
+      "name": "Salio",
+      "username": "Sal",
+      "id": 3
+    },
+    {
+      "email": "nyjawacev@mailinator.com",
+      "password": "$2a$10$0yGKcFzgb1SipYs.Uxk7qeevXqHFTpBJrxQHHVty9v3my0Da1ZR0m",
+      "name": "Lisandra Cardenas",
+      "username": "xebovykim",
+      "id": 5
+    },
+    {
+      "email": "linoxixu@mailinator.com",
+      "password": "$2a$10$ZPq5Mh/E9quGs7f00Jsgne6hqmldn8pxHR0h4WoXS9bZ4n0g.Uxku",
+      "name": "Nina Maynard",
+      "username": "ldnfgaldgkn",
+      "id": 6
+    },
+    {
+      "email": "wesed@mailinator.com",
+      "password": "$2a$10$/8JceAnlzMnZhpHo9e7ZjeAnlt4fAudgoomEDKaDhpr3e4ISOTqWO",
+      "name": "Lesley Curtis",
+      "username": "qinyp",
+      "id": 7
+    }
+  ],
+  "posts": [
+    {
+      "userId": 5,
+      "title": "Commodi consectetur cumque dol",
+      "content": "Ex totam ipsum suscipit sint v",
+      "date": "2022-09-22T19:59:03.234Z",
+      "allLikeId": [],
+      "allDislikeId": [
+        6
+      ],
+      "id": 1
+    },
+    {
+      "userId": 5,
+      "title": "Necessitatibus sit reprehende",
+      "content": "Molestias autem non nisi Nam s",
+      "date": "2022-09-22T20:13:01.240Z",
+      "allLikeId": [
+        5,
+        1
+      ],
+      "allDislikeId": [
+        6
+      ],
+      "id": 2
+    },
+    {
+      "userId": 5,
+      "title": "Fugiat reprehenderit nisi ex",
+      "content": "Inventore lorem pariatur Magn",
+      "date": "2022-09-22T20:13:06.193Z",
+      "allLikeId": [
+        1,
+        6
+      ],
+      "allDislikeId": [
+        5
+      ],
+      "id": 3
+    },
+    {
+      "userId": 5,
+      "title": "Laborum Aspernatur doloribus ",
+      "content": "Repudiandae autem in autem ven",
+      "date": "2022-09-22T20:13:11.859Z",
+      "allLikeId": [],
+      "allDislikeId": [
+        5
+      ],
+      "id": 4
+    },
+    {
+      "parentId": 3,
+      "userId": 5,
+      "title": "",
+      "content": "Non aut et id maxime occaecat ",
+      "date": "2022-09-22T21:16:00.035Z",
+      "allLikeId": [
+        5
+      ],
+      "allDislikeId": [],
+      "id": 5
+    },
+    {
+      "parentId": 5,
+      "userId": 5,
+      "title": "",
+      "content": "Inventore voluptas deserunt en",
+      "date": "2022-09-22T21:19:24.577Z",
+      "allLikeId": [],
+      "allDislikeId": [
+        5
+      ],
+      "id": 6
+    },
+    {
+      "parentId": 6,
+      "userId": 5,
+      "title": "",
+      "content": "Et excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilisEt excepturi dolor eum facilis",
+      "date": "2022-09-22T21:20:17.840Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 7
+    },
+    {
+      "parentId": 3,
+      "userId": 5,
+      "title": "",
+      "content": "Deleniti et dicta numquam labo",
+      "date": "2022-09-22T21:24:22.437Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 8
+    },
+    {
+      "parentId": 3,
+      "userId": 5,
+      "title": "",
+      "content": "Ipsum qui ullamco molestiae al",
+      "date": "2022-09-22T21:36:47.218Z",
+      "allLikeId": [
+        5
+      ],
+      "allDislikeId": [],
+      "id": 9
+    },
+    {
+      "parentId": 3,
+      "userId": 5,
+      "title": "",
+      "content": "Fugiat enim rem impedit autem",
+      "date": "2022-09-22T21:59:14.922Z",
+      "allLikeId": [
+        5
+      ],
+      "allDislikeId": [],
+      "id": 10
+    },
+    {
+      "parentId": 3,
+      "userId": 1,
+      "title": "",
+      "content": "Dolores nihil dolor tempore s",
+      "date": "2022-09-22T22:05:20.232Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "title": "Omnis ipsa duis sunt volupta",
+      "content": "Corrupti dolor nisi magnam od",
+      "date": "2022-09-22T22:05:32.516Z",
+      "allLikeId": [
+        1,
+        5,
+        6
+      ],
+      "allDislikeId": [],
+      "id": 12
+    },
+    {
+      "parentId": 12,
+      "userId": 1,
+      "title": "",
+      "content": "Provident molestias nihil eni",
+      "date": "2022-09-22T22:05:46.213Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 13
+    },
+    {
+      "parentId": 2,
+      "userId": 6,
+      "title": "",
+      "content": "Rem ducimus id voluptate por",
+      "date": "2022-09-23T10:09:53.641Z",
+      "allLikeId": [
+        6
+      ],
+      "allDislikeId": [],
+      "id": 15
+    },
+    {
+      "userId": 6,
+      "title": "Voluptatem quis dicta neque la",
+      "content": "A et veniam esse totam nisi r",
+      "date": "2022-09-23T10:10:09.413Z",
+      "allLikeId": [],
+      "allDislikeId": [
+        6
+      ],
+      "id": 16
+    },
+    {
+      "userId": 6,
+      "title": "Excepteur fugit duis enim omn",
+      "content": "Nihil quis amet fugiat aut e",
+      "date": "2022-09-23T10:11:07.990Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 17
+    },
+    {
+      "parentId": 12,
+      "userId": 6,
+      "title": "",
+      "content": "Rerum proident distinctio In",
+      "date": "2022-09-23T10:11:56.353Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 18
+    },
+    {
+      "parentId": 14,
+      "userId": 6,
+      "title": "",
+      "content": "Deleniti qui adipisicing sit i",
+      "date": "2022-09-23T12:14:47.797Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 19
+    },
+    {
+      "parentId": 4,
+      "userId": 6,
+      "title": "",
+      "content": "Necessitatibus ad praesentium ",
+      "date": "2022-09-23T12:15:02.814Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 20
+    }
+  ]
+}

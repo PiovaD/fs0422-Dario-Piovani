@@ -1,0 +1,50 @@
+::ng-deep .ant-list-empty-text {
+  padding: 0
+}
+
+.container {
+  margin: 3vh 0;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  max-width: 1200px;
+
+
+
+  @media (min-width: 768px) {
+    margin: 3vh 5%;
+  }
+
+  @media (min-width: 1300px) {
+    margin: 3vh auto;
+  }
+}
+
+.ant-list {
+  padding: 0.5rem 1.5rem;
+}
+
+span {
+  padding: 5px;
+}
+
+@media (min-width: 768px) {
+
+  h4,
+  p,
+  span {
+    font-size: 1rem;
+  }
+
+  ::ng-deep span.ant-comment-content-author-name.ng-star-inserted {
+    font-size: 1rem;
+  }
+
+  ::ng-deep .ant-comment-avatar>nz-avatar>img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+nz-list {
+  background-color: #fff;
+}

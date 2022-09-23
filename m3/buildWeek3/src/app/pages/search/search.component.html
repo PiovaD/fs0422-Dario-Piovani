@@ -1,0 +1,33 @@
+<nz-form-item class="search-bar">
+  <nz-input-group [nzSuffix]="suffixIconSearch">
+    <input nz-input type="text" placeholder="Cerca un post o un utente" [(ngModel)]="contentValue" (keyup)="find()">
+  </nz-input-group>
+</nz-form-item>
+
+<ng-template #suffixIconSearch>
+  <span nz-icon nzType="search"></span>
+</ng-template>
+
+
+<section *ngIf="contentValue">
+
+  <nz-divider *ngIf="userFind.length > 0" nzText="USER"></nz-divider>
+
+    <nz-list class="container"
+            *ngIf="userFind.length > 0"
+            [nzDataSource]="userFind"
+            [nzRenderItem]="userTemplate"
+            [nzItemLayout]="'horizontal'">
+   </nz-list>
+
+  <ng-template  #userTemplate let-user>
+    <h4 nz-typography ><nz-avatar [routerLink]="['/user/', user.id]" nz-comment-avatar nzIcon="user" [nzSrc]="getAvatar(user)"></nz-avatar>
+    {{user.username}}</h4>
+  </ng-template>
+
+  <nz-divider *ngIf="postsFind.length > 0 " nzText="POST"></nz-divider>
+
+  <app-show-post *ngIf="postsFind.length > 0 " [posts]="postsFind"></app-show-post>
+
+  <nz-empty  *ngIf="userFind.length == 0 && postsFind.length == 0 "></nz-empty>
+</section>

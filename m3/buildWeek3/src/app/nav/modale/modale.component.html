@@ -1,0 +1,15 @@
+<nz-modal [(nzVisible)]="isVisible" (nzOnCancel)="handleCancel()">
+
+  <ng-container *nzModalTitle>
+    <h3>A cosa pensi?</h3>
+  </ng-container>
+
+  <ng-container *nzModalContent>
+    <app-form-modale (isVisible)="toggle()"></app-form-modale>
+  </ng-container>
+
+  <ng-container *nzModalFooter></ng-container>
+
+</nz-modal>
+
+

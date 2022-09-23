@@ -1,0 +1,30 @@
+.container {
+  padding: 0.5rem;
+  background-color: #fff;
+  margin: 3vh 0;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  max-width: 1200px;
+
+  @media (min-width: 768px) {
+    margin: 3vh 5%;
+  }
+
+  @media (min-width: 1300px) {
+    margin: 3vh auto;
+  }
+
+}
+
+
+::ng-deep .ant-divider-inner-text{
+  color: #fff;
+}
+
+nz-avatar {
+  cursor: pointer;
+}
+
+.search-bar {
+  margin: 2rem 15%;
+}

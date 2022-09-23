@@ -1,0 +1,16 @@
+<nz-comment>
+
+  <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="'https://i.pravatar.cc/150?img=' + loggedUser.user.id">
+  </nz-avatar>
+  <nz-comment-content>
+    <nz-form-item>
+      <textarea [(ngModel)]="contentValue" nz-input rows="2"></textarea>
+    </nz-form-item>
+    <nz-form-item>
+      <button nz-button nzType="primary" [nzLoading]="isLoading" [disabled]="!contentValue" (click)="handleSubmit()">
+        Add Comment
+      </button>
+    </nz-form-item>
+  </nz-comment-content>
+
+</nz-comment>

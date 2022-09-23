@@ -1,0 +1,14 @@
+ #avatar-container {
+   position: relative;
+   margin-top: 1rem;
+
+   >button {
+     top: 50px;
+     right: 30px
+   }
+ }
+
+
+ .ant-avatar{
+    left: calc(50% - 75px);
+   }
