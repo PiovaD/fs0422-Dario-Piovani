@@ -49,7 +49,7 @@ public class Helloworld {
 				perimetro(in.nextInt(), lr1)
 				);
 		
-		System.out.println(" area triangoilo: lato 1 ");
+		System.out.println("area triangoilo: lato 1 ");
 		double lt1 = in.nextDouble();
 		System.out.println("lato 2 ");
 		double lt2 = in.nextDouble();
@@ -79,14 +79,16 @@ public class Helloworld {
 
 	public static void printArr(String[] x) {
 		for(int i = 0; i < x.length; i++) {
-			System.out.println(x[i]);
+			System.out.print(x[i]  + '-');
 		}
+		System.out.println();
 	}
 
 	public static void printArrRev(String[] x) {
 		for (int i = x.length - 1; i >= 0; i--) {
-			System.out.println(x[i]);
+			System.out.print(x[i] + '-');
 		}
+		System.out.println();
 	}
 	
 	public static double perimetro(double l1, double l2) {
