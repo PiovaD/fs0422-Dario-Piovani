@@ -25,6 +25,7 @@ public class esercizio3 {
 }
 
 class Articolo {
+
 	int codArt;
 	String infoArt;
 	double price;
