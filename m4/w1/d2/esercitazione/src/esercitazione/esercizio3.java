@@ -10,17 +10,16 @@ public class esercizio3 {
 		Articolo a1 = new Articolo("Maglia", 10, 2);
 		Articolo a2 = new Articolo("Pantalone", 25, 1);
 		Articolo a3 = new Articolo("Scarpe", 50, 50);
-		
+
 		Carrello cart = new Carrello(c);
-		
+
 		cart.addArticle(a1);
 		cart.addArticle(a2);
 		cart.addArticle(a2);
 		cart.addArticle(a3);
 		cart.addArticle(a3);
-		
-		cart.printCarrello();
 
+		cart.printCarrello();
 	}
 }
 
