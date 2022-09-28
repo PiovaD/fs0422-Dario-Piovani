@@ -14,14 +14,9 @@ public class Esercizio3 {
 
 		while (!str.equals(":q")) {
 
-			// String newStr = str.replaceAll("", ",");
-
-			String[] newStr = str.split("");
-
-			for (String ch : newStr) {
-				System.out.printf(ch + ",");
-			}
-			System.out.println();
+			str = String.join(",", str.split("")); 
+			System.out.println(str);
+			
 			System.out.println("Inserisci stringa: ");
 			str = in.nextLine();
 		}
