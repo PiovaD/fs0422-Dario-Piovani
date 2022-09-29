@@ -33,7 +33,6 @@ public class GestioneDipendenti {
 			tot += Dipendente.calcolaPaga(dip, oreStr);
 		}
 		
-		
 		return tot;
 	}
 

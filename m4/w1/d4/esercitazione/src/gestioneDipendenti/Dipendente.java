@@ -31,19 +31,7 @@ public class Dipendente {
 	}
 
 	private void setStipendio() {
-		switch (this.livello) {
-		case OPERAIO:
-			break;
-		case IMPIEGATO:
-			this.stipendio = stipendioBase * 1.2;
-			break;
-		case QUADRO:
-			this.stipendio = stipendioBase * 1.5;
-			break;
-		case DIRIGENTE:
-			this.stipendio = stipendioBase * 2;
-			break;
-		}
+		this.stipendio = stipendioBase * this.livello.getMoltip();
 	}
 
 	public void setDipartimento(Dipartimento dip) {
@@ -97,7 +85,7 @@ public class Dipendente {
 			System.err.println("L'utente ha raggiunto il massimo livello della sua carriera");
 			break;
 		}
-		
+
 		setStipendio();
 	}
 
