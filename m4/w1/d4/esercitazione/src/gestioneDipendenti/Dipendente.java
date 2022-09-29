@@ -27,10 +27,12 @@ public class Dipendente {
 		this(matricola, dipart);
 		this.importoOrarioStraordinario = impOraStraora;
 		this.livello = livello;
+		setStipendio();
+	}
 
-		switch(this.livello) {
+	private void setStipendio() {
+		switch (this.livello) {
 		case OPERAIO:
-			this.stipendio = stipendioBase;
 			break;
 		case IMPIEGATO:
 			this.stipendio = stipendioBase * 1.2;
@@ -38,10 +40,10 @@ public class Dipendente {
 		case QUADRO:
 			this.stipendio = stipendioBase * 1.5;
 			break;
-		case DIRIGENTE:			
+		case DIRIGENTE:
 			this.stipendio = stipendioBase * 2;
 			break;
-		}	
+		}
 	}
 
 	public void setDipartimento(Dipartimento dip) {
@@ -73,45 +75,38 @@ public class Dipendente {
 	}
 
 	public void printData() {
-		System.out.printf( 
-				"Matricola: %s %n"
-				+ "Stipendio: %s %n"
-				+ "Importo Straordinario: %s %n"
-				+ "Livello: %s %n"
-				+ "Dipartimento: %s %n",
-				this.matricola,this.stipendio,
-				this.importoOrarioStraordinario,
-				this.livello,this.dipartimento);
+		System.out.printf(
+				"Matricola: %s %n" + "Stipendio: %s %n" + "Importo Straordinario: %s %n" + "Livello: %s %n"
+						+ "Dipartimento: %s %n",
+				this.matricola, this.stipendio, this.importoOrarioStraordinario, this.livello, this.dipartimento);
 	}
 
 	public void promuovi() {
-		
-		switch(this.livello) {
+
+		switch (this.livello) {
 		case OPERAIO:
-			this.livello= Livello.IMPIEGATO;
-			this.stipendio = stipendioBase * 1.2;
+			this.livello = Livello.IMPIEGATO;
 			break;
 		case IMPIEGATO:
-			this.livello= Livello.QUADRO;
-			this.stipendio = stipendioBase * 1.5;
+			this.livello = Livello.QUADRO;
 			break;
 		case QUADRO:
-			this.livello= Livello.DIRIGENTE;
-			this.stipendio = stipendioBase * 2;
+			this.livello = Livello.DIRIGENTE;
 			break;
-		case DIRIGENTE:			
+		case DIRIGENTE:
 			System.err.println("L'utente ha raggiunto il massimo livello della sua carriera");
 			break;
-		}		
+		}
+		
+		setStipendio();
 	}
 
 	public static double calcolaPaga(Dipendente dipendente) {
 		return dipendente.stipendio;
 	}
-	
+
 	public static double calcolaPaga(Dipendente dipendente, int oreStraordinario) {
 		return (dipendente.stipendio + (dipendente.importoOrarioStraordinario * oreStraordinario));
 	}
-	
 
 }
