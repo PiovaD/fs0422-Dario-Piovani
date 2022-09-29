@@ -3,7 +3,7 @@ package MyArray;
 public class MyArray {
 	int[] arr;
 
-	MyArray(int length) {
+	public MyArray(int length) {
 		this.arr = new int[length];
 	}
 

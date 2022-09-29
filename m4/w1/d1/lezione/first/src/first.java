@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class first {
@@ -7,8 +8,8 @@ public class first {
 		int x = 100;
 		byte v1 = 127;
 		short v2 = 32_767;
-		int v3 = 2147483647;
-		long v4 = 1000000000000000000L;
+		int v3 = 2_147_483_647;
+		long v4 = 9200000000000000000L;
 
 		System.out.println(x);
 
@@ -25,7 +26,7 @@ public class first {
 		char v7 = 'c';
 
 		char v8 = 'i';
-
+		
 		System.out.println(v7 + v8);
 
 		String name = "Luigi";
