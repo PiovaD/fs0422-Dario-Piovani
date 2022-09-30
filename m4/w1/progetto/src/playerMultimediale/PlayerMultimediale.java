@@ -10,12 +10,11 @@ public class PlayerMultimediale {
 		ElementoMultimediale[] lettore = new ElementoMultimediale[5];
 
 		for (int i = 0; i < lettore.length; i++) {
-
 			lettore[i] = inserimento(i, in);
 		}
 
 		printListaMultimedia(lettore);
-		
+
 		whatsNext(lettore, in);
 
 		System.out.println("the end");
@@ -25,7 +24,7 @@ public class PlayerMultimediale {
 	static void printListaMultimedia(ElementoMultimediale[] arr) {
 		System.out.println("--- i tuoi elementi ---");
 		for (int i = 0; i < arr.length; i++) {
-			System.out.println((i+1) + ": " + arr[i].getTitle());
+			System.out.println((i + 1) + ": " + arr[i].getTitle());
 		}
 		System.out.println("-----------------------");
 	}
@@ -54,7 +53,7 @@ public class PlayerMultimediale {
 
 	}
 
-	static void whatsNext(ElementoMultimediale[] arr,Scanner in) {
+	static void whatsNext(ElementoMultimediale[] arr, Scanner in) {
 		int then;
 		do {
 
@@ -62,13 +61,13 @@ public class PlayerMultimediale {
 			then = Integer.parseInt(in.nextLine());
 
 			if (then > 0 && then <= 5) {
-
+		
 				arr[then - 1].esegui();
 			}
 
 		} while (then != 0);
 	}
-	
+
 	static Immagine creaImmagine(Scanner in) {
 		return new Immagine(title(in), brightness(in));
 	}
