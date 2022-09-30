@@ -19,6 +19,10 @@ public class Audio extends ElementoMultimediale implements IPlayable {
 		return this.volume;
 	}
 
+	public void setVolume(int v) {
+		this.volume = v;
+	}
+
 	@Override
 	public void esegui() {
 		for (int i = 0; i < this.duration; i++) {
@@ -40,7 +44,9 @@ public class Audio extends ElementoMultimediale implements IPlayable {
 	}
 
 	public void volumeDown() {
-		this.volume--;
+		if (this.volume > 0) {
+			this.volume--;
+		}
 	}
 
 }

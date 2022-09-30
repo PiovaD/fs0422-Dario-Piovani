@@ -21,8 +21,16 @@ public class Video extends ElementoMultimediale implements IShowable, IPlayable 
 		return this.volume;
 	}
 
+	public void setVolume(int v) {
+		this.volume = v;
+	}
+
 	public int getBrightness() {
 		return this.brightness;
+	}
+
+	public void setBrightness(int b) {
+		this.brightness = b;
 	}
 
 	@Override
@@ -47,7 +55,7 @@ public class Video extends ElementoMultimediale implements IShowable, IPlayable 
 	public void show() {
 		System.out.printf("Luminosità: ");
 		for (int i = 0; i < this.brightness; i++) {
-			System.out.printf("*");
+			System.out.printf("!");
 		}
 		System.out.println();
 	}
@@ -57,7 +65,9 @@ public class Video extends ElementoMultimediale implements IShowable, IPlayable 
 	}
 
 	public void volumeDown() {
-		this.volume--;
+		if (this.volume > 0) {
+			this.volume--;
+		}
 	}
 
 	public void brightnessUp() {
@@ -65,7 +75,9 @@ public class Video extends ElementoMultimediale implements IShowable, IPlayable 
 	}
 
 	public void brightnessDown() {
-		this.brightness--;
+		if (this.brightness > 0) {
+			this.brightness--;
+		}
 	}
 
 }

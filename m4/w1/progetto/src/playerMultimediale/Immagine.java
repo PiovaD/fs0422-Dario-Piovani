@@ -13,6 +13,10 @@ public class Immagine extends ElementoMultimediale implements IShowable {
 		return this.brightness;
 	}
 
+	public void setBrightness(int b) {
+		this.brightness = b;
+		}
+	
 	@Override
 	public void esegui() {
 		System.out.println(super.getTitle());
@@ -23,7 +27,7 @@ public class Immagine extends ElementoMultimediale implements IShowable {
 	public void show() {
 		System.out.printf("Luminosità: ");
 		for (int i = 0; i < this.brightness; i++) {
-			System.out.printf("*");
+			System.out.printf("!");
 		}
 		System.out.println();
 	}
@@ -33,7 +37,9 @@ public class Immagine extends ElementoMultimediale implements IShowable {
 	}
 
 	public void brightnessDown() {
-		this.brightness--;
+		if (this.brightness > 0) {
+			this.brightness--;
+		}
 	}
 
 }
