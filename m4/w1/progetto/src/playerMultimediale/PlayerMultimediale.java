@@ -9,18 +9,19 @@ import playerMultimediale.multimedia.Video;
 
 public class PlayerMultimediale {
 
+	private static Scanner in = new Scanner(System.in);
+	
 	public static void main(String[] args) {
-
-		Scanner in = new Scanner(System.in);
+		
 		ElementoMultimediale[] lettore = new ElementoMultimediale[5];
 
 		for (int i = 0; i < lettore.length; i++) {
-			lettore[i] = inserimento(i, in);
+			lettore[i] = inserimento(i);
 		}
 
 		printListaMultimedia(lettore);
 
-		whatsNext(lettore, in);
+		whatsNext(lettore);
 
 		System.out.println("the end");
 		in.close();
@@ -34,7 +35,7 @@ public class PlayerMultimediale {
 		System.out.println("-----------------------");
 	}
 
-	static ElementoMultimediale inserimento(int i, Scanner in) {
+	static ElementoMultimediale inserimento(int i) {
 		String userIns;
 
 		while (true) {
@@ -44,13 +45,13 @@ public class PlayerMultimediale {
 			switch (userIns) {
 
 			case "VIDEO":
-				return creaVideo(in);
+				return creaVideo();
 
 			case "AUDIO":
-				return creaAudio(in);
+				return creaAudio();
 
 			case "IMMAGINE":
-				return creaImmagine(in);
+				return creaImmagine();
 			}
 
 			System.out.println("Errore nella selezione del tipo");
@@ -58,7 +59,7 @@ public class PlayerMultimediale {
 
 	}
 
-	static void whatsNext(ElementoMultimediale[] arr, Scanner in) {
+	static void whatsNext(ElementoMultimediale[] arr) {
 		int then;
 		do {
 
@@ -73,20 +74,20 @@ public class PlayerMultimediale {
 		} while (then != 0);
 	}
 
-	static Immagine creaImmagine(Scanner in) {
-		return new Immagine(title(in), brightness(in));
+	static Immagine creaImmagine() {
+		return new Immagine(title(), brightness());
 	}
 
-	static Audio creaAudio(Scanner in) {
-		return new Audio(title(in), duration(in), volume(in));
+	static Audio creaAudio() {
+		return new Audio(title(), duration(), volume());
 	}
 
-	static Video creaVideo(Scanner in) {
-		return new Video(title(in), duration(in), volume(in), brightness(in));
+	static Video creaVideo() {
+		return new Video(title(), duration(), volume(), brightness());
 
 	}
 
-	private static String title(Scanner in) {
+	private static String title() {
 		System.out.printf("Inserisci il titolo: ");
 		String title;
 		do {
@@ -98,22 +99,22 @@ public class PlayerMultimediale {
 		return title;
 	}
 
-	private static int duration(Scanner in) {
+	private static int duration() {
 		System.out.printf("Inserisci la durata > di 0: ");
-		return intVal(in);
+		return intVal();
 	}
 
-	private static int brightness(Scanner in) {
+	private static int brightness() {
 		System.out.printf("Inserisci la luminosità > di 0: ");
-		return intVal(in);
+		return intVal();
 	}
 
-	private static int volume(Scanner in) {
+	private static int volume() {
 		System.out.printf("Inserisci il volume > di 0: ");
-		return intVal(in);
+		return intVal();
 	}
 
-	private static int intVal(Scanner in) {
+	private static int intVal() {
 				
 		int val = Integer.parseInt(in.nextLine());
 		
