@@ -94,17 +94,17 @@ public class PlayerMultimediale {
 	}
 
 	private static int duration(Scanner in) {
-		System.out.printf("Inserisci la durata >= di 0: ");
+		System.out.printf("Inserisci la durata > di 0: ");
 		return intVal(in);
 	}
 
 	private static int brightness(Scanner in) {
-		System.out.printf("Inserisci la luminosità >= di 0: ");
+		System.out.printf("Inserisci la luminosità > di 0: ");
 		return intVal(in);
 	}
 
 	private static int volume(Scanner in) {
-		System.out.printf("Inserisci il volume >= di 0: ");
+		System.out.printf("Inserisci il volume > di 0: ");
 		return intVal(in);
 	}
 
