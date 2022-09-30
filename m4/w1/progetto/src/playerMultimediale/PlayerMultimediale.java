@@ -66,7 +66,7 @@ public class PlayerMultimediale {
 			System.out.println("Quale oggetto vuoi eseguire(inserisci numero da 1 a 5 oppure 0 per finire)");
 			then = Integer.parseInt(in.nextLine());
 
-			if (then > 0 && then <= 5) {
+			if (then > 0 && then <= arr.length) {
 		
 				arr[then - 1].esegui();
 			}
