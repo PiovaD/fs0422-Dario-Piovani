@@ -2,6 +2,11 @@ package playerMultimediale;
 
 import java.util.Scanner;
 
+import playerMultimediale.multimedia.Audio;
+import playerMultimediale.multimedia.ElementoMultimediale;
+import playerMultimediale.multimedia.Immagine;
+import playerMultimediale.multimedia.Video;
+
 public class PlayerMultimediale {
 
 	public static void main(String[] args) {
@@ -109,7 +114,9 @@ public class PlayerMultimediale {
 	}
 
 	private static int intVal(Scanner in) {
+				
 		int val = Integer.parseInt(in.nextLine());
+		
 		while (val <= 0) {
 			System.out.println("Valore inserito errato, riprova (deve essere maggiore di 0)");
 			val = Integer.parseInt(in.nextLine());

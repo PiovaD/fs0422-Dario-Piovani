@@ -1,4 +1,4 @@
-package playerMultimediale;
+package playerMultimediale.multimedia;
 
 public class Immagine extends ElementoMultimediale implements IShowable {
 

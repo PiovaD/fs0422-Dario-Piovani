@@ -1,4 +1,4 @@
-package playerMultimediale;
+package playerMultimediale.multimedia;
 
 public abstract class ElementoMultimediale {
 

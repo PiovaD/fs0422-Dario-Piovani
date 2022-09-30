@@ -1,4 +1,4 @@
-package playerMultimediale;
+package playerMultimediale.multimedia;
 
 public class Video extends ElementoMultimediale implements IShowable, IPlayable {
 

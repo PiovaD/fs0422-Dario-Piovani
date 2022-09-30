@@ -1,4 +1,4 @@
-package playerMultimediale;
+package playerMultimediale.multimedia;
 
 public class Audio extends ElementoMultimediale implements IPlayable {
 
