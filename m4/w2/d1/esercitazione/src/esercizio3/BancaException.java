@@ -10,13 +10,9 @@ public class BancaException extends Exception {
 		super(message);
 		this.message = message;
 	}
-
-	public String getMessage() {
-		return message;
-	}
 	
 	@Override
 	public String toString() {
-		return this.message;
+		return "BANCAEXCEPTION - " + this.message;
 	}
 }
