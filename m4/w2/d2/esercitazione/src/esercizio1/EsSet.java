@@ -3,6 +3,7 @@ package esercizio1;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class EsSet {
 
@@ -11,7 +12,7 @@ public class EsSet {
 	public static void main(String[] args) {
 
 		int elemQuantita = 0;
-		HashSet<String> hSet = new HashSet<>();
+		Set<String> hSet = new HashSet<>();
 
 		ArrayList<String> duplicate = new ArrayList<>();
 

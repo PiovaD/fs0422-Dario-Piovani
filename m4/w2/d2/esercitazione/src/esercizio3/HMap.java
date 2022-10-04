@@ -9,6 +9,8 @@ public class HMap {
 		r1.addPerson("Wario", 121435104);
 		r1.addPerson("Carlo", 1215143204);
 
+		r1.addPerson("Carlo", 1215143204);
+
 		System.out.println(r1.removePerson("Malario") ? "Rimosso" : "Non trovato");
 		
 		System.out.printf("Riusltato ricerca per numero: %n" + r1.findPerson(1215143204) + "%n");

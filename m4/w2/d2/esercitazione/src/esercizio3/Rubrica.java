@@ -5,12 +5,13 @@ import java.util.Map;
 
 public class Rubrica {
 
-	private HashMap<String, Integer> rubric = new HashMap<>();
+	private Map<String, Integer> rubric = new HashMap<>();
 
 	public Rubrica() {
 	}
 
 	public void addPerson(String name, int number) {
+		if (rubric.containsKey(name)) System.err.println("Nome già esistente");
 		this.rubric.put(name, number);
 	}
 
@@ -23,6 +24,11 @@ public class Rubrica {
 		return rubric.containsValue(number) ? "Nome: " + returnKey(number) + " Numero: " + number : "non trovato";
 	}
 
+	public String findPerson(String name) {
+
+		return rubric.containsKey(name) ? "Nome: " + name + " Numero: " + rubric.get(name).toString() : "non trovato";
+	}
+
 	private String returnKey(int number) {
 
 		for (Map.Entry<String, Integer> entry : rubric.entrySet()) {
@@ -32,11 +38,6 @@ public class Rubrica {
 		}
 
 		return "";
-	}
-
-	public String findPerson(String name) {
-
-		return rubric.containsKey(name) ? "Nome: " + name + " Numero: " + rubric.get(name).toString() : "non trovato";
 	}
 
 	public void print() {
