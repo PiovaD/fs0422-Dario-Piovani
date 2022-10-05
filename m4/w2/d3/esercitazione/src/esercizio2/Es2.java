@@ -13,9 +13,17 @@ public class Es2 {
 
 		ArrayList<Integer> intArr = generaArr(3000);
 
-		ThParziale tP1 = new ThParziale("a", intArr.subList(0, ((intArr.size() / 3) - 1)));
-		ThParziale tP2 = new ThParziale("b", intArr.subList(intArr.size() / 3, (((intArr.size() / 3) * 2) - 1)));
-		ThParziale tP3 = new ThParziale("c", intArr.subList(((intArr.size() / 3) * 2), 3000 - 1));
+		ThParziale.logger.info(" s");
+		int somma = 0;
+		for (int i : intArr) {
+			somma += i;
+		}
+
+		ThParziale.logger.info(" f" + somma);
+
+		ThParziale tP1 = new ThParziale("a", intArr.subList(0, (intArr.size()/3)));
+		ThParziale tP2 = new ThParziale("b", intArr.subList((intArr.size()/3), (intArr.size()/3)*2));
+		ThParziale tP3 = new ThParziale("c", intArr.subList((intArr.size()/3)*2,intArr.size()));
 
 		tP1.start();
 		tP2.start();
@@ -61,9 +69,12 @@ class ThParziale extends Thread {
 	}
 
 	private void somma() {
+		logger.info(this.getName() + " s");
 		for (int i : intArr) {
 			this.somma += i;
 		}
+
+		logger.info(this.getName() + " f");
 	}
 
 	public int getSomma() {

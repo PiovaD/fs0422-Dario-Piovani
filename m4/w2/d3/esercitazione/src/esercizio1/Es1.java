@@ -7,8 +7,8 @@ public class Es1 {
 
 	public static void main(String[] args) {
 
-		Thread t1 = new Th("*");
-		Thread t2 = new Th("#");
+		Th t1 = new Th("*");
+		Th t2 = new Th("#");
 
 		t1.start();
 		t2.start();
