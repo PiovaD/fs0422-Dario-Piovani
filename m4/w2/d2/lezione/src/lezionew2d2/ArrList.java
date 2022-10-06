@@ -2,11 +2,11 @@ package lezionew2d2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 public class ArrList {
 
+	@SuppressWarnings("removal")
 	public static void main(String[] args) {
 
 		ArrayList<String> words = new ArrayList<>();
@@ -25,6 +25,7 @@ public class ArrList {
 		people.add(p1);
 		people.add(p2);
 
+		@SuppressWarnings("unchecked")
 		ArrayList<Person> peopleClone = (ArrayList<Person>) people.clone();
 
 		System.out.println(people == peopleClone);

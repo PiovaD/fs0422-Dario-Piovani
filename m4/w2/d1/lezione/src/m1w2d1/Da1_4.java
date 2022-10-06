@@ -1,7 +1,5 @@
 package m1w2d1;
 
-import java.util.Scanner;
-
 public class Da1_4 {
 
 	public static void main(String[] args) {
