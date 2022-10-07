@@ -47,16 +47,24 @@ public class Archive {
 		System.out.println(this.archive.remove(ISBN) != null ? "Rimozione riuscita" : "Rimozione non riuscita");
 	}
 
-	public Catalog find(int ISBN) {
+	/**
+	 * Inserisci il numero senza gli eventuali zero frontali
+	 * */
+	public Catalog find(int NoZeroISBN) {
+
+		Catalog found = this.archive.get(NoZeroISBN);
+		
+		System.out.println(NoZeroISBN);
+		
 		try {
-			if (this.archive.get(ISBN) == null) {
+			if (found == null) {
 				throw new ArchiveException("Elemento non trovato");
 			}
 		} catch (ArchiveException e) {
 			System.out.println(e.getLocalizedMessage());
-			
+
 		}
-		return this.archive.get(ISBN);
+		return found;
 	}
 
 	public Map<Integer, Catalog> find(Year year) {
@@ -101,6 +109,7 @@ public class Archive {
 
 			return true;
 		}
+
 		return false;
 	}
 
@@ -111,6 +120,7 @@ public class Archive {
 			s += entry.getValue()
 					.forDiskString();
 		}
+
 		return s;
 
 	}
@@ -132,7 +142,7 @@ public class Archive {
 				addBook(splitData(tmp[1]));
 
 			} else {
-				System.err.println("Dato errato lettura impossibile");
+				System.err.println("Dato errato: lettura impossibile");
 			}
 
 		}

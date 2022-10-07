@@ -30,7 +30,7 @@ public class Magazine extends Catalog {
 
 	@Override
 	public String toString() {
-		return "Rivista [ codice ISBN: " + this.getISBN() + ", titolo: " + this.getTitle() + ", Anno di pubblicazione: "
+		return "Rivista [ codice ISBN: " + String.format("%07d", this.getISBN()) + ", titolo: " + this.getTitle() + ", Anno di pubblicazione: "
 				+ this.getPublicationYear() + ", N° di pagine: " + this.getPageNumber() + ", Periodicità: "
 				+ this.getPeriodicity() + " ]";
 	}

@@ -37,11 +37,15 @@ public class Main {
 		a1.add(new Book("Viaggi su Andromeda", 2012, 543, "Ermanno Vivaldi", "Fantascienza"));
 		a1.add(new Magazine("Il coding per tutti", 2015, 23, Periodicity.SETTIMANALE));
 
+		sep("Trova ISBN");
+		Catalog c1 = a1.find(7);
+		System.out.println(c1);
+		
 		sep("Rimozione");
 		a1.remove(5);
 
 		sep("Trova ISBN");
-		Catalog c1 = a1.find(5);
+		c1 = a1.find(5);
 		System.out.println(c1);
 
 		sep("Trova autore");

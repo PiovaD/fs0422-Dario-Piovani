@@ -41,7 +41,7 @@ public class Book extends Catalog {
 
 	@Override
 	public String toString() {
-		return "Libro [ codice ISBN: " + this.getISBN() + ", titolo: " + this.getTitle() + ", Anno di pubblicazione: "
+		return "Libro [ codice ISBN: " + String.format("%07d", this.getISBN()) + ", titolo: " + this.getTitle() + ", Anno di pubblicazione: "
 				+ this.getPublicationYear() + ", N° di pagine: " + this.getPageNumber() + ", autore: "
 				+ this.getAuthor() + ", genere: " + this.getGenre() + " ]";
 	}
