@@ -5,7 +5,7 @@ import java.time.Year;
 public abstract class Catalog {
 	private static int ISBNId = 0;
 
-	private int ISBN; 
+	private int ISBN;
 	private String title;
 	private Year publicationYear;
 	private int pageNumber;
@@ -21,7 +21,7 @@ public abstract class Catalog {
 		return ISBN;
 	}
 
-	private void setISBN() {		
+	private void setISBN() {
 		this.ISBN = ISBNId++;
 	}
 
@@ -48,5 +48,7 @@ public abstract class Catalog {
 	public void setPageNumber(int pageNumber) {
 		this.pageNumber = pageNumber;
 	}
+
+	public abstract String forDiskString();
 
 }
