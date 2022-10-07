@@ -10,6 +10,12 @@ public class Book extends Catalog {
 		this.setAuthor(author);
 		this.setGenre(genre);
 	}
+	
+	protected Book(int ISBN, String title, int publicationYear, int pageNumber, String author, String genre) {
+		super(ISBN, title, publicationYear, pageNumber);
+		this.setAuthor(author);
+		this.setGenre(genre);
+	}
 
 	public String getAuthor() {
 		return author;

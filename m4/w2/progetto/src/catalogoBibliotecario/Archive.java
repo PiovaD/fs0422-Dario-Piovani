@@ -48,6 +48,14 @@ public class Archive {
 	}
 
 	public Catalog find(int ISBN) {
+		try {
+			if (this.archive.get(ISBN) == null) {
+				throw new ArchiveException("Elemento non trovato");
+			}
+		} catch (ArchiveException e) {
+			System.out.println(e.getLocalizedMessage());
+			
+		}
 		return this.archive.get(ISBN);
 	}
 
@@ -146,9 +154,9 @@ public class Archive {
 	private void addBook(ArrayList<String> data) {
 
 		if (data.size() == 6)
-			this.add(new Book(data.get(1), Integer.parseInt(data.get(2)), Integer.parseInt(data.get(3)), data.get(4),
-					data.get(5)));
 
+			this.add(new Book(Integer.parseInt(data.get(0)), data.get(1), Integer.parseInt(data.get(2)),
+					Integer.parseInt(data.get(3)), data.get(4), data.get(5)));
 		else
 			System.err.println("Errore elaborazione dati " + data.toString());
 
@@ -157,12 +165,21 @@ public class Archive {
 	private void addMegazine(ArrayList<String> data) {
 
 		if (data.size() == 5)
-			this.add(new Magazine(data.get(1), Integer.parseInt(data.get(2)), Integer.parseInt(data.get(3)),
-					Periodicity.valueOf(data.get(4))));
+
+			this.add(new Magazine(Integer.parseInt(data.get(0)), data.get(1), Integer.parseInt(data.get(2)),
+					Integer.parseInt(data.get(3)), Periodicity.valueOf(data.get(4))));
 
 		else
 			System.err.println("Errore elaborazione dati " + data.toString());
 
 	}
 
+}
+
+@SuppressWarnings("serial")
+class ArchiveException extends Exception {
+
+	public ArchiveException(String message) {
+		super(message);
+	}
 }

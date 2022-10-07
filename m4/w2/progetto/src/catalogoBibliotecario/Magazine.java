@@ -8,6 +8,11 @@ public class Magazine extends Catalog {
 		super(title, publicationYear, pageNumber);
 		this.setPeriodicity(periodicity);
 	}
+	
+	public Magazine(int ISBN, String title, int publicationYear, int pageNumber, Periodicity periodicity) {
+		super(ISBN, title, publicationYear, pageNumber);
+		this.setPeriodicity(periodicity);
+	}
 
 	public Periodicity getPeriodicity() {
 		return periodicity;

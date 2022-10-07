@@ -17,12 +17,24 @@ public abstract class Catalog {
 		this.setPageNumber(pageNumber);
 	}
 
+	protected Catalog(int _ISBN, String title, int publicationYear, int pageNumber) {
+		this(title, publicationYear, pageNumber);
+		this.setISBNId(_ISBN);
+
+	}
+
 	public int getISBN() {
 		return ISBN;
 	}
 
 	private void setISBN() {
 		this.ISBN = ISBNId++;
+	}
+
+	private void setISBNId(int _ISBN) {
+		if (ISBNId < _ISBN)
+			ISBNId = _ISBN;
+		this.ISBN = _ISBN;
 	}
 
 	public String getTitle() {
