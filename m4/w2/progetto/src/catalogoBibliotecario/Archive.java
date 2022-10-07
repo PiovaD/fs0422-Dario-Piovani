@@ -54,8 +54,6 @@ public class Archive {
 
 		Catalog found = this.archive.get(NoZeroISBN);
 		
-		System.out.println(NoZeroISBN);
-		
 		try {
 			if (found == null) {
 				throw new ArchiveException("Elemento non trovato");
