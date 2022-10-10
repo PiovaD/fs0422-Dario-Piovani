@@ -50,25 +50,25 @@ public class EventoDAO {
 
 	}
 
-	public static void delete(Evento obj) {
+	public static void delete(Long id) {
 
-		EntityManager em = JpaUtil.getEntityManagerFactory()
-				.createEntityManager();
+		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 
+		
 		try {
 			EntityTransaction t = em.getTransaction();
 
 			t.begin();
+			
 
-			em.remove(obj);
+			em.remove(em.find(Evento.class, id));
 			
 			t.commit();
 		} catch (Exception ex) {
 			em.getTransaction()
 					.rollback();
 
-			logger.error("Errore cancellazione evento: " + obj.getClass()
-					.getSimpleName(), ex);
+			logger.error("Errore cancellazione evento: " + id, ex);
 
 			throw ex;
 

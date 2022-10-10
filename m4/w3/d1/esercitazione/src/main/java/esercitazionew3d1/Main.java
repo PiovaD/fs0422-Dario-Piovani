@@ -22,7 +22,7 @@ public static void main(String[] args) {
 		
 		//EventoDAO.refresh(evento1);
 		
-		EventoDAO.delete(evento1);
+		EventoDAO.delete(1L);
 	}
 
 }
