@@ -1,4 +1,4 @@
-package models;
+package models.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -6,7 +6,9 @@ import javax.persistence.EntityTransaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import models.Evento;
 import utils.JpaUtil;
+import utils.LogColor;
 
 public class EventoDAO {
 	private static final Logger logger = LoggerFactory.getLogger(EventoDAO.class);
@@ -28,8 +30,8 @@ public class EventoDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error("Errore di salvataggio:  " + obj.getClass()
-					.getSimpleName(), ex);
+			logger.error(LogColor.ANSI_RED + "Errore di salvataggio Evento:  " + obj.getClass()
+					.getSimpleName() + LogColor.ANSI_RED, ex);
 		} finally {
 			em.close();
 		}
@@ -68,7 +70,7 @@ public class EventoDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error("Errore cancellazione evento: " + id, ex);
+			logger.error(LogColor.ANSI_RED + "Errore cancellazione Evento: " + id + LogColor.ANSI_RED, ex);
 
 
 		} finally {
@@ -89,8 +91,8 @@ public class EventoDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error("Error refreshing object: " + obj.getClass()
-					.getSimpleName(), ex);
+			logger.error(LogColor.ANSI_RED + "Error refreshing Evento: " + obj.getClass()
+					.getSimpleName() + LogColor.ANSI_RED, ex);
 
 		} finally {
 			em.close();

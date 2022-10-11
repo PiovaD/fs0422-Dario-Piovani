@@ -1,4 +1,4 @@
-package models;
+package models.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -6,12 +6,15 @@ import javax.persistence.EntityTransaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import models.Partecipazione;
 import utils.JpaUtil;
+import utils.LogColor;
 
-public class EventoDAO {
+public class PartecipazioneDAO {
+
 	private static final Logger logger = LoggerFactory.getLogger(EventoDAO.class);
 
-	public static void save(Evento obj) {
+	public static void save(Partecipazione obj) {
 
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
@@ -28,21 +31,21 @@ public class EventoDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error("Errore di salvataggio:  " + obj.getClass()
-					.getSimpleName(), ex);
+			logger.error(LogColor.ANSI_RED + "Errore di salvataggio Partecipazione:  " + obj.getClass()
+					.getSimpleName() + LogColor.ANSI_RED, ex);
 		} finally {
 			em.close();
 		}
 
 	}
 
-	public static Evento getById(Long id) {
+	public static Partecipazione getById(Long id) {
 
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
 		try {
 
-			return em.find(Evento.class, id);
+			return em.find(Partecipazione.class, id);
 
 		} finally {
 			em.close();
@@ -61,14 +64,14 @@ public class EventoDAO {
 			t.begin();
 			
 
-			em.remove(em.find(Evento.class, id));
+			em.remove(em.find(Partecipazione.class, id));
 			
 			t.commit();
 		} catch (Exception ex) {
 			em.getTransaction()
 					.rollback();
 
-			logger.error("Errore cancellazione evento: " + id, ex);
+			logger.error(LogColor.ANSI_RED + "Errore cancellazione Partecipazione: " + id + LogColor.ANSI_RED, ex);
 
 
 		} finally {
@@ -77,20 +80,19 @@ public class EventoDAO {
 
 	}
 
-	public static void refresh(Evento obj) {
+	public static void refresh(Long id) {
 
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
 		try {
 
-			em.refresh(obj);
+			em.refresh(em.find(Partecipazione.class, id));
 
 		} catch (Exception ex) {
 			em.getTransaction()
 					.rollback();
 
-			logger.error("Error refreshing object: " + obj.getClass()
-					.getSimpleName(), ex);
+			logger.error(LogColor.ANSI_RED + "Error refreshing Partecipazione: " + LogColor.ANSI_RED, ex);
 
 		} finally {
 			em.close();

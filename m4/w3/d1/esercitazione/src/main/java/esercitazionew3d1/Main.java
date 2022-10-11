@@ -20,9 +20,9 @@ public static void main(String[] args) {
 
 		System.out.println(EventoDAO.getById(1L));
 		
-		//EventoDAO.refresh(evento1);
+		EventoDAO.refresh(evento1);
 		
-		EventoDAO.delete(1L);
+		EventoDAO.delete(3L);
 	}
 
 }
