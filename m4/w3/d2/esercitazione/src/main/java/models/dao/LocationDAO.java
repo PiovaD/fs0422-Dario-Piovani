@@ -30,8 +30,8 @@ public class LocationDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Errore di salvataggio Location:  " + obj.getClass()
-					.getSimpleName() + LogColor.ANSI_RED, ex);
+			logger.error(LogColor.RED("Errore di salvataggio Location:  " + obj.getClass()
+					.getSimpleName()), ex);
 		} finally {
 			em.close();
 		}
@@ -54,24 +54,22 @@ public class LocationDAO {
 
 	public static void delete(Long id) {
 
-		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
 
-		
 		try {
 			EntityTransaction t = em.getTransaction();
 
 			t.begin();
-			
 
 			em.remove(em.find(Location.class, id));
-			
+
 			t.commit();
 		} catch (Exception ex) {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Errore cancellazione Location: " + id + LogColor.ANSI_RED, ex);
-
+			logger.error(LogColor.RED("Errore cancellazione Location: " + id), ex);
 
 		} finally {
 			em.close();
@@ -91,7 +89,7 @@ public class LocationDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Error refreshing Location: " + LogColor.ANSI_RED, ex);
+			logger.error(LogColor.RED("Error refreshing Location: "), ex);
 
 		} finally {
 			em.close();

@@ -13,7 +13,7 @@ public class Location {
 	
 	@Id
 	@SequenceGenerator(name = "location_seq", sequenceName = "location_seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "location_seq")
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "location_seq")
 	private Long id;
 	
 	private String nome;

@@ -30,8 +30,8 @@ public class EventoDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Errore di salvataggio Evento:  " + obj.getClass()
-					.getSimpleName() + LogColor.ANSI_RED, ex);
+			logger.error(LogColor.RED("Errore di salvataggio Evento:  " + obj.getClass()
+					.getSimpleName()), ex);
 		} finally {
 			em.close();
 		}
@@ -42,6 +42,7 @@ public class EventoDAO {
 
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
+
 		try {
 
 			return em.find(Evento.class, id);
@@ -54,24 +55,22 @@ public class EventoDAO {
 
 	public static void delete(Long id) {
 
-		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
 
-		
 		try {
 			EntityTransaction t = em.getTransaction();
 
 			t.begin();
-			
 
 			em.remove(em.find(Evento.class, id));
-			
+
 			t.commit();
 		} catch (Exception ex) {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Errore cancellazione Evento: " + id + LogColor.ANSI_RED, ex);
-
+			logger.error(LogColor.RED("Errore cancellazione Evento: " + id), ex);
 
 		} finally {
 			em.close();
@@ -91,8 +90,8 @@ public class EventoDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Error refreshing Evento: " + obj.getClass()
-					.getSimpleName() + LogColor.ANSI_RED, ex);
+			logger.error(LogColor.RED("Error refreshing Evento: " + obj.getClass()
+					.getSimpleName()), ex);
 
 		} finally {
 			em.close();

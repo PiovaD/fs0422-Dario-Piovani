@@ -31,8 +31,8 @@ public class PersonaDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Errore di salvataggio Persona:  " + obj.getClass()
-					.getSimpleName() + LogColor.ANSI_RED, ex);
+			logger.error(LogColor.RED("Errore di salvataggio Persona:  " + obj.getClass()
+					.getSimpleName()), ex);
 		} finally {
 			em.close();
 		}
@@ -55,24 +55,22 @@ public class PersonaDAO {
 
 	public static void delete(Long id) {
 
-		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
 
-		
 		try {
 			EntityTransaction t = em.getTransaction();
 
 			t.begin();
-			
 
 			em.remove(em.find(Persona.class, id));
-			
+
 			t.commit();
 		} catch (Exception ex) {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Errore cancellazione Persona: " + id + LogColor.ANSI_RED, ex);
-
+			logger.error(LogColor.RED("Errore cancellazione Persona: " + id), ex);
 
 		} finally {
 			em.close();
@@ -92,7 +90,7 @@ public class PersonaDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Error refreshing Persona: " + LogColor.ANSI_RED, ex);
+			logger.error(LogColor.RED("Error refreshing Persona: "), ex);
 
 		} finally {
 			em.close();

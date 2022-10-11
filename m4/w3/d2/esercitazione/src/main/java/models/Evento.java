@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,7 +37,7 @@ public class Evento {
 	
 	private int numeroMassimoPartecipanti;
 	
-	@OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "event", cascade = CascadeType.ALL)
 	private Set<Partecipazione> partecipazioni;
 	
 	@ManyToOne

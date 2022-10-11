@@ -25,16 +25,16 @@ public class Main {
 
 		Partecipazione par = savePartecipazione(ev, per, Stato.CONFERMATA);
 
-		System.out.println(LogColor.ANSI_GREEN + loc + LogColor.ANSI_RESET);
+		System.out.println(LogColor.GREEN(loc.toString()));
 		
-		System.out.println(LogColor.ANSI_GREEN + ev + LogColor.ANSI_RESET);
+		System.out.println(LogColor.GREEN(ev.toString()));
 		
-		System.out.println(LogColor.ANSI_GREEN + per + LogColor.ANSI_RESET);
+		System.out.println(LogColor.GREEN(per.toString()));
 		
-		System.out.println(LogColor.ANSI_GREEN + par + LogColor.ANSI_RESET);
+		System.out.println(LogColor.GREEN(par.toString()));
 		
-		//Evento ev = EventoDAO.getById(1L);
-		//System.out.println(LogColor.ANSI_GREEN + ev + LogColor.ANSI_RESET);
+		//Evento ev2 = EventoDAO.getById(1L);
+		//System.out.println(LogColor.GREEN(ev2.toString()));
 		
 
 	}

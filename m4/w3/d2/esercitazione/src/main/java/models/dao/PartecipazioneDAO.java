@@ -31,8 +31,8 @@ public class PartecipazioneDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Errore di salvataggio Partecipazione:  " + obj.getClass()
-					.getSimpleName() + LogColor.ANSI_RED, ex);
+			logger.error(LogColor.RED("Errore di salvataggio Partecipazione:  " + obj.getClass()
+					.getSimpleName()), ex);
 		} finally {
 			em.close();
 		}
@@ -55,24 +55,22 @@ public class PartecipazioneDAO {
 
 	public static void delete(Long id) {
 
-		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
 
-		
 		try {
 			EntityTransaction t = em.getTransaction();
 
 			t.begin();
-			
 
 			em.remove(em.find(Partecipazione.class, id));
-			
+
 			t.commit();
 		} catch (Exception ex) {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Errore cancellazione Partecipazione: " + id + LogColor.ANSI_RED, ex);
-
+			logger.error(LogColor.RED("Errore cancellazione Partecipazione: " + id), ex);
 
 		} finally {
 			em.close();
@@ -92,7 +90,7 @@ public class PartecipazioneDAO {
 			em.getTransaction()
 					.rollback();
 
-			logger.error(LogColor.ANSI_RED + "Error refreshing Partecipazione: " + LogColor.ANSI_RED, ex);
+			logger.error(LogColor.RED("Error refreshing Partecipazione: "), ex);
 
 		} finally {
 			em.close();
