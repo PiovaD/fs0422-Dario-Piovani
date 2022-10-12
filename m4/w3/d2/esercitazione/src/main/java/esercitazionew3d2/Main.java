@@ -33,8 +33,8 @@ public class Main {
 		
 		System.out.println(LogColor.GREEN(par.toString()));
 		
-		//Evento ev2 = EventoDAO.getById(1L);
-		//System.out.println(LogColor.GREEN(ev2.toString()));
+//		Evento ev2 = EventoDAO.getById(1L);
+//		System.out.println(LogColor.GREEN(ev2.toString()));
 		
 
 	}
