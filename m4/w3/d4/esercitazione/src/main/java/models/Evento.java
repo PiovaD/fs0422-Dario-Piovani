@@ -26,8 +26,8 @@ import javax.persistence.Table;
 @Table(name = "event")
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "event_type", discriminatorType = DiscriminatorType.STRING)
-@NamedQuery(name="eventiSoldOut", query="SELECT e FROM Evento e WHERE e.numeroMassimoPartecipanti = SIZE(e.partecipazioni)")
-@NamedQuery(name="eventiPerInvitato", query="SELECT e FROM Evento AS e WHERE EXISTS(SELECT p FROM e.partecipazioni p WHERE p.persona = :invitato)")
+//@NamedQuery(name="eventiSoldOut", query="SELECT e FROM Evento e WHERE e.numeroMassimoPartecipanti = SIZE(e.partecipazioni)")
+//@NamedQuery(name="eventiPerInvitato", query="SELECT e FROM Evento AS e WHERE EXISTS(SELECT p FROM e.partecipazioni p WHERE p.persona = :invitato)")
 public class Evento {
 
 	@Id

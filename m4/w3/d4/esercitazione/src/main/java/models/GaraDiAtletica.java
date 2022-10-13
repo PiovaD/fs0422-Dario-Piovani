@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -16,7 +17,7 @@ import javax.persistence.NamedQuery;
 @NamedQuery(name = "garePerPartecipante", query = "SELECT g FROM GaraDiAtletica g WHERE :persona MEMBER OF g.setAtleti")
 public class GaraDiAtletica extends Evento {
 
-	@ManyToMany(cascade = CascadeType.MERGE)
+	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinTable(name = "athlete",
 	joinColumns = @JoinColumn(name = "gara_id"), inverseJoinColumns = @JoinColumn(name="athlete_id"))
 	private Set<Persona> setAtleti = new HashSet<Persona>();

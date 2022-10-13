@@ -1,6 +1,7 @@
 package models.dao;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -127,8 +128,7 @@ public class EventoDAO {
 
 		} catch (Exception e) {
 			logger.error(LogColor.RED(e.getMessage()));
-		}
-		finally {
+		} finally {
 			em.close();
 		}
 
@@ -143,152 +143,160 @@ public class EventoDAO {
 
 			Query q = em.createNamedQuery("getConcertGenre");
 
-			q.setParameter("genere", genere); 
+			q.setParameter("genere", genere);
 
 			return q.getResultList();
 
 		} catch (Exception e) {
 			logger.error(LogColor.RED(e.getMessage()));
-		}
-		finally {
+		} finally {
 			em.close();
 		}
 		return null;
 	}
 
-    public static void getPartiteVinteInCasa(String squadra) {
-        EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
-        
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-        
-        CriteriaQuery<Object> cq = cb.createQuery(Object.class);
-        
-        Root<PartitaDiCalcio> p = cq.from(PartitaDiCalcio.class);    
-        
-        Expression<String> squadraVincente = p.get("squadraVincente");
-        Expression<String> squadraCasa = p.get("squadraCasa");
+	public static void getPartiteVinteInCasa(String squadra) {
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
 
-        Predicate pd1 = cb.equal(squadraVincente, squadra);
-        Predicate pd2 = cb.equal(squadraCasa, squadra);
-        
-        cq.select(squadraVincente).where(cb.and(pd1,pd2));
-        
-        // prendi tutte le entita' di tipo person
-        Query q = em.createQuery(cq);
+		CriteriaBuilder cb = em.getCriteriaBuilder();
 
-        List<Object> list = q.getResultList();
-        
-        System.out.println("La squadra "+ squadra + " ha vinto "+ list.size() + " partite in casa.");
+		CriteriaQuery<Object> cq = cb.createQuery(Object.class);
 
-        em.close();
-    }
-    
-    public static void getPartiteVinteInTrasferta(String squadra) {
-        EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
-        
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-        
-        CriteriaQuery<Object> cq = cb.createQuery(Object.class);
-        
-        Root<PartitaDiCalcio> p = cq.from(PartitaDiCalcio.class);    
-        
-        Expression<String> squadraVincente = p.get("squadraVincente");
-        Expression<String> squadraTrasferta = p.get("squadraOspite");
+		Root<PartitaDiCalcio> p = cq.from(PartitaDiCalcio.class);
 
-        Predicate pd1 = cb.equal(squadraVincente, squadra);
-        Predicate pd2 = cb.equal(squadraTrasferta, squadra);
-        
-        cq.select(squadraVincente).where(cb.and(pd1,pd2));
-        
-        // prendi tutte le entita' di tipo person
-        Query q = em.createQuery(cq);
+		Expression<String> squadraVincente = p.get("squadraVincente");
+		Expression<String> squadraCasa = p.get("squadraCasa");
 
-        List<Object> list = q.getResultList();
-        
-        System.out.println("La squadra "+ squadra + " ha vinto "+ list.size() + " partite in trasferta.");
+		Predicate pd1 = cb.equal(squadraVincente, squadra);
+		Predicate pd2 = cb.equal(squadraCasa, squadra);
 
-        em.close();
-    }
-    
-    public static void getPartitePareggiate(String squadra) {
-        EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
-        
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-        
-        CriteriaQuery<Object> cq = cb.createQuery(Object.class);
-        
-        Root<PartitaDiCalcio> p = cq.from(PartitaDiCalcio.class);    
-        
-        Expression<String> squadraCasa = p.get("squadraCasa");
-        Expression<String> squadraTrasferta = p.get("squadraOspite");
-        Expression<String> squadraVincente = p.get("squadraVincente");
+		cq.select(squadraVincente)
+				.where(cb.and(pd1, pd2));
 
-        Predicate pd1 = cb.equal(squadraCasa, squadra);
-        Predicate pd2 = cb.equal(squadraTrasferta, squadra);
-        Predicate pd3 = cb.equal(squadraVincente, "pareggio");
-        
-        //pd1 or pd2 and pd3
-        cq.select(p.get("id")).where(cb.and(cb.or(pd1,pd2), pd3));        
-        
-        Query q = em.createQuery(cq);
+		// prendi tutte le entita' di tipo person
+		Query q = em.createQuery(cq);
 
-        List<Object> list = q.getResultList();
-        
-        System.out.println("La squadra "+ squadra + " ha pareggiato "+ list.size() + " partite.");
+		List<Object> list = q.getResultList();
 
-        em.close();
-    }
+		System.out.println("La squadra " + squadra + " ha vinto " + list.size() + " partite in casa.");
 
-    public static void getGareDiAtleticaPerVincitore(Persona vincitore) {
-        EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
-        
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-        
-        CriteriaQuery<Object[]> cq = cb.createQuery(Object[].class);
-        
-        Root<GaraDiAtletica> p = cq.from(GaraDiAtletica.class);    
-                
-        cq.select(p.get("id")).where(cb.equal(p.get("winner"), vincitore));        
-        
-        Query q = em.createQuery(cq);
+		em.close();
+	}
 
-        List<GaraDiAtletica> list = q.getResultList();
-        
-        System.out.println(list.size());    
+	public static void getPartiteVinteInTrasferta(String squadra) {
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
 
-        em.close();
-    }
-    
-    public static void getGareDiAtleticaPerPartecipante(Persona partecipante) {
-		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+
+		CriteriaQuery<Object> cq = cb.createQuery(Object.class);
+
+		Root<PartitaDiCalcio> p = cq.from(PartitaDiCalcio.class);
+
+		Expression<String> squadraVincente = p.get("squadraVincente");
+		Expression<String> squadraTrasferta = p.get("squadraOspite");
+
+		Predicate pd1 = cb.equal(squadraVincente, squadra);
+		Predicate pd2 = cb.equal(squadraTrasferta, squadra);
+
+		cq.select(squadraVincente)
+				.where(cb.and(pd1, pd2));
+
+		// prendi tutte le entita' di tipo person
+		Query q = em.createQuery(cq);
+
+		List<Object> list = q.getResultList();
+
+		System.out.println("La squadra " + squadra + " ha vinto " + list.size() + " partite in trasferta.");
+
+		em.close();
+	}
+
+	public static void getPartitePareggiate(String squadra) {
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
+
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+
+		CriteriaQuery<Object> cq = cb.createQuery(Object.class);
+
+		Root<PartitaDiCalcio> p = cq.from(PartitaDiCalcio.class);
+
+		Expression<String> squadraCasa = p.get("squadraCasa");
+		Expression<String> squadraTrasferta = p.get("squadraOspite");
+		Expression<String> squadraVincente = p.get("squadraVincente");
+
+		Predicate pd1 = cb.equal(squadraCasa, squadra);
+		Predicate pd2 = cb.equal(squadraTrasferta, squadra);
+		Predicate pd3 = cb.equal(squadraVincente, "pareggio");
+
+		// pd1 or pd2 and pd3
+		cq.select(p.get("id"))
+				.where(cb.and(cb.or(pd1, pd2), pd3));
+
+		Query q = em.createQuery(cq);
+
+		List<Object> list = q.getResultList();
+
+		System.out.println("La squadra " + squadra + " ha pareggiato " + list.size() + " partite.");
+
+		em.close();
+	}
+
+	public static void getGareDiAtleticaPerVincitore(Persona vincitore) {
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
+
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+
+		CriteriaQuery<Object[]> cq = cb.createQuery(Object[].class);
+
+		Root<GaraDiAtletica> p = cq.from(GaraDiAtletica.class);
+
+		cq.select(p.get("id"))
+				.where(cb.equal(p.get("winner"), vincitore));
+
+		Query q = em.createQuery(cq);
+
+		List<GaraDiAtletica> list = q.getResultList();
+
+		System.out.println(list.size());
+
+		em.close();
+	}
+
+	public static void getGareDiAtleticaPerPartecipante(Persona partecipante) {
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
 		try {
 
 			Query query = em.createNamedQuery("garePerPartecipante");
 
 			query.setParameter("persona", partecipante);
-			List<GaraDiAtletica> list  = query.getResultList();
-			
-			System.out.println(list.size());   
-					
+			List<GaraDiAtletica> list = query.getResultList();
+
+			System.out.println(list.size());
 
 		} finally {
 			em.close();
 		}
 	}
 
-	public static void getEventiSoldOut(){
-		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+	public static void getEventiSoldOut() {
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
 		try {
 			Query q = em.createNamedQuery("eventiSoldOut");
 			List<Evento> list = q.getResultList();
-			
+
 			System.out.println(list.size());
 		} finally {
 			em.close();
 		}
 	}
-	
-//	public static void getEventiPerInvitato(Persona invitato){
+
+	public static void getEventiPerInvitato(Persona invitato) {
 //		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 //		try {
 //			Query q = em.createNamedQuery("eventiPerInvitato");
@@ -299,7 +307,33 @@ public class EventoDAO {
 //		} finally {
 //			em.close();
 //		}
-//	}
-//    
-}
+	}
 
+	public static void addPartecipantiGara(long idEvento, long idPersona) {
+
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
+
+		EntityTransaction t = em.getTransaction();
+		try {
+			t.begin();
+
+			GaraDiAtletica ev = em.find(GaraDiAtletica.class, idEvento);
+
+		Set<Persona> sp = ev.getSetAtleti();
+
+		sp.add(PersonaDAO.getById(idPersona));	
+
+		for(Persona p: sp) {
+			System.out.println(p);
+		}
+			em.flush();
+			t.commit();
+
+		} catch (Exception e) {
+			System.err.println(e.getLocalizedMessage());
+		} finally {
+			em.close();
+		}
+	}
+}

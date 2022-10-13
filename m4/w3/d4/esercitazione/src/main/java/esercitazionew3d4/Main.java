@@ -34,11 +34,11 @@ PartecipazioneDAO;
 //		Location loc2 = saveLocation("Olimpico", "Roma");
 //		saveEventoPartita("Seria a", "4a Giornata", LocalDate.now(), 10, loc2, TipoEvento.PUBBLICO,"Roma", "Lazio", 0, 0);
 
-		EventoDAO.getPartiteVinteInCasa("Milan");
-		EventoDAO.getPartiteVinteInCasa("Inter");
-		
-		EventoDAO.getPartitePareggiate("Milan");
-		EventoDAO.getPartitePareggiate("Roma");
+//		EventoDAO.getPartiteVinteInCasa("Milan");
+//		EventoDAO.getPartiteVinteInCasa("Inter");
+//		
+//		EventoDAO.getPartitePareggiate("Milan");
+//		EventoDAO.getPartitePareggiate("Roma");
 		
 //		Set<Persona> sa1 = new HashSet<Persona>();	
 //		
@@ -58,15 +58,19 @@ PartecipazioneDAO;
 //				
 //		saveEventoGaraAtletica("staffetta", "qual. olimpica", LocalDate.now(), 1_000, LocationDAO.getById(2L), TipoEvento.PRIVATO, PersonaDAO.getById(1L),sa2);
 		
-		EventoDAO.getGareDiAtleticaPerVincitore(PersonaDAO.getById(1L));
+//		EventoDAO.getGareDiAtleticaPerVincitore(PersonaDAO.getById(1L));
+//		
+//		EventoDAO.getGareDiAtleticaPerPartecipante(PersonaDAO.getById(1L));
+//		EventoDAO.getGareDiAtleticaPerPartecipante(PersonaDAO.getById(4L));
+//		
+//		EventoDAO.getEventiSoldOut();
+		//EventoDAO.getEventiPerInvitato(PersonaDAO.getById(1L));no worka
 		
-		EventoDAO.getGareDiAtleticaPerPartecipante(PersonaDAO.getById(1L));
-		EventoDAO.getGareDiAtleticaPerPartecipante(PersonaDAO.getById(4L));
+		//PartecipazioneDAO.getPartecipazioniDaConfermarePerEvento(EventoDAO.getById(1L));no worka
 		
-		EventoDAO.getEventiSoldOut();
-		//EventoDAO.getEventiPerInvitato(PersonaDAO.getById(1L));
+		EventoDAO.addPartecipantiGara(8L, 4L);
 		
-		//PartecipazioneDAO.getPartecipazioniDaConfermarePerEvento(EventoDAO.getById(1L));
+		System.out.println("end");
 		
 	}
 	
