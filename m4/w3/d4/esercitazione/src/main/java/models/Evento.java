@@ -1,6 +1,7 @@
 package models;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -16,6 +17,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -24,6 +26,8 @@ import javax.persistence.Table;
 @Table(name = "event")
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "event_type", discriminatorType = DiscriminatorType.STRING)
+@NamedQuery(name="eventiSoldOut", query="SELECT e FROM Evento e WHERE e.numeroMassimoPartecipanti = SIZE(e.partecipazioni)")
+@NamedQuery(name="eventiPerInvitato", query="SELECT e FROM Evento AS e WHERE EXISTS(SELECT p FROM e.partecipazioni p WHERE p.persona = :invitato)")
 public class Evento {
 
 	@Id
@@ -43,7 +47,7 @@ public class Evento {
 	private int numeroMassimoPartecipanti;
 	
 	@OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
-	private Set<Partecipazione> partecipazioni;
+	private Set<Partecipazione> partecipazioni = new HashSet<Partecipazione>();
 	
 	@ManyToOne
 	@JoinColumn(name = "id_location")

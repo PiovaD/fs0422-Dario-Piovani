@@ -232,7 +232,6 @@ public class EventoDAO {
         
         Query q = em.createQuery(cq);
 
-        System.out.println("here");
         List<Object> list = q.getResultList();
         
         System.out.println("La squadra "+ squadra + " ha pareggiato "+ list.size() + " partite.");
@@ -248,21 +247,59 @@ public class EventoDAO {
         CriteriaQuery<Object[]> cq = cb.createQuery(Object[].class);
         
         Root<GaraDiAtletica> p = cq.from(GaraDiAtletica.class);    
-        
-        Expression<Persona> vincitoreGara = p.get("vincitore");
-        
-        //pd1 or pd2 and pd3
-        cq.select(p.get("vincitore")).where(cb.equal(p.get("vincitore"), vincitore));        
+                
+        cq.select(p.get("id")).where(cb.equal(p.get("winner"), vincitore));        
         
         Query q = em.createQuery(cq);
 
-        List<Object> list = q.getResultList();
+        List<GaraDiAtletica> list = q.getResultList();
         
-        System.out.println(list.size());
-        
-
+        System.out.println(list.size());    
 
         em.close();
     }
+    
+    public static void getGareDiAtleticaPerPartecipante(Persona partecipante) {
+		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		try {
+
+			Query query = em.createNamedQuery("garePerPartecipante");
+
+			query.setParameter("persona", partecipante);
+			List<GaraDiAtletica> list  = query.getResultList();
+			
+			System.out.println(list.size());   
+					
+
+		} finally {
+			em.close();
+		}
+	}
+
+	public static void getEventiSoldOut(){
+		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		try {
+			Query q = em.createNamedQuery("eventiSoldOut");
+			List<Evento> list = q.getResultList();
+			
+			System.out.println(list.size());
+		} finally {
+			em.close();
+		}
+	}
+	
+//	public static void getEventiPerInvitato(Persona invitato){
+//		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+//		try {
+//			Query q = em.createNamedQuery("eventiPerInvitato");
+//			q.setParameter("invitato", invitato);
+//			List<Evento> list = q.getResultList();
+//
+//			System.out.println(list.size());			
+//		} finally {
+//			em.close();
+//		}
+//	}
+//    
 }
 

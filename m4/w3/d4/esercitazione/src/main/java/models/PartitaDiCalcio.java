@@ -19,17 +19,17 @@ public class PartitaDiCalcio extends Evento{
     public PartitaDiCalcio() {}
 
 
-	public PartitaDiCalcio(String squadraCasa, String squadraOspite, String squadraVincente, int golCasa,
-			int golOspite, String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento,
-			int numeroMassimoPartecipanti, Location location) {
+	public PartitaDiCalcio( 
+			String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento,
+			int numeroMassimoPartecipanti, Location location, String squadraCasa, String squadraOspite, int golCasa,int golOspite) {
 		
 		super(titolo, dataEvento, descrizione, tipoEvento, numeroMassimoPartecipanti, location);
 
 		this.squadraCasa = squadraCasa;
 		this.squadraOspite = squadraOspite;
-		this.squadraVincente = squadraVincente;
 		this.golCasa = golCasa;
 		this.golOspite = golOspite;
+		this.setSquadraVincente();
 	}
 
 
@@ -58,13 +58,13 @@ public class PartitaDiCalcio extends Evento{
 	}
 
 
-	public void setSquadraVincente(String squadraVincente) {
+	public void setSquadraVincente() {
 		if(this.golCasa > this.golOspite) {
 			this.squadraVincente = this.squadraCasa;
 		}else if(this.golCasa < this.golOspite){
-			this.squadraVincente = this.squadraOspite;			
+			this.squadraVincente = this.squadraOspite;
 		}else {
-			this.squadraVincente = null;			
+			this.squadraVincente = "pareggio";
 		}
 	}
 

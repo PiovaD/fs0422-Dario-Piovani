@@ -9,7 +9,9 @@ import javax.persistence.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import models.Evento;
 import models.Partecipazione;
+import models.Stato;
 import utils.JpaUtil;
 import utils.LogColor;
 
@@ -134,4 +136,19 @@ public class PartecipazioneDAO {
 
 		return null;
 	}
+	
+//	public static void getPartecipazioniDaConfermarePerEvento(Evento evento){
+//		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+//		try {
+//			Query q = em.createNativeQuery("SELECT p \r\n"
+//					+ "FROM partecipation p \r\n"
+//					+ "WHERE p.state = 'CONFERMATA'\r\n"
+//					+ "AND p.id_event = 1 ");
+//			q.setParameter("evento", evento);
+//			q.setParameter("daConfermare", Stato.DA_CONFERMARE);
+//			List<Partecipazione> list = q.getResultList();
+//		} finally {
+//			em.close();
+//		}
+//	}
 }
