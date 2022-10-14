@@ -5,7 +5,7 @@
 	<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			
-			<property name="javax.persistence.jdbc.url"	value="jdbc:postgresql://localhost:5432/gestioneventi"/>
+			<property name="javax.persistence.jdbc.url"	value="jdbc:postgresql://localhost:5432/biblioteca"/>
 			
 			<property name="javax.persistence.jdbc.user" value="postgres" />
 			
