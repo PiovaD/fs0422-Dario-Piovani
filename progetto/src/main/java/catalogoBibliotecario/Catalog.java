@@ -80,6 +80,10 @@ public abstract class Catalog {
 	public void setPublicationYear(int publicationYear) {
 		this.publicationYear = Year.of(publicationYear);
 	}
+	
+	public void setPublicationYear(Year publicationYear) {
+		this.publicationYear = publicationYear;
+	}
 
 	public int getPageNumber() {
 		return pageNumber;

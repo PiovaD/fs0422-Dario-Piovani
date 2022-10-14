@@ -1,11 +1,19 @@
 package main;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import catalogoBibliotecario.ArchiveMaker;
+import catalogoBibliotecario.Book;
+import catalogoBibliotecario.Catalog;
+import catalogoBibliotecario.Magazine;
+import catalogoBibliotecario.Periodicity;
 import catalogoBibliotecario.dao.ArchiveDAO;
+import catalogoBibliotecario.dao.CatalogDAO;
+import catalogoBibliotecario.dao.LoanDAO;
 import catalogoBibliotecario.dao.UserDAO;
 import catalogoBibliotecario.prestito.Loan;
+import catalogoBibliotecario.prestito.User;
 import utils.LogColor;
 
 public class Main {
@@ -16,8 +24,7 @@ public class Main {
 				
 		List<Loan> lLoan = ArchiveDAO.currentlyLoanItemsByLibCard("0010256851");
 		
-		printList(lLoan);
-			
+		printList(lLoan);		
 		
 		System.err.println("THE END");
 

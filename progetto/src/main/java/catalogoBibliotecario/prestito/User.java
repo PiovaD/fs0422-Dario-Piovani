@@ -87,10 +87,6 @@ public class User {
 		return loanSet;
 	}
 
-	public void setLoanSet(Set<Loan> loanSet) {
-		this.loanSet = loanSet;
-	}
-
 	@Override
 	public String toString() {
 		return "User [id=" + this.id + ", name=" + this.name + ", lastName=" + this.lastName + ", birthDate=" + this.birthDate

@@ -14,7 +14,6 @@ import javax.persistence.criteria.Root;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import catalogoBibliotecario.Catalog;
 import catalogoBibliotecario.prestito.User;
 import utils.JpaUtil;
 import utils.LogColor;
@@ -56,7 +55,33 @@ public class UserDAO {
 		}
 	}
 
-	// TODO public static void update(Long id) {}
+	public static void update(User updateUser) {
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
+
+		try {
+			EntityTransaction t = em.getTransaction();
+
+			t.begin();
+
+			User oldUser = em.find(User.class, updateUser.getId());
+
+			oldUser.setName(updateUser.getName());
+			oldUser.setLastName(updateUser.getLastName());
+			oldUser.setBirthDate(updateUser.getBirthDate());
+
+			em.flush();
+
+			t.commit();
+
+		} catch (Exception e) {
+			em.getTransaction()
+					.rollback();
+			logger.error(LogColor.RED("Remove error: ") + e.getLocalizedMessage());
+		} finally {
+			em.close();
+		}
+	}
 	
 	public static void remove(Long id) {
 
@@ -69,9 +94,10 @@ public class UserDAO {
 			t.begin();
 
 			em.remove(em.find(User.class, id));
-			;
 
 			t.commit();
+			
+			logger.info(LogColor.CYAN("Remove user with success"));
 
 		} catch (Exception e) {
 			em.getTransaction()

@@ -53,7 +53,7 @@ public class ArchiveDAO {
 			logger.error(LogColor.RED("ISBN not found, ") + e.getLocalizedMessage());
 
 		} catch (Exception e) {
-			logger.error(LogColor.RED("ISBN find error: ") + e.getLocalizedMessage());
+			logger.error(LogColor.RED("ISBN find error: ") + e);
 
 		} finally {
 			em.close();
@@ -173,7 +173,6 @@ public class ArchiveDAO {
 	}
 
 	// Ricerca degli elementi attualmente in prestito dato un numero di tessera
-	// utente
 	public static List<Loan> currentlyLoanItemsByLibCard(String idCard) {
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
@@ -250,6 +249,7 @@ public class ArchiveDAO {
 
 	}
 
+	// Ricerca di tutti i prestiti dato un numero di tesssera
 	public static List<Loan> LoanItemsByLibCard(String idCard) {
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();

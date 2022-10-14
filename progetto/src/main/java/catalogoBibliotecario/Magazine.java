@@ -1,6 +1,8 @@
 package catalogoBibliotecario;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 /*
  Le riviste hanno:
@@ -10,6 +12,7 @@ import javax.persistence.Entity;
 @Entity
 public class Magazine extends Catalog {
 
+	@Enumerated(EnumType.STRING)
 	private Periodicity periodicity;
 	
 	public Magazine() {

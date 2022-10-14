@@ -33,7 +33,34 @@ public class LoanDAO {
 		}
 	}
 	
-	// TODO public static void update(Long id) {}
+	public static void update(Loan updateLoan) {
+		EntityManager em = JpaUtil.getEntityManagerFactory()
+				.createEntityManager();
+
+		try {
+			EntityTransaction t = em.getTransaction();
+
+			t.begin();
+
+			Loan oldLoan = em.find(Loan.class, updateLoan.getId());
+
+			oldLoan.setEffectiveReturn(updateLoan.getEffectiveReturn());
+			oldLoan.setExpectedReturn(updateLoan.getExpectedReturn());
+			oldLoan.setLoanedElem(updateLoan.getLoanedElem());
+			oldLoan.setUser(updateLoan.getUser());
+
+			em.flush();
+
+			t.commit();
+
+		} catch (Exception e) {
+			em.getTransaction()
+					.rollback();
+			logger.error(LogColor.RED("Remove error: ") + e.getLocalizedMessage());
+		} finally {
+			em.close();
+		}
+	}
 	
 	public static void remove(Long id) {
 
@@ -46,14 +73,15 @@ public class LoanDAO {
 			t.begin();
 
 			em.remove(em.find(Loan.class, id));
-			;
 
 			t.commit();
+			
+			logger.info(LogColor.CYAN("Remove loan with success"));
 
 		} catch (Exception e) {
 			em.getTransaction()
 					.rollback();
-			logger.error(LogColor.RED("Remove Loan error: ") + e.getLocalizedMessage());
+			logger.error(LogColor.RED("Remove loan error: ") + e.getLocalizedMessage());
 
 		} finally {
 			em.close();
