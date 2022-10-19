@@ -25,8 +25,6 @@ public class LoanDAO {
 			em.persist(loan);
 
 			t.commit();
-
-
 		
 		} finally {
 			em.close();
