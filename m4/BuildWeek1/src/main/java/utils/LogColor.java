@@ -44,15 +44,15 @@ public class LogColor {
 	}
 	
 	public static void standardMessage( String stringa ) {
-        StringBuilder vuota = new StringBuilder( "**" );
+        StringBuilder vuota = new StringBuilder( "****" );
         for( String s : stringa.split( "" ) ) {
-            vuota.append( "" );
+            vuota.append( "*" );
         }
 
         System.out.println( LogColor.YELLOW( vuota.toString() ) );
-        System.out.println( LogColor.YELLOW( " " + stringa + " *") );
+        System.out.println( LogColor.YELLOW( "* " + stringa + " *" ) );
         System.out.println( LogColor.YELLOW( vuota.toString() ) );
-    }
+    } 
 
     public static void infoMessage( String stringa ) {
         StringBuilder vuota = new StringBuilder( "----------" );
@@ -71,4 +71,17 @@ public class LogColor {
         System.out.println( LogColor.RED( "| ERROR | " + stringa + " |" ) );
         System.out.println( LogColor.RED( vuota.toString() ) );
     }
+    
+    public static void selectionMessage( String stringa ) {
+        StringBuilder vuota = new StringBuilder( "-v--v--v--" );
+        vuota.append( "-".repeat( Math.max( 0, stringa.length() + 1 ) ) );
+
+        System.out.println( LogColor.GREEN( vuota.toString() ) );
+        System.out.println( LogColor.GREEN( "| INPUT | " + stringa + " |" ) );
+        System.out.println( LogColor.GREEN( vuota.toString() ) );
+        System.out.println( LogColor.GREEN( "  V V V " ) );
+        System.out.println( LogColor.GREEN( "   V V " ) );
+        System.out.println( LogColor.GREEN( "    V " ) );
+    }
+
 }

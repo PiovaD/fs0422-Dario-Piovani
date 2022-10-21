@@ -1,31 +1,32 @@
 package models.dao;
 
-
-import models.SeasonTicket;
+import models.User;
+import models.UserCard;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.JpaUtil;
+import utils.LogColor;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
-public class SeasonTicketDAO {
-
-    private static final Logger logger = LoggerFactory.getLogger(SeasonTicketDAO.class);
+public class UserCardDAO {
+    private static final Logger logger = LoggerFactory.getLogger(UserCardDAO.class);
 
 	/*
-	Salva nel database
+	Salva nel Database
 	*/
-    public static void save(SeasonTicket object) {
+    public void save( UserCard object) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
 
             EntityTransaction transaction = em.getTransaction();
             transaction.begin();
+            
+            object.setUser(em.find(User.class, object.getUser().getId()));
 
             em.persist(object);
 
@@ -43,9 +44,9 @@ public class SeasonTicketDAO {
     }
 
 	/*
-	Aggiorna nel database
+	Aggiorna nel databse
 	*/
-    public void refresh(SeasonTicket object) {
+    public void refresh(UserCard object) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
 
@@ -56,15 +57,20 @@ public class SeasonTicketDAO {
         }
 
     }
-	
+
 	/*
-	Cerca nel databse dato l'id
+	Aggiorna la data di scadenza della UserCard 
 	*/
-    public static SeasonTicket getById(Long id) {
+    public static void refreshExpireDate( UserCard object, LocalDate date ) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
 
-            return em.find(SeasonTicket.class, id);
+            UserCard card = em.find(object.getClass(), object.getId());
+
+            em.getTransaction().begin();
+            card.setExpireDate( date );
+            LogColor.infoMessage( "Rinnovata tessera: " + card );
+            em.getTransaction().commit();
 
         } finally {
             em.close();
@@ -73,9 +79,24 @@ public class SeasonTicketDAO {
     }
 
 	/*
-	Cancella dal database dato un oggetto SeasonTicket
+	Cerca nel database la UserCard dato il suo id/numero carta
 	*/
-    public static void delete(SeasonTicket object) {
+    public UserCard getById(Long id) {
+        EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+        try {
+
+            return em.find(UserCard.class, id);
+
+        } finally {
+            em.close();
+        }
+
+    }
+
+	/*
+	Cancella dal database
+	*/
+    public void delete(UserCard object) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
 
@@ -97,13 +118,13 @@ public class SeasonTicketDAO {
     }
 
 	/*
-	Restituisce la lista di tutti gli abbonamenti (season ticket)
+	Restituisce la lista di tutte le User Card
 	*/
-    public static List<SeasonTicket> getAll() {
+    public List<UserCard> getAll() {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
 
-            return em.createQuery("select p from SeasonTicket p").getResultList();
+            return em.createQuery("select p from UserCard p").getResultList();
 
         } finally {
             em.close();
@@ -111,27 +132,18 @@ public class SeasonTicketDAO {
     }
 
 	/*
-	Restituisce la lista di tutti gli abbonamenti (season ticket)
-	emessi in un certo range di tempo
+	Restituisce la lista di tutte le User Card appartentni ad uno User
+	dato il suo ID
 	*/
-    public List<SeasonTicket> getSeasonTicketByReseller(Long id, LocalDate initialDate, LocalDate endDate) {
+    public List<UserCard> getCardByUserId(Long id) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
-
         try {
 
-            Query query = em.createQuery("select p from SeasonTicket p where p.reseller.id = :id");
+            Query query = em.createQuery("select p from UserCard p where p.user.id = :id");
+
             query.setParameter("id", id);
 
-            List<SeasonTicket> ticketsFinded = query.getResultList();
-            List<SeasonTicket> ticketsRange = new ArrayList<>();
-
-            for (SeasonTicket t : ticketsFinded) {
-                if (t.getReleaseDate().compareTo(initialDate) > 0 && t.getReleaseDate().compareTo(endDate) < 0) {
-                    ticketsRange.add(t);
-                }
-            }
-
-            return ticketsRange;
+            return query.getResultList();
 
         } finally {
             em.close();

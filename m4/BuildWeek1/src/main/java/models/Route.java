@@ -1,6 +1,7 @@
 package models;
 
 import java.util.Set;
+import utils.LogColor;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -10,6 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/*
+Definisce la rotta che un mezzo puo fare,
+ha inizio, fine e tempo di percorrenza.
+Un mezzo puo' avere una sola rotta ma
+piu' mezzi possono condividere la stesa rotta
+*/
 @Entity
 @Table(name = "routes")
 public class Route {
@@ -62,10 +69,20 @@ public class Route {
 	public long getId() {
 		return id;
 	}
-
+	
 	@Override
-	public String toString() {
-		return "Route: [Start: " + start + " | Finish: " + finish + " | Travel time: " + travelTime + " ]";
-	}
-
+    public String toString() {
+        return "|| " +
+                LogColor.YELLOW( "Route" ) 
+                + " | " + LogColor.YELLOW( "N. ID '" +
+                        LogColor.GREEN( id+"" ))   + "' |\n \n|| " +
+                LogColor.CYAN( "Start '" +
+                        LogColor.GREEN( start ) ) + "\' |" +
+                LogColor.CYAN( " Finish '" +
+                        LogColor.GREEN( finish ) )  + "\'" +
+                LogColor.CYAN( " Travel Time '" +
+                        LogColor.GREEN( travelTime+"" ) )  + "\'"
+                + " ||";
+    }
+	
 }

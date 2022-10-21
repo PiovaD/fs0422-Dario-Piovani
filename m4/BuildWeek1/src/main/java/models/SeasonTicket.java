@@ -3,7 +3,20 @@ package models;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import utils.LogColor;
 
+/*
+Definisce l'abbonamento che lo User puo'
+acquistare in biglietteria
+
+Un utente puo acquistare piu abbonamenti,
+	un abbonamento appartiene ad un solo utente.
+Un reseller puo' vendere piu season ticket,
+	un season ticket e' venduto da solo un reseller
+	
+Validita' impostata con il metodo settedPeriodicity() 
+in base al valore dell'enum Periodicity
+*/
 @Entity
 public class SeasonTicket {
     @Id
@@ -31,16 +44,8 @@ public class SeasonTicket {
         this.reseller = reseller;
     }
 
-    SeasonTicket(){
-        if (periodicity == Periodicity.WEEKLY){
-            expireDate = LocalDate.now().plusWeeks(1);
-        } else if (periodicity == Periodicity.MONTHLY) {
-            expireDate = LocalDate.now().plusMonths(1);
-        } else if (periodicity == Periodicity.YEARLY) {
-            expireDate = LocalDate.now().minusYears(1);
-        } else {
-            expireDate = LocalDate.now().plusWeeks(1);
-        }
+    public SeasonTicket(){
+
     }
     public User getUser() {
         return user;
@@ -78,15 +83,42 @@ public class SeasonTicket {
         return releaseDate;
     }
 
-    @Override
-    public String toString() {
-        return "SeasonTicket{" +
-                "id=" + id +
-                ", user=" + user +
-                ", reseller=" + reseller +
-                ", expireDate=" + expireDate +
-                ", periodicity=" + periodicity +
-                ", releaseDate=" + releaseDate +
-                '}';
+	/*
+	Metodo per settare la validita e quindi la data di scadenza 
+	dell'abbonamento in base al valore di Enum.Periodicity
+	*/
+    public void settedPeriodicity(){
+        if (periodicity == Periodicity.WEEKLY){
+            expireDate = LocalDate.now().plusWeeks(1);
+        } else if (periodicity == Periodicity.MONTHLY) {
+            expireDate = LocalDate.now().plusMonths(1);
+        } else if (periodicity == Periodicity.YEARLY) {
+            expireDate = LocalDate.now().plusYears(1);
+        } else {
+            expireDate = LocalDate.now().plusWeeks(1);
+        }
     }
+
+    @Override
+	public String toString() {
+	     return "|| " + LogColor.YELLOW( "Season Ticket" ) + " | " +
+	    
+	             LogColor.YELLOW( "N. ID " + LogColor.GREEN( id.toString()))          
+	             +"' |\n" + " \n" + "|| " +
+	                
+	             LogColor.CYAN( "USER " + LogColor.GREEN( user.toString() ) )                
+	             + '\'' + " |" +
+	                
+	             LogColor.CYAN( " RESELLER " + LogColor.GREEN( reseller.toString() ) )                
+	             + '\'' + " |" +
+	                
+	             LogColor.CYAN( " EXPIRATION DATE " + LogColor.GREEN( expireDate+"" ) )                
+	             + '\'' + " |" +
+	                
+	             LogColor.CYAN( " PERIODICITY " + LogColor.GREEN( periodicity+"" ) )                
+	             + '\'' + " |" +
+	                
+	             LogColor.CYAN( " RELEASE DATE " + LogColor.GREEN( releaseDate+"" ) )                
+	             + '\'' + "' ||";
+	}
 }

@@ -14,12 +14,9 @@ import javax.persistence.criteria.Root;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import models.Ticket;
 import models.Vehicle;
-import models.Route;
 import models.Voyage;
-import net.bytebuddy.implementation.bytecode.Throw;
 import utils.JpaUtil;
 import utils.LogColor;
 
@@ -27,7 +24,10 @@ public class VehicleDAO {
 
 	private static final Logger log = LoggerFactory.getLogger(VehicleDAO.class);
 
-	public static void save(Vehicle vehicole) {
+	/*
+	Salva nel database
+	*/
+	public static void save(Vehicle vehichle) {
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
 
@@ -35,7 +35,7 @@ public class VehicleDAO {
 			EntityTransaction et = em.getTransaction();
 			et.begin();
 
-			em.persist(vehicole);
+			em.persist(vehichle);
 
 			et.commit();
 
@@ -43,26 +43,29 @@ public class VehicleDAO {
 			em.getTransaction()
 					.rollback();
 			e.printStackTrace();
-			log.error(LogColor.RED(e + " vehicole"));
+			log.error(LogColor.RED(e + " vehichle"));
 		} finally {
 			em.close();
 		}
 	}
 
+	/*
+	Cerca Vehicle dato il suo ID
+	*/
 	public static Vehicle getById(Long id) {
 
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
 
 		try {
-			Vehicle vehicole = em.find(Vehicle.class, id);
+			Vehicle vehichle = em.find(Vehicle.class, id);
 
-			return vehicole;
+			return vehichle;
 
 		} catch (Exception e) {
 			em.getTransaction()
 					.rollback();
-			log.error(LogColor.RED("Find vehicole error: ") + e.getLocalizedMessage());
+			log.error(LogColor.RED("Find vehichle error: ") + e.getLocalizedMessage());
 
 		} finally {
 			em.close();
@@ -70,6 +73,9 @@ public class VehicleDAO {
 		return null;
 	}
 
+	/*
+	Restituisce la lista di tutti i Vehicle
+	*/
 	public static List<Vehicle> getAll() {
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
@@ -86,6 +92,9 @@ public class VehicleDAO {
 		return null;
 	}
 
+	/*
+	Cancella dal database data l'istanza dell'oggetto Vehicle
+	*/
 	public static void delete(Vehicle object) {
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
@@ -110,6 +119,9 @@ public class VehicleDAO {
 
 	}
 
+	/*
+	Aggiorna nel database
+	*/
 	public static void refresh(Vehicle vehicle) {
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
@@ -137,6 +149,9 @@ public class VehicleDAO {
 		}
 	}
 
+	/*
+	Metodo per la vidimazione di un biglietto
+	*/
 	public static boolean punch(Ticket ticket, Vehicle vehicle) {
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
@@ -172,8 +187,11 @@ public class VehicleDAO {
 		return isValid;
 	}
 	
-	//n volte un veicolo ha fatto una rotta e avg time
-	public static String vehicleTracker(Long veicoloID, Long routeID){
+	/*
+	Metodo per tracciare quante volte un Veicolo X ha percorso una Tratta Y
+	e il suo tempo medio di percorrenza
+	*/
+	public static void vehicleTracker(Long veicoloID, Long routeID){
 		 EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
 
@@ -192,21 +210,25 @@ public class VehicleDAO {
 
 			List<Integer> itemList = q.getResultList(); 
 
-			if(itemList.size() == 0) {
-				System.out.println("No item found.");
-			}
+			
 			
 			double avgTot = (itemList.stream().reduce(0,  (subtotal, element) -> subtotal + element)) / itemList.size();
 			
-			return "Il veicolo con id: " + veicoloID 
-				+ " ha percorso la tratta con id: " + routeID + " " + itemList.size() + " volte, "
-				+ "con un tempo medio di percorrenza di: " + avgTot + " min";
-
+			if(itemList.size() == 0) {
+				LogColor.infoMessage("Nessun viaggio trovato.");
+			}else {
+				
+			LogColor.infoMessage("Il veicolo con id: " + LogColor.GREEN(veicoloID+"")
+				+ " ha percorso la tratta con id: " + LogColor.GREEN(routeID+"") + " => " + LogColor.YELLOW(itemList.size()+"") +
+				(itemList.size() == 1 ? " volta, " : " volte, ")
+				+ "con un tempo medio di percorrenza di: " + LogColor.YELLOW(avgTot+"") + " min");
+			}
         } 
         finally {
             em.close();
         }
 	}
+
 }
 
 

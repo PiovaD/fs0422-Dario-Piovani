@@ -1,12 +1,15 @@
 package models;
 
 
-import models.dao.SeasonTicketDAO;
-import models.dao.TicketDAO;
+
+import utils.LogColor;
 
 import javax.persistence.*;
+import java.util.Set;
 
-
+/*
+Superclasse dei RIvenditori, estendera' automaticDealer e Dealer
+*/
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Reseller {
@@ -15,12 +18,19 @@ public class Reseller {
     @Column(name = "id", nullable = false)
     private Long id;
     private String name;
+    
+    @OneToMany(mappedBy = "reseller")
+    private Set<Ticket> ticket;
 
     public Reseller() {
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -31,25 +41,17 @@ public class Reseller {
         this.name = name;
     }
 
+    
     @Override
     public String toString() {
-        return "Reseller{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+        return "|| " +
+                LogColor.YELLOW( "BIGLIETTERIA" ) +
+                " | " +
+                LogColor.YELLOW( "N. ID '" +
+                        LogColor.GREEN( id.toString() ))   + "' |\n" + " \n" +
+                "|| " + LogColor.CYAN( " NOME '" +
+                        LogColor.GREEN( name ) ) + '\'' +
+                " ||";
     }
 
-    public void makeTiket(Reseller reseller) {
-        Ticket ticket = new Ticket();
-        ticket.setReseller(reseller);
-        TicketDAO.save(ticket);
-    }
-
-    public void makeSeasonTiket(Reseller reseller, User user, Periodicity periodicity) {
-        SeasonTicket ticket = new SeasonTicket();
-        ticket.setReseller(reseller);
-        ticket.setUser(user);
-        ticket.setPeriodicity(periodicity);
-        SeasonTicketDAO.save(ticket);
-    }
 }

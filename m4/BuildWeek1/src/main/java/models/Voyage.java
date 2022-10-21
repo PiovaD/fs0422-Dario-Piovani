@@ -1,18 +1,23 @@
 package models;
 
-import java.util.Set;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import utils.LogColor;
 
+/*
+Definsce il viaggio di un mezzo
+
+Contiene:
+	- vehicle: mezzo al quale e' stato asegnato questo viaggio 
+		(many viaggi posso essere asegnati ad un mezzo)
+	- route: tratta assegnata a questo viaggio
+		(many viaggi posso essere assegnati ad una tratta)
+*/
 @Entity
 @Table(name = "voyage")
 public class Voyage {
@@ -20,17 +25,14 @@ public class Voyage {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "vehicle_id")
 	private Vehicle vehicle;
 	
 	@ManyToOne
 	@JoinColumn(name = "route_id")
 	private Route route;
-
-	@OneToMany(fetch = FetchType.EAGER)
-	private Set<Ticket> ticketSet; //TODO verificare se serve
-	
+		
 	private int travelTime;
 	
 	public Voyage() {
@@ -58,18 +60,6 @@ public class Voyage {
 		this.route = route;
 	}
 
-	public Set<Ticket> getTicketSet() {
-		return ticketSet;
-	}
-
-	public void setTicketSet(Set<Ticket> ticketSet) {
-		this.ticketSet = ticketSet;
-	}
-	
-	public void addTicketSet(Ticket ticket) {
-		this.ticketSet.add(ticket);
-	}
-
 	public int getTravelTime() {
 		return travelTime;
 	}
@@ -81,11 +71,22 @@ public class Voyage {
 	public long getId() {
 		return id;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Voyage [id=" + id + ", vehicle=" + vehicle + ", route=" + route + ", ticketSet=" + ticketSet
-				+ ", averageTime=" + travelTime + "]";
+	     return "|| " + LogColor.YELLOW( "VOYAGE" ) + " | " +
+	    
+	             LogColor.YELLOW( "N. ID " + LogColor.GREEN( id+""))          
+	             +"' |\n" + " \n" + "|| " +
+	                
+	             LogColor.CYAN( "VEICOLO " + LogColor.GREEN( vehicle.toString() ) )                
+	             + '\'' + " |" +
+	                
+	             LogColor.CYAN( " ROUTE " + LogColor.GREEN( route.toString() ) )                
+	             + '\'' + " |" +
+	                
+	             LogColor.CYAN( " AVERAGE TRAVEL TIME " + LogColor.GREEN( travelTime+"" ) )                
+	             + '\'' + "' ||";
 	}
 	
 	

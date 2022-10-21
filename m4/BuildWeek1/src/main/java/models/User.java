@@ -1,15 +1,33 @@
 package models;
 
+import utils.LogColor;
+
+import java.util.Set;
+
 import javax.persistence.*;
 
+/*
+Definisce lo User
+
+Coniente setSeason, Set di abbonamenti acquistati dall'utente
+
+Contiene userCard unica per ogni utente
+*/
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "numero_tessera", nullable = false)
-    private Long numeroTessera;
+    @Column(name = "id", nullable = false)
+    private Long id;
+    
     private String name;
     private String lastName;
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<SeasonTicket> setSeason;
+    
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private UserCard userCard;
 
     public User() {
     }
@@ -31,19 +49,25 @@ public class User {
     }
 
     public Long getId() {
-        return numeroTessera;
+        return id;
     }
 
-    public void setId(Long numeroTessera) {
-        this.numeroTessera = numeroTessera;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
     public String toString() {
-        return " Utente" +
-                " | N. TESSERA= '" + numeroTessera +
-                "' | NOME= '" + name + '\'' +
-                " | COGNOME= '" + lastName +
-                "' ";
+        return "|| " + LogColor.YELLOW( "Utente" ) + " | " +
+    
+                LogColor.YELLOW( "N. ID '" + LogColor.GREEN( id.toString()))          
+                +"' |\n" + " \n" + "|| " +
+                
+                LogColor.CYAN( "NOME '" + LogColor.GREEN( name ) )                
+                + '\'' + " |" +
+                
+                LogColor.CYAN( " COGNOME '" + LogColor.GREEN( lastName ) )                
+                + '\'' + "' ||";
+
     }
 }

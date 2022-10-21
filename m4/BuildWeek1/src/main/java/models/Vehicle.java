@@ -11,9 +11,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import utils.LogColor;
 
+/*
+Definisce il Veicolo 
+
+Contiene:
+	- type: valori dati dall'enum VehicleType, puo essere BUS o TRAM
+	- Set voyage: i viaggi eseguiti dal dato mezzo
+	- Set ticket: biglietti vidimati dal dato mezzo
+	- maintenance: data della manutenzione del mezzo durante
+		la quale non sara' in servizio quindi non sara' possibile
+		assegnarli altri viaggi
+*/
 @Entity
 @Table(name = "vehicles")
 public class Vehicle {
@@ -25,8 +36,8 @@ public class Vehicle {
 	@Enumerated(EnumType.STRING)
 	private VehicleType type;
 
-	@OneToOne(mappedBy = "vehicle", cascade = CascadeType.ALL)
-	private Voyage voyage;
+	@OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
+	private Set<Voyage> voyage;
 
 	@OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
 	private Set<Ticket> ticket;
@@ -108,10 +119,24 @@ public class Vehicle {
 			this.isService = false;
 
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Vehicle [id: " + id + " | Capacity: " + capacity + " | Type=" + type + " | Maintance=" + maintenance
-				+ " | Service: " + isService + "]";
+	     return "|| " + LogColor.YELLOW( "VEICOLO" ) + " | " +
+	    
+	             LogColor.YELLOW( "N. ID " + LogColor.GREEN( id.toString()))          
+	             +"' |\n" + " \n" + "|| " +
+	                
+	             LogColor.CYAN( "CAPACITY " + LogColor.GREEN( capacity+"" ) )                
+	             + '\'' + " |" +
+	                
+	             LogColor.CYAN( " TYPE " + LogColor.GREEN( type+"" ) )                
+	             + '\'' + " |" +
+	                
+	             LogColor.CYAN( " MAINTENANCE " + LogColor.GREEN( maintenance+"" ) )                
+	             + '\'' + " |" +
+	                
+	             LogColor.CYAN( " IN SERVICE " + LogColor.GREEN( isService+"" ) )                
+	             + '\'' + "' ||";
 	}
 }

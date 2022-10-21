@@ -2,8 +2,23 @@ package models;
 
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
+import models.dao.ResellerDAO;
+
+import java.time.LocalDate;
+import utils.LogColor;
+
+/*
+Definisce il biglietto "semplice"
+
+Contiene una proprieta' vehicle per tracciare il mezzo su cui e' stato
+	vidimato.
+Contiene una proprieta' reseller per tracciare il venditore da cui e'
+	stato acquistato.
+
+Proprieta' puch e' null se non e' stato vidimato,
+	se vidimato contiene la data di vidimazione.
+*/
 @Entity
 public class Ticket {
     @Id
@@ -14,7 +29,7 @@ public class Ticket {
     @ManyToOne
     @JoinColumn(name = "vehicle_id")
     private Vehicle vehicle;
-    
+        
     private LocalDate releaseDate;
     private LocalDate punch;
     
@@ -38,10 +53,6 @@ public class Ticket {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public LocalDate getPunch() {
         return punch;
     }
@@ -61,14 +72,21 @@ public class Ticket {
 	public void setVehicle(Vehicle vehicle) {
 		this.vehicle = vehicle;
 	}
-        @Override
-        public String toString() {
-            return "Ticket{" +
-                    "id=" + id +
-                    ", releaseDate=" + releaseDate +
-                    ", punch=" + punch +
-                    ", reseller=" + reseller +
-                    '}';
-        }
+     
+     @Override
+	 public String toString() {
+	     return "|| " + LogColor.YELLOW( "Ticket" ) + " | " +
+	    
+	             LogColor.YELLOW( "N. ID '" + LogColor.GREEN( id.toString()))          
+	             +"' |\n" + " \n" + "|| " +
+	                
+	             LogColor.CYAN( " RELEASE DATE '" + LogColor.GREEN( releaseDate+"" ) )                
+	             + '\'' + " |" +
+	                
+	             LogColor.CYAN( " PUNCH '" + LogColor.GREEN( punch+"" ) )                
+	             + '\'' + " |\n" + " \n" + "|| " + 
+	                
+	             LogColor.CYAN( " RESELLER " + LogColor.WHITE( ResellerDAO.getById(reseller.getId()) == null ? "null" : reseller.toString() ) );
+	}
     
 }

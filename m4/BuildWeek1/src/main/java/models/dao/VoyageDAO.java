@@ -20,6 +20,9 @@ public class VoyageDAO {
 
 	private static final Logger log = LoggerFactory.getLogger(VoyageDAO.class);
 
+	/*
+	Salva nel databse
+	*/
 	public static void save(Voyage voyage) {
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
@@ -42,7 +45,10 @@ public class VoyageDAO {
 		}
 
 	}
-
+	
+	/*
+	Cancella dal database data l'istanza dell'oggetto Voyage
+	*/
 	public static void delete(Voyage voyage) {
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
@@ -51,8 +57,9 @@ public class VoyageDAO {
 			EntityTransaction et = em.getTransaction();
 
 			et.begin();
+			Voyage found = em.find(Voyage.class, voyage.getId());
 
-			em.remove(voyage);
+			em.remove(found);
 
 			et.commit();
 
@@ -65,6 +72,9 @@ public class VoyageDAO {
 		}
 	}
 	
+	/*
+	Restituisce la lista di tutti i Voyage
+	*/
 	public static List<Voyage> getAll() {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
@@ -76,7 +86,10 @@ public class VoyageDAO {
         }
     }
        
-   
+    /*
+	Restituisce la lista di Voyage dati ID veicolo e ID route
+	(id dovrebbero esesre long, possibile ottimizzazione)
+	*/
     public static List<Voyage> getRouteByIDS(int veicoloID, int routeID) {
 
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
@@ -98,7 +111,8 @@ public class VoyageDAO {
 			List<Voyage> itemList = q.getResultList();
 
 			if(itemList.size() == 0) {
-				System.out.println("No item found.");
+				
+				LogColor.errorMessage("No item found.");
 			}
 			
 			return itemList;
@@ -109,6 +123,9 @@ public class VoyageDAO {
         }
     }
     
+    /*
+	Restituisce un Voyage dato il suo ID
+	*/
     public static Voyage getById(Long id) {
 
 		EntityManager em = JpaUtil.getEntityManagerFactory()
@@ -130,6 +147,9 @@ public class VoyageDAO {
 		return null;
 	}
 	
+	/*
+	Metodo per cambiare il mezzo assegnato ad un Voyage
+	*/
 	public static void refreshVehicle(Voyage object, long newVID) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
@@ -146,6 +166,9 @@ public class VoyageDAO {
 
     }
     
+    /*
+	Metodo per cambiare la Tratta/Route assegnata ad un Voyage
+	*/
     public static void refreshRoute(Voyage object, long newRID) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
@@ -162,6 +185,9 @@ public class VoyageDAO {
 
     }
     
+    /*
+	Metodo per cambiare il tempo medio di percorrenza di un Voyage
+	*/
     public static void refreshAvgTime(Voyage object, int newAVG) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {

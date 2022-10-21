@@ -16,6 +16,9 @@ import utils.LogColor;
 public class RouteDAO {
 	private static final Logger log = LoggerFactory.getLogger(RouteDAO.class);
 
+	/*
+	Salva nel database
+	*/
 	public static void save(Route route) {
 		EntityManager em = JpaUtil.getEntityManagerFactory()
 				.createEntityManager();
@@ -39,6 +42,9 @@ public class RouteDAO {
 		}
 	}
 	
+	/*
+	Cancella dal database dato un oggetto Route
+	*/
 	public static void delete(Route object) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
@@ -60,6 +66,9 @@ public class RouteDAO {
 
     }
 	
+	/*
+	Cerca nel database dato l'id di una Route
+	*/
 	public static Route getById(Long id) {
 
 		EntityManager em = JpaUtil.getEntityManagerFactory()
@@ -81,6 +90,9 @@ public class RouteDAO {
 		return null;
 	}
 	
+	/*
+	Restituisce la lista di tutte le Route
+	*/
 	public static List<Route> getAll() {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
@@ -92,6 +104,11 @@ public class RouteDAO {
         }
     }
     
+    /*
+	Restituisce la lista di Route date:
+		- inizio tratta
+		- fine tratta
+	*/
     public static List<Route> getRouteBySF(String inizio, String fine) {
 
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
@@ -109,6 +126,9 @@ public class RouteDAO {
         }
     }
     
+    /*
+	Aggiorna l'inizio della tratta
+	*/
     public static void refreshStart(Route object, String start) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
@@ -125,6 +145,9 @@ public class RouteDAO {
 
     }
     
+    /*
+	Aggiorna la fine della tratta
+	*/
     public static void refreshFinish(Route object, String finish) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
@@ -141,6 +164,9 @@ public class RouteDAO {
 
     }
     
+    /*
+	Aggiorna il travel time della tratta
+	*/
     public static void refreshTT(Route object, int tt) {
         EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
         try {
