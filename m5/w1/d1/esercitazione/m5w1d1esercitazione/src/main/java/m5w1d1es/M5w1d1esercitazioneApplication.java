@@ -19,6 +19,7 @@ public class M5w1d1esercitazioneApplication {
 		LogColor.infoMessage("Seconda Parte");
 		
 		stampa.testTopping();
+		
 	}
 
 }

@@ -39,7 +39,7 @@ public class PizzaTopping extends Pizza{
 
 	@Override
 	public String toString() {
-		return "Prodotto: " + LogColor.GREEN(getName()) +  LogColor.YELLOW("(" +getSize() + ")" ) 
+		return "Prodotto: " + LogColor.GREEN(getName()) +  LogColor.YELLOW(" (" +getSize() + ")" ) 
 		+ " | ====> Calorie: " + LogColor.GREEN(getCalories() + "")
 		+ " | ====> Prezzo: " + LogColor.GREEN(getPrice()+ "");
 	}
