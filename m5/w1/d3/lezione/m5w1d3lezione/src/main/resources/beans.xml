@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- load application.properties -->
+	<context:property-placeholder
+		location="classpath:application.properties"></context:property-placeholder>
+
+	<!-- Costruzione beans -->
+
+	<bean id="address1" class="m5w1d2lez.classes.Address">
+		<property name="road" value="#{'${adr1.road}'.toUpperCase() + '100'}"></property>
+	</bean>
+
+	<!-- DIpendecies injection manuale -->
+	<!-- 
+	<bean id="person1" class="m5w1d2lez.classes.Person">
+		<property name="name" value="Paolo"></property>
+		<property name="address">
+			<ref bean="address1"></ref>
+		</property>
+	</bean>
+	 -->
+	
+	<!-- DIpendecies injection autowriring -->
+
+	<bean id="person1" class="m5w1d2lez.classes.Person" autowire="byType">
+		<property name="name" value="Paolo"></property>
+	</bean>
+
+</beans>
+            

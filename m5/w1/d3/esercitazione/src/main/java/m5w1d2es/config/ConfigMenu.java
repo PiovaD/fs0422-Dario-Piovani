@@ -1,7 +1,10 @@
 package m5w1d2es.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 
 import m5w1d2es.model.Drink;
@@ -16,73 +19,74 @@ import m5w1d2es.products.*;
 
 @Configuration
 public class ConfigMenu {
-	
 
+	@Autowired
+	private ApplicationContext ctx;
+	
 	@Bean(name = "menuSettimanale")
 	@Scope("singleton")
 	public Menu menu() {
 
 		Menu menu = new Menu();
 
-		menu.getMenuPizza().add(pizzaMargherita());
-		menu.getMenuPizza().add(pizzaSalami());
+		menu.getMenuPizza().add(ctx.getBean("margherita", Pizza.class));
+		menu.getMenuPizza().add(ctx.getBean("diavola", Pizza.class));
 
-		menu.getMenuTopping().add(new ToppingOnions(null));
-		menu.getMenuTopping().add(new ToppingHam(null));
+		menu.getMenuTopping().add(ctx.getBean("topOnion", PizzaTopping.class));
+		menu.getMenuTopping().add(ctx.getBean("topHam", PizzaTopping.class));
 
-
-		menu.getMenuDrink().add(water());
+		menu.getMenuDrink().add(ctx.getBean("water", Drink.class));
 		
-		menu.getMenuSouvenir().add(souvenirMug());
-				
-
+		menu.getMenuSouvenir().add(ctx.getBean("mug", Souvenir.class));
+					
 		return menu;
 
 	}
 
-	@Bean
+	@Bean(name = "margherita")
 	@Scope("prototype")
+	@Primary
 	public PizzaMargherita pizzaMargherita() {
 		return new PizzaMargherita(PizzaSize.STANDARD);
 	}
 
-	@Bean
+	@Bean(name = "diavola")
 	@Scope("prototype")
 	public Diavola pizzaSalami() {	
 		return new Diavola(PizzaSize.STANDARD);
 	}
 	
-	@Bean
+	@Bean(name = "topOnion")
 	@Scope("singleton")
 	public PizzaTopping toppingOnions(Pizza pizza) {
 		return new ToppingOnions(pizza);
 	}
 
-	@Bean
-	@Scope("prototype")
+	@Bean(name = "topHam")
+	@Scope("singleton")
 	public PizzaTopping toppingHam(Pizza pizza) {
 		return new ToppingHam(pizza);
 	}
 
-	@Bean
-	@Scope("prototype")
+	@Bean(name = "water")
+	@Scope("singleton")
 	public Drink water() {
 		return new Water();
 	}
 	
-	@Bean
-	@Scope("prototype")
+	@Bean(name = "wine")
+	@Scope("singleton")
 	public Drink wine() {
 		return new Wine();
 	}
 	
-	@Bean
-	@Scope("prototype")
+	@Bean(name = "mug")
+	@Scope("singleton")
 	public Souvenir souvenirMug() {
 		return new Mug();
 	}
 	
-	@Bean
+	@Bean(name = "oreder")
 	@Scope("prototype")
 	public Order order() {
 		return new Order();

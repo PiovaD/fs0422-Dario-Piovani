@@ -32,6 +32,9 @@ public class GestioneMenu {
 		menu.getMenuSouvenir().forEach(p -> System.out.println(p));
 
 	}
-
+	
+	public void closeCtx() {
+		ctx.close();
+	}
 	
 }
