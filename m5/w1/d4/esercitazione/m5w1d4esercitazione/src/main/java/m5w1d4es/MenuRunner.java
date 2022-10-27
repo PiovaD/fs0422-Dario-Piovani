@@ -8,11 +8,13 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 import m5w1d4es.model.Drink;
+import m5w1d4es.model.PizzaTopping;
 import m5w1d4es.model.order.Order;
 import m5w1d4es.model.order.OrderItem;
 import m5w1d4es.model.order.Table;
 import m5w1d4es.model.superclass.Pizza;
 import m5w1d4es.products.*;
+import m5w1d4es.repositories.DrinkRepository;
 import m5w1d4es.repositories.OrderItemRepo;
 import m5w1d4es.repositories.OrderRepository;
 import m5w1d4es.repositories.PizzaRepository;
@@ -33,7 +35,10 @@ public class MenuRunner implements CommandLineRunner {
 	private PizzaRepository pizzaRepo;
 	
 	@Autowired
-	private PizzaToppingRepository TopRepo;
+	private DrinkRepository drinkRepo;
+	
+	@Autowired
+	private PizzaToppingRepository topRepo;
 	
 	@Autowired
 	private OrderItemRepo oiRep;
@@ -71,28 +76,19 @@ public class MenuRunner implements CommandLineRunner {
 			order.addMenuItem(oi);
 		}
 
-//		Pizza pizzaTopping1 = (Pizza) ctx.getBean("topOnion", ctx.getBean("margherita", PizzaMargherita.class));		
-//		pizzaTopping1 = (Pizza) ctx.getBean("topHam", pizzaTopping1);
-//		pizzaRepo.save(pizzaTopping1);
-//		
+//		Pizza pizza =ctx.getBean("margherita", PizzaMargherita.class);
+//		pizzaRepo.save(pizza);				
+//		PizzaTopping pizzaTopping1 = (PizzaTopping) ctx.getBean("topOnion", pizza);	
+//		topRepo.save(pizzaTopping1);//		
 //		OrderItem oi1 = new OrderItem(pizzaTopping1, "");
-//		oiRep.save(oi1);
-//		
+//		oiRep.save(oi1);		
 //		order.addMenuItem(oi1);
-//
-//		Pizza pizzaTopping2 = new ToppingOnions(ctx.getBean("diavola", Diavola.class));
-//		pizzaRepo.save(pizzaTopping2);
-//		
-//		OrderItem oi2 = new OrderItem(pizzaTopping2, "");
-//		oiRep.save(oi2);
-//		
-//		order.addMenuItem(oi2);
-//
-//		Drink drink = ctx.getBean("wine", Drink.class);
-//		OrderItem oi3 = new OrderItem(drink, "");
-//		oiRep.save(oi3);
-//		
-//		order.addMenuItem(oi3);
+
+		Drink drink = ctx.getBean("wine", Drink.class);
+		drinkRepo.save(drink);
+		OrderItem oi3 = new OrderItem(drink, "");
+		oiRep.save(oi3);		
+		order.addMenuItem(oi3);
 	}
 
 	public Order addOrder(Table table, int coveredNumber) {
