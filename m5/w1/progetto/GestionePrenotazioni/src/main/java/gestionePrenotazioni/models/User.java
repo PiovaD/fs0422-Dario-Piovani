@@ -3,7 +3,6 @@ package gestionePrenotazioni.models;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,13 +12,11 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 //utente, che è identificato da uno username, un nome completo ed una email.
 
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name = "users")
 public class User {
@@ -44,5 +41,11 @@ public class User {
 		this.name = name;
 		this.email = email;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", name=" + name + ", email=" + email + "]";
+	}
+	
 	
 }

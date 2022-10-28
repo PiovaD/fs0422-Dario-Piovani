@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import gestionePrenotazioni.Repositories.BookingRepository;
 import gestionePrenotazioni.models.Booking;
+import gestionePrenotazioni.utils.LogColor;
 
 @Service
 public class BookingService {
@@ -21,6 +22,7 @@ public class BookingService {
 
 	public void create(Booking booking) throws Exception {
 
+		try {
 		
 		if (br.getByUserAndValidity(booking.getUser().getId(), booking.getValidity()).size() == 0) {
 
@@ -35,6 +37,10 @@ public class BookingService {
 		} else {
 			throw new Exception(
 					booking.getUser() + " ha già prenotato una postazione in data: " + booking.getValidity());
+		}
+		
+		}catch (Exception e) {
+			LogColor.errorMessage(e.getMessage());
 		}
 	}
 

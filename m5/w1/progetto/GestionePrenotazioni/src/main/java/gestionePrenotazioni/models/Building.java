@@ -13,7 +13,6 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 // L'edificio ha un nome, un indirizzo ed una città.
 
@@ -31,7 +30,7 @@ public class Building {
 	private String address;
 	private String city;
 	
-	@OneToMany(mappedBy = "building")
+	@OneToMany(mappedBy = "building", cascade = CascadeType.ALL)
 	private Set<Workstation> workstationSet = new HashSet<Workstation>();
 	
 	public Building() {

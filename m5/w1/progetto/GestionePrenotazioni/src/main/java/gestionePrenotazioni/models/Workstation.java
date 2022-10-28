@@ -17,7 +17,6 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 //Ogni postazione è identificata da un codice univoco, una descrizione,
 //un tipo [PRIVATO, OPENSPACE, SALA RIUNIONI], un numero massimo di occupanti ed un edificio.
