@@ -5,6 +5,9 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,7 +24,6 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name = "workstations")
 public class Workstation {
@@ -31,13 +33,15 @@ public class Workstation {
 	private long id;
 	
 	private String description;
+	
+	@Enumerated(EnumType.STRING)
 	private WorkstationType type;
 	private int maxOccupants;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Building building;
 
-	@OneToMany(mappedBy = "workstation" ,cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "workstation")
 	private Set<Booking> bookings = new HashSet<Booking>();
 	
 	public Workstation() {
@@ -48,5 +52,13 @@ public class Workstation {
 		this.type = type;
 		this.maxOccupants = maxOccupants;
 	}
+
+	@Override
+	public String toString() {
+		return "Workstation [id=" + id + ", description=" + description + ", type=" + type + ", maxOccupants="
+				+ maxOccupants + ", building=" + building + "]";
+	}
+	
+	
 	
 }

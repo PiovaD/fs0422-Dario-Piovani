@@ -19,14 +19,9 @@ public class BookingService {
 		return br.findAll();
 	}
 
-	/*
-	 * Una postazione può essere prenotata da un utente. La prenotazione vale per un
-	 * solo giorno e può essere effettuata solo se per quel giorno la postazione
-	 * risulta libera. Un utente può avere più prenotazioni in corso, ma non può
-	 * prenotare più di una postazione per una particolare data.
-	 */
 	public void create(Booking booking) throws Exception {
 
+		
 		if (br.getByUserAndValidity(booking.getUser().getId(), booking.getValidity()).size() == 0) {
 
 			if (br.getByWorkstationAndValidity(booking.getWorkstation().getId(), booking.getValidity())

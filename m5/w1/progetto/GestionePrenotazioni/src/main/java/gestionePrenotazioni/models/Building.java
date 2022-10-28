@@ -19,7 +19,6 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name = "buildings")
 public class Building {
@@ -32,7 +31,7 @@ public class Building {
 	private String address;
 	private String city;
 	
-	@OneToMany(mappedBy = "building", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "building")
 	private Set<Workstation> workstationSet = new HashSet<Workstation>();
 	
 	public Building() {
@@ -42,6 +41,11 @@ public class Building {
 		this.name = name;
 		this.address = address;
 		this.city = city;
+	}
+
+	@Override
+	public String toString() {
+		return "Building [id=" + id + ", name=" + name + ", address=" + address + ", city=" + city + "]";
 	}
 	
 }

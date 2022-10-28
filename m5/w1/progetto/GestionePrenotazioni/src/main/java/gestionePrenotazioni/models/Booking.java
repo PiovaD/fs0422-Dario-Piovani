@@ -2,7 +2,9 @@ package gestionePrenotazioni.models;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,15 +32,15 @@ public class Booking {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	private LocalDate validity;
-	
-	@ManyToOne
-	private Workstation workstation;	
-	
-	@ManyToOne
+
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Workstation workstation;
+
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private User user;
-	
+
 	public Booking() {
 	}
 
@@ -47,6 +49,5 @@ public class Booking {
 		this.workstation = workstation;
 		this.user = user;
 	}
-	
-	
+
 }
