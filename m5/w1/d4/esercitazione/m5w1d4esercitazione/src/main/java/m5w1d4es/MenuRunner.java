@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 import m5w1d4es.model.Drink;
-import m5w1d4es.model.PizzaTopping;
 import m5w1d4es.model.order.Order;
 import m5w1d4es.model.order.OrderItem;
 import m5w1d4es.model.order.Table;
@@ -18,7 +17,7 @@ import m5w1d4es.repositories.DrinkRepository;
 import m5w1d4es.repositories.OrderItemRepo;
 import m5w1d4es.repositories.OrderRepository;
 import m5w1d4es.repositories.PizzaRepository;
-import m5w1d4es.repositories.PizzaToppingRepository;
+//import m5w1d4es.repositories.PizzaToppingRepository;
 import m5w1d4es.repositories.TableRepository;
 
 @Component
@@ -37,8 +36,8 @@ public class MenuRunner implements CommandLineRunner {
 	@Autowired
 	private DrinkRepository drinkRepo;
 	
-	@Autowired
-	private PizzaToppingRepository topRepo;
+	//@Autowired
+	//private PizzaToppingRepository topRepo;
 	
 	@Autowired
 	private OrderItemRepo oiRep;
