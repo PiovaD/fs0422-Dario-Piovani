@@ -1,12 +1,12 @@
-package gestionePrenotazioni.services;
+package m5w2d1es.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import gestionePrenotazioni.Repositories.UserRepository;
-import gestionePrenotazioni.models.User;
+import m5w2d1es.Repositories.UserRepository;
+import m5w2d1es.models.User;
 
 @Service
 public class UserService {
