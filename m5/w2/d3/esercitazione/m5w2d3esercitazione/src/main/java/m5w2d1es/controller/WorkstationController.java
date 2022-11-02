@@ -3,12 +3,17 @@ package m5w2d1es.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,23 +23,36 @@ import m5w2d1es.models.WorkstationType;
 import m5w2d1es.services.WorkstationService;
 
 @RestController
+@RequestMapping("/api/workstations")
 @Slf4j
 public class WorkstationController {
 
 	@Autowired
 	private WorkstationService ws;
 
-	@GetMapping("/api/workstations")
-	public List<Workstation> searchAllWorkstations() {
+	@GetMapping("")
+	public Iterable<Workstation> searchAllWorkstations() {
 		return ws.searchAllWorkstations();
 	}
+	
+	@GetMapping("/pageable")
+	public ResponseEntity<Page<Workstation>> findAll(Pageable p) {
+		Page<Workstation> findAll = ws.searchAllWorkstationsPage(p);
 
-	@GetMapping("/api/workstations/searchByCityAndType")
+		if (findAll.hasContent()) {
+			return new ResponseEntity<>(findAll, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+		}
+
+	}
+
+	@GetMapping("/searchByCityAndType")
 	public List<Workstation> searchByCityAndType(@RequestParam String city, @RequestParam WorkstationType type) {
 		return ws.searchWorkstation(city, type);
 	}
 
-	@PostMapping("/api/workstations")
+	@PostMapping("")
 	public void create(@RequestBody Workstation workstation) {
 		try {
 			ws.create(workstation);
@@ -43,7 +61,7 @@ public class WorkstationController {
 		}
 	}
 
-	@GetMapping("/api/workstations/{id}")
+	@GetMapping("/{id}")
 	public Workstation readById(@PathVariable Long id) {
 		try {
 			return ws.findById(id);
@@ -53,7 +71,7 @@ public class WorkstationController {
 		}
 	}
 
-	@PutMapping("/api/workstations")
+	@PutMapping("")
 	public void update(@RequestBody Workstation workstation) {
 		try {
 			ws.create(workstation);
@@ -62,7 +80,7 @@ public class WorkstationController {
 		}
 	}
 
-	@DeleteMapping("/api/workstations/{id}")
+	@DeleteMapping("/{id}")
 	public void deleteById(@PathVariable Long id) {
 		try {
 			ws.delete(id);

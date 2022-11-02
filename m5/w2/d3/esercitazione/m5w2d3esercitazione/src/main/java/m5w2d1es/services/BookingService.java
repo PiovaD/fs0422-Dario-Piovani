@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import m5w2d1es.Repositories.BookingRepository;
@@ -16,8 +18,12 @@ public class BookingService {
 	@Autowired
 	private BookingRepository br;
 
-	public List<Booking> searchAllBookings() {
+	public Iterable<Booking> searchAllBookings() {
 		return br.findAll();
+	}
+	
+	public Page<Booking> searchAllBookingsPage(Pageable p) {
+		return br.findAll(p);
 	}
 
 	public void create(Booking booking) throws Exception {
