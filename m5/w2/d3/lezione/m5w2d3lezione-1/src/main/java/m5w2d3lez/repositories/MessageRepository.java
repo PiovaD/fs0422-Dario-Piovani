@@ -11,9 +11,12 @@ import m5w2d3lez.entities.Message;
 
 @Repository
 public interface MessageRepository extends PagingAndSortingRepository<Message, Long> {
-	@Query(nativeQuery = true, value = "SELECT * FROM message WHERE lower(title) LIKE %:n% OR WHERE lower(content) LIKE %:n%")
+	
+	@Query(value ="SELECT m FROM messages m WHERE m.sender.username LIKE lower(concat('%', :n, '%'))")
+	public Page<Message> findByAuthorAndPaginate(@Param("n") String n, Pageable p);
+	
+	@Query(nativeQuery = true, value = "SELECT * FROM messages WHERE lower(title) LIKE %:n% OR lower(content) LIKE %:n%")
 	public Page<Message> findByMessageAndPaginate(@Param("n") String n, Pageable p);
 
-	@Query(value = "SELECT m FROM Message m WHERE m.author.username LIKE lower(concat('%', :n, '%'))")
-	public Page<Message> findByAuthorAndPaginate(@Param("n") String n, Pageable p);
+
 }

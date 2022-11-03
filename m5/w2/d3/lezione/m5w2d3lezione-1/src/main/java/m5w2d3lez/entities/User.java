@@ -1,14 +1,12 @@
 package m5w2d3lez.entities;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,10 +22,7 @@ public class User {
 	
 	@Column(unique = true, nullable = false)
 	private String username;
-	
-	@OneToMany
-	private List<Message> messages;
-		
+			
 	private LocalDate birth;
 	private Boolean active = false;
 	
