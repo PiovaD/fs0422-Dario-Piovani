@@ -12,7 +12,7 @@ import deviceManagement.Models.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
 
-	@Query(value = "SELECT u FROM User u WHERE UPPER(username) LIKE :u ")
+	@Query(value = "SELECT u FROM User u WHERE username = :u ")
 	public Optional<User> findByUsername(@Param("u") String username);
 
 }

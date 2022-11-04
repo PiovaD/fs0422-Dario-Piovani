@@ -1,6 +1,6 @@
 package deviceManagement.Repositories;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -14,6 +14,6 @@ import deviceManagement.Models.DeviceType;
 public interface DeviceRepository extends JpaRepository<Device, Long> {
 
 	@Query(value = "SELECT d FROM Device d WHERE deviceType LIKE :t ")
-	public Optional<Device> findByType(@Param("t") DeviceType type);
+	public List<Device> findByType(@Param("t") DeviceType type);
 
 }

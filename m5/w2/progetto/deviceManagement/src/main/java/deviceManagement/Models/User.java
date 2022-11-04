@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,8 +16,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,13 +43,12 @@ public class User {
 	@Column(nullable = false)
 	private String lastName;
 	
-	@JsonIgnore
 	@Column(nullable = false)
 	private String password;
 	
 	private Boolean active = true;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name = "users_roles", 
 			joinColumns = @JoinColumn(name = "user_id"), 
@@ -58,7 +57,7 @@ public class User {
 	private Set<Role> roles = new HashSet<Role>();
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	@JsonBackReference
+	@JsonManagedReference
 	private Set<Device> devices;
 
 	public User(String username, String email, String firstName, String lastName, String password) {

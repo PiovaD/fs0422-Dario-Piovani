@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,8 +33,8 @@ public class Device {
 	@Enumerated(EnumType.STRING)
 	private DeviceStatus deviceStatus;
 
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST })
-	@JsonManagedReference
+	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
+	@JsonBackReference
 	private User user;
 
 	public Device(DeviceType deviceType, DeviceStatus deviceStatus) {

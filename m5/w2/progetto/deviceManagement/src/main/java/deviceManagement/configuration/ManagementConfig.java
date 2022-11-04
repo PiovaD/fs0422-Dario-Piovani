@@ -63,7 +63,7 @@ public class ManagementConfig {
 	@Scope("singleton")
 	public Device deviceSmartphone2() {
 		Device d =  new Device(DeviceType.SMARTPHONE, DeviceStatus.ASSIGNED);
-		d.setUser(user1());
+		d.setUser(user2());
 		return d;
 	}
 	
@@ -71,7 +71,7 @@ public class ManagementConfig {
 	@Scope("singleton")
 	public Device deviceSmartphone3() {
 		Device d =  new Device(DeviceType.SMARTPHONE, DeviceStatus.MAINTENANCE);
-		d.setUser(user1());
+		d.setUser(user3());
 		return d;
 	}
 	
@@ -79,7 +79,7 @@ public class ManagementConfig {
 	@Scope("singleton")
 	public Device deviceTablet() {
 		Device d =  new Device(DeviceType.TABLET, DeviceStatus.ASSIGNED);
-		d.setUser(user1());
+		d.setUser(user2());
 		return d;
 	}
 	
@@ -87,7 +87,7 @@ public class ManagementConfig {
 	@Scope("singleton")
 	public Device deviceLaptop() {
 		Device d =  new Device(DeviceType.LAPTOP, DeviceStatus.ASSIGNED);
-		d.setUser(user1());
+		d.setUser(user3());
 		return d;
 	}
 	

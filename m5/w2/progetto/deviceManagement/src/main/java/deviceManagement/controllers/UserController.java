@@ -57,9 +57,9 @@ public class UserController {
 	}
 	
 	@GetMapping("/username/{username}")
-	public ResponseEntity<User> getByUsername(@PathVariable String u) {
+	public ResponseEntity<User> getByUsername(@PathVariable String username) {
 		try {
-			return new ResponseEntity<>(us.getByUsername(u.toUpperCase()).get(), HttpStatus.OK);
+			return new ResponseEntity<>(us.getByUsername(username).get(), HttpStatus.OK);
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);

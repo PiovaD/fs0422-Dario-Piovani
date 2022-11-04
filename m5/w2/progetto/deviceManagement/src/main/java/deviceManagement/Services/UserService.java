@@ -6,17 +6,19 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import deviceManagement.Models.User;
 import deviceManagement.Repositories.UserRepository;
+import deviceManagement.security.WebSecurityConfig;
 
 @Service
 public class UserService {
 
 	@Autowired
 	UserRepository ur;
-
+	
 	public List<User> getAll() {
 		return ur.findAll();
 	}
@@ -34,6 +36,8 @@ public class UserService {
 	}
 
 	public void save(User u) {
+		String psw = u.getPassword();
+		u.setPassword(psw);
 		ur.save(u);
 	}
 

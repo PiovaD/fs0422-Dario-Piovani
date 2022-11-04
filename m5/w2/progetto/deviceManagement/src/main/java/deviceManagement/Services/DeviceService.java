@@ -35,7 +35,7 @@ public class DeviceService {
 		return dr.findById(id);
 	}
 	
-	public Optional<Device> getByType(DeviceType type) {
+	public List<Device> getByType(DeviceType type) {
 		return dr.findByType(type);
 	}
 	

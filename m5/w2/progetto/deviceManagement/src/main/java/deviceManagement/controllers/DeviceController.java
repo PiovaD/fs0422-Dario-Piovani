@@ -58,10 +58,10 @@ public class DeviceController {
 		}
 	}
 	
-	@GetMapping("/type/{id}")
-	public ResponseEntity<Device> readByType(@PathVariable DeviceType type) {
+	@GetMapping("/type/{type}")
+	public ResponseEntity<List<Device>> readByType(@PathVariable DeviceType type) {
 		try {
-			return new ResponseEntity<>(ds.getByType(type).get(), HttpStatus.OK);			
+			return new ResponseEntity<>(ds.getByType(type), HttpStatus.OK);			
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);

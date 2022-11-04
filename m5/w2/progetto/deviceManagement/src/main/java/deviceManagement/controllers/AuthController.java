@@ -22,7 +22,7 @@ import deviceManagement.security.login.LoginRequest;
 import deviceManagement.security.login.LoginResponse;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/api")
 public class AuthController {
 
 	@Autowired
@@ -34,12 +34,12 @@ public class AuthController {
 	@Autowired
 	JwtUtils jwtUtils;
 
-	@PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
-
+		
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
-
+		
 		authentication.getAuthorities();
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
