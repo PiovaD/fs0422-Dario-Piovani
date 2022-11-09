@@ -41,11 +41,10 @@ public class WebSecurityConfig {
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	
+
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http
-				.csrf()
+		http.csrf()
 				.disable()
 				.exceptionHandling()
 				.authenticationEntryPoint(unauthorizedHandler)
@@ -54,7 +53,7 @@ public class WebSecurityConfig {
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
 				.authorizeRequests()
-				.antMatchers("/api/login", "/api/**/new", "/api/users")
+				.antMatchers("/**")
 				.permitAll()
 				.anyRequest()
 				.authenticated();

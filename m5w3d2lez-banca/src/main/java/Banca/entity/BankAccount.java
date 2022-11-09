@@ -41,12 +41,12 @@ public class BankAccount {
 			joinColumns =  @JoinColumn(name = "account_id"),
 			inverseJoinColumns = @JoinColumn(name = "user_id")
 			 )
-	private Set<User> user;
+	private Set<User> users;
 	
 	private int balance = 0;
 
-	public BankAccount( Set<User> user) {
-		this.user = user;
+	public BankAccount( User user) {
+		this.users.add(user);
 	}
 	
 	
