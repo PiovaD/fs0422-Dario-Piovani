@@ -4,12 +4,12 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
-import m5w3d4.es1.Adapter;
-import m5w3d4.es1.DataSource;
+import m5w3d4.es1.InfoDataAdapter;
 import m5w3d4.es1.Info;
 import m5w3d4.es1.UserData;
 import m5w3d4.es2.Libro;
 import m5w3d4.es2.Pagina;
+import m5w3d4.es2.Sezione;
 import m5w3d4.es3.Capitano;
 import m5w3d4.es3.Colonnello;
 import m5w3d4.es3.Generale;
@@ -38,7 +38,7 @@ public class home {
 		i.setDataDiNascita(Date.from(LocalDate.of(1993, 4, 18).atStartOfDay(ZoneId.systemDefault()).toInstant()));
 
 		UserData ud = new UserData();
-		ud.getData(new Adapter(i));
+		ud.getData(new InfoDataAdapter(i));
 
 		System.out.println(ud.getNomeCompleto());
 		System.out.println(ud.getEta());
@@ -46,7 +46,27 @@ public class home {
 	}
 
 	public static void composite() {
-//TODO
+		Pagina p1 = new Pagina(1);
+		Pagina p2 = new Pagina(2);
+		Pagina p3 = new Pagina(3);
+		Pagina p4 = new Pagina(4);
+		
+		Sezione s1 = new Sezione("s1");
+		Sezione s2 = new Sezione("s2");
+		
+		Libro l1 = new Libro("l1");
+		
+		s1.addListaC(p1);
+		s1.addListaC(p2);
+		s1.addListaC(p3);
+		
+		s2.addListaC(p4);
+		
+		l1.addListaC(s1);
+		l1.addListaC(s2);
+		
+		l1.stampa();
+		System.out.println(l1.getNumeroPagine());
 	}
 
 	public static void chainOfResponsibility() {

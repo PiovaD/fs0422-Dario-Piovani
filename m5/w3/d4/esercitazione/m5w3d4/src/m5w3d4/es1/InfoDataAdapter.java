@@ -4,12 +4,12 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
 
-public class Adapter implements DataSource{
+public class InfoDataAdapter implements DataSource{
 
 
 	private Info info;
 	
-	public Adapter(Info info) {
+	public InfoDataAdapter(Info info) {
 		this.info = info;
 	}
 	

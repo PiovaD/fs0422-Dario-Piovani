@@ -1,27 +1,35 @@
 package m5w3d4.es2;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Libro {
+public class Libro extends ComponenteLibro{
 
 	private String titolo;
-	private Double prezzo;
+	
 	private List<String> autori;
-	private List<ComponenteLibro> listaComponenti;
+	private List<ComponenteLibro> listaComponenti = new ArrayList<ComponenteLibro>();
+	
+	public Libro() {
+	}
+	
+	public Libro(String t) {
+		this.titolo = t;
+	}
 
 	public void stampa() {
 		System.out.println("Libro: " + titolo);
 		listaComponenti.forEach(com -> com.stampa());
 	}
 
-	public Double getPrezzo() {
-		return this.prezzo;
-	}
-
 	public List<String> getAutori() {
 		return this.autori;
 
+	}
+	
+	public void addListaC(ComponenteLibro c) {
+		this.listaComponenti.add(c);
 	}
 
 	public int getNumeroPagine() {
@@ -44,10 +52,6 @@ public class Libro {
 
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
-	}
-
-	public void setPrezzo(Double prezzo) {
-		this.prezzo = prezzo;
 	}
 
 	public void setAutori(List<String> autori) {
