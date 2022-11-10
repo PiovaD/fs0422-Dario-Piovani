@@ -1,0 +1,31 @@
+git init 				inizializza nuova repository
+git remote add <nome> <url>  		copia da git per collegare repo
+git commit -m "<nome>"
+git remote -v				veifico l a repository
+git status 
+git fetch				scarico le modifiche dal remoto ma senza merge
+
+git branch 				verifico le branch
+git branch "<nome>"			creo branch
+git branch -d "<nome>"			cancello branch con verifica
+git branch -D "<nome>"			cancello branch senza verifica
+git checkout 				ci sposta tra le branch
+git merge "<nome branch>"		mergia le branch con verifica	
+git branch --no-merge			verifico le branch non mergiate
+
+git add . 				aggiunge tutto
+git commit -m "<nome>"			aggiorna il lavoro ma non la pagina web con un nome alle modifiche
+git push <remote ->origin> <ramo ->master>			push sul sito
+
+
+git clone 				copia la repository
+git pull origin master			aggiorna la rep
+
+git --version ?
+
+touch <nome file es. .gitignore>			creo un file 
+
+all interno posso dare nomi di cartelle da non pushare esempio "node_modules/"
+git ingore evita il caricamento di file per esempio quelli con elementi sensibili
+
+git reset --hard <hash commit 90675c05de43e87a39842f4d2d244fc85fbafedf> && git clean -f
