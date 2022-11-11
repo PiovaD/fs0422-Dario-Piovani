@@ -10,8 +10,11 @@ public class Subject {
 
 	private final List<Observer> observers = new ArrayList<Observer>();
 
-	public void notifyObservers() {
+	public boolean notifyObservers() {
+
 		this.getObservers().forEach(elem -> elem.update(this));
+		
+		return true;
 	}	
 
 	public void addObserver(Observer obs) {

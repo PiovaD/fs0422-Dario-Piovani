@@ -24,12 +24,14 @@ public class Probe extends Subject {
 		this.longitude = longitude;
 	}
 
-	public void setSmokeLevel(int smokeLevel) {
+	public boolean setSmokeLevel(int smokeLevel){
 		this.smokeLevel = smokeLevel;
 
 		if (smokeLevel > SMOKE_THRESHOLD) {
-			super.notifyObservers();
+			return super.notifyObservers();
 		}
+		
+		return false;
 	}
 
 }
