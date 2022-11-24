@@ -1,0 +1,330 @@
+@media screen and (min-width: 768px) {
+
+    /*header*/
+
+    header .container {
+        width: 720px;
+        height: 95px;
+        bottom: 95px;
+    }
+
+    header .navigator img {
+        margin-top: 15px;
+    }
+
+    header .button-container {
+        display: none;
+    }
+
+    header .navigator {
+        display: inline;
+    }
+
+    header .nav-menu ul {
+        height: auto;
+        float: right;
+        padding-top: 5px;
+        padding-right: 25px;
+        overflow: inherit;
+    }
+
+    header .nav-menu li {
+        display: inline;
+        margin-left: 20px;
+    }
+
+    header .nav-menu li a {
+        margin: 0;
+    }
+
+    /*main*/
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    #slider,
+    #blog ul,
+    #price,
+    #subscribe h1,
+    #subscibe p,
+    #contact-us,
+    footer section {
+        width: 720px;
+    }
+
+    #slider #images .slide-img {
+        padding-right: 15px;
+    }
+
+    span,
+    #price h1>span {
+        font-size: 2.8rem;
+    }
+
+    #blog ul li {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    #blog a {
+        float: none;
+        top: 30px;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    #blog p,
+    #price li p {
+        font-size: 0.9rem;
+    }
+
+    #blog .block ul li .content-right {
+        padding: 40px 35px 23px;
+        font-size: 16px;
+        line-height: 26px;
+        float: right;
+        position: relative;
+        z-index: 1;
+
+    }
+
+    #blog .block ul li .content-right:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 30%;
+        width: 30px;
+        height: 30px;
+        margin-top: -15px;
+        background: white;
+        transform: rotate(45deg);
+        margin-left: -15px;
+    }
+
+    #blog .block ul li .content-left {
+        padding: 40px 35px 23px;
+        font-size: 16px;
+        line-height: 26px;
+        float: left;
+        position: relative;
+        z-index: 1;
+    }
+
+    #blog .block ul li .content-left:after {
+        content: "";
+        position: absolute;
+        right: -15px;
+        top: 30%;
+        width: 30px;
+        height: 30px;
+        margin-top: 0px;
+        background: white;
+        transform: rotate(45deg);
+
+    }
+
+    #price .titolo {
+        position: relative;
+    }
+
+    #price .titolo h2 {
+        display: inline;
+        position: relative;
+        background-color: white;
+        bottom: -15px;
+        z-index: 2;
+        padding-bottom: 2px;
+    }
+
+    #price h3 {
+        padding-bottom: 20px;
+    }
+
+    #price .sotto {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border: 1px dotted #C9C9C9;
+        margin-top: 20px;
+    }
+
+    #price .titolo span {
+        float: right;
+        color: #938463;
+    }
+
+    #subscribe h1 {
+        font-size: 2.25rem;
+    }
+
+    .form {
+        width: 662px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .form input[type=text] {
+        flex: 0 0 450px;
+    }
+
+    #subscribe .form .btn {
+        position: inherit;
+        margin: 0;
+        flex-grow: 0;
+    }
+
+    #contact-us {
+        padding-bottom: 0;
+    }
+
+    #contact-us .btn {
+        width: 512px;
+        display: block;
+        float: none;
+        margin: 40px auto;
+    }
+
+    .contact li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+
+    footer section {
+        padding-top: 0;
+    }
+
+    footer .copyright {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    header .container,
+    #slider,
+    #blog ul,
+    #price,
+    #subscribe h1,
+    .btn-container,
+    #subscibe p,
+    #contact-us,
+    footer section {
+
+        margin-left: auto;
+        margin-right: auto;
+        width: 940px;
+    }
+
+    #slider #images .slide-img {
+        padding-right: 30px;
+    }
+
+    #blog ul {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #blog h3 {
+        padding: 0 40px 20px;
+    }
+
+    #blog a {
+        top: 0;
+        padding: 28px 100px;
+    }
+
+    #blog ul li img {
+        object-fit: none;
+        object-position: top;
+        height: 100%;
+    }
+
+    #blog ul li>div {
+        background-color: white;
+    }
+
+    #blog .btn {
+        float: right;
+        margin: 0;
+    }
+
+    #blog .btn:hover {
+        border-radius: 0;
+    }
+
+    #contact-us .btn {
+        float: right;
+    }
+
+    #container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #container div {
+        width: 32%;
+    }
+
+    .photo li img {
+        margin-bottom: 25px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    header .container,
+    #slider,
+    #blog ul,
+    #price,
+    #subscribe h1,
+    .btn-container,
+    #subscibe p,
+    #contact-us,
+    footer #container {
+
+        margin-left: auto;
+        margin-right: auto;
+        width: 1140px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        right: 20px;
+    }
+
+    #blog ul li img {
+        object-fit: cover;
+    }
+
+    #blog .btn {
+        padding: 28px 103.5px;
+    }
+
+    #contact-us {
+        padding-bottom: 100px;
+    }
+
+    #contact-us .btn {
+        margin-bottom: 0;
+    }
+
+    .photo {
+        padding-top: 20px;
+    }
+
+    #footer-photo div {
+        margin-top: 0;
+    }
+}

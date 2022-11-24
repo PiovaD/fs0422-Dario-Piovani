@@ -1,0 +1,706 @@
+/*GENERAL*/
+
+@font-face {
+    font-family: youfont;
+    src: url(../fonts/ufonts.com_tw-cen-mt.ttf);
+}
+
+span {
+    color: #ff530A;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+main p {
+    font-size: 0.9rem;
+    color: #959595;
+    line-height: 1.5rem;
+    padding-top: 40px;
+}
+
+h1,
+h3,
+h3 span {
+    font-size: 1.2rem;
+}
+
+h1,
+h2,
+h4 {
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3,
+h3 span {
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.15rem;
+}
+
+body,
+a {
+    font-family: youfont;
+    font-size: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    width: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*HEADER*/
+
+.header-img {
+    max-width: 100%;
+}
+
+#top-img {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url("../images/overlay-pattern.png") #000;
+    opacity: 0.3;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+header {
+    position: sticky;
+    top: 70px;
+    height: 0;
+    z-index: 100;
+}
+
+header .container {
+
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.6), #ffffff);
+    width: 93%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    bottom: 70px;
+}
+
+.navigator {
+    height: 70px
+}
+
+.logo {
+    position: relative;
+    left: 20px;
+    top: 22px;
+}
+
+.button-container {
+    position: absolute;
+    right: 20px;
+    top: 27px;
+    cursor: pointer;
+}
+
+.button {
+    background-color: #e94c3d;
+    width: 20px;
+    height: 2px;
+    margin-bottom: 5px;
+}
+
+.nav-menu ul {
+    height: 0;
+    overflow: hidden;
+
+    transition: height 0.5s;
+}
+
+input[type="checkbox"]:checked~.nav-menu ul {
+    transition: height 0.5s;
+    height: 230px;
+}
+
+.nav-menu a {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #2E2E2E;
+    margin-left: 15px;
+    padding: 10px 0;
+
+}
+
+.nav-menu ul li span{
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #ff530A;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    transition: width .3s;
+}
+
+.nav-menu li.item:hover span,
+.nav-menu li.nav-active span{
+    width: 100%;
+}
+
+.nav-menu li {
+    padding: 10px 0;
+    
+    position: relative;
+}
+
+/*MAIN*/
+
+/*slider*/
+
+#slider {
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding: 50px 0;
+}
+
+#images {
+    display: grid;
+    grid-auto-flow: column;
+    transition: all 0.5s;
+}
+
+#images img {
+    margin: 0;
+}
+
+#images .slide-img {
+    height: 220px;
+}
+
+#images .slide-img img {
+    object-fit: fill;
+    width: 100%;
+    height: inherit
+}
+
+#slider .works {
+    position: relative;
+    width: 100%;
+}
+
+#slider div i {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #AA9D84;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+#slider h3 {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#slider .dot-container {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#slider .dot-container .dot {
+    background: #DADADA;
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin-right: 5px;
+    width: 10px;
+    cursor: pointer;
+}
+
+#slider .dot-container .dot.active-dot {
+    background: #FF5333;
+}
+
+#images {
+    padding: 30px 0;
+    margin-bottom: 20px;
+}
+
+/*restaurnt*/
+
+#restaurant {
+    background-color: #f6f6f6;
+    padding: 70px 0;
+}
+
+#restaurant div {
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#restaurant h1 {
+    padding: 40px 0;
+    line-height: 1.3;
+}
+
+#restaurant,
+#blog,
+#price,
+#subscribe {
+    text-align: center;
+}
+
+/*blog*/
+
+#blog {
+    background-image: url(../images/blog/blog-bg.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-bottom: 170px;
+}
+
+#blog h1 {
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+#blog h3 {
+    padding: 20px 0;
+}
+
+#blog ul {
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 0;
+}
+
+#blog .block li div {
+    position: relative;
+
+}
+
+.overf {
+    overflow: hidden;
+}
+
+#blog ul li p {
+    padding-top: 25px;
+}
+
+.content-left,
+.content-right {
+    background-color: white;
+    padding: 20px 35px;
+}
+
+#blog img {
+    width: 100%;
+}
+
+#blog .block ul li:hover img {
+    transform: scale(1.25) rotate(10deg);
+
+}
+
+#blog .block ul li img {
+    transition: all 0.8s ease-out;
+
+}
+
+.btn {
+    background-color: #ff530a;
+    padding: 28px 85px;
+    position: relative;
+    color: white;
+    float: left;
+    margin-top: 30px;
+    margin-left: 3.5%;
+
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 1px solid #ff530a;
+    color: #ff530a;
+    transition: 0.5s;
+}
+
+#blog .btn:hover {
+    border-radius: 10px;
+}
+
+/*price*/
+
+#price {
+    width: 93%;
+    margin: auto auto;
+    padding: 150px 0px;
+}
+
+#price .sotto {
+    display: none;
+}
+
+#price h1 {
+    padding: 40px 0;
+}
+
+#price span,
+#price h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+#price h3 {
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+#price h1>span {
+    font-size: 1.8rem;
+}
+
+#price .titolo {
+    text-align: left;
+    padding: 12px 0px;
+}
+
+#price li span:hover,
+#price .titolo:hover {
+    color: #ff530a;
+}
+
+#price li span:hover .titolo,
+#price .titolo:hover span {
+    color: #ff530a;
+}
+
+#price li span {
+    color: #938463;
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding-top: 15px;
+    display: block;
+    float: none;
+}
+
+#price li p {
+    text-align: left;
+    padding-bottom: 12px;
+    padding-top: 0;
+}
+
+#price li {
+    padding: 21px 0;
+}
+
+#price .btn {
+    font-weight: 600;
+    float: right;
+    color: #ff530a;
+    background-color: white;
+    border: 1px solid #ff530a;
+    margin: 0;
+}
+
+#price .btn:hover {
+    background-color: #ff530a;
+    color: white;
+    transition: 0.5s;
+}
+
+/*subscribe*/
+
+#subscribe {
+    background-image: url(../images/subscribe-bg.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-bottom: 200px;
+}
+
+#subscribe h1,
+#subscribe p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 93%;
+    color: white;
+    position: relative;
+}
+
+#subscribe h1 {
+    text-transform: uppercase;
+    padding: 120px 0 40px;
+    font-size: 1.8rem;
+}
+
+#subscribe p {
+    padding: 25px 0;
+    font-size: 1.12rem;
+}
+
+#subscribe span {
+    text-transform: none;
+}
+
+#subscribe .btn {
+    width: auto;
+    font-family: youfont;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    color: white;
+    background-color: #7ec3bb;
+    margin-top: 20px;
+    font-weight: 600;
+    padding: 25px 60px;
+    opacity: 1;
+}
+
+#subscribe .btn:hover {
+    background-color: #5d918b;
+    border: none;
+    box-shadow: 0px 0px 30px 15px white;
+    transition: 0.5s;
+}
+
+.form {
+    position: relative;
+}
+
+.form input {
+    width: 93%;
+    height: 65px;
+    opacity: 0.9;
+    padding: 12px 6px;
+    border: none;
+}
+
+/*contact us*/
+
+#contact-us {
+    position: relative;
+    padding: 70px 0;
+    max-width: 93%;
+    margin: auto auto;
+}
+
+#contact-us h1 {
+    padding: 40px 0;
+    text-align: center;
+}
+
+#contact-us h3 {
+    padding: 20px 0;
+}
+
+#contact-us input[type=text],
+#contact-us textarea {
+    display: block;
+    width: 100%;
+    font-family: youfont;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+#contact-us input[type=text] {
+    height: 48px;
+}
+
+#contact-us .btn {
+    text-align: center;
+    margin-left: 0;
+    padding: 20px 0;
+    width: 100%;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+}
+
+/*footer*/
+
+footer section {
+    margin-left: auto;
+    margin-right: auto;
+    width: 93%;
+    padding: 60px 0;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+footer p a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+footer div {
+    margin: 50px 0;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer h3 {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: #2E2E2E;
+    font-weight: 600;
+}
+
+footer h3 span {
+    font-weight: 600;
+}
+
+/*contact*/
+
+.contact h4 {
+    color: #ff530A;
+    padding: 18px 0;
+}
+
+.contact li h4 i {
+    color: #555;
+    margin-right: 30px;
+}
+
+.contact li h4 i:hover {
+    color: #ff530a;
+    transition: 0.5s;
+}
+
+/*blog*/
+
+.footer-blog h4 {
+    font-size: 1.2rem;
+    color: #ff530a;
+    font-weight: 600;
+    padding: 15px 0;
+    margin-top: 10px;
+}
+
+.footer-blog p {
+    color: #474747;
+    line-height: 1.5;
+}
+
+/*photo*/
+
+.photo li {
+    display: inline;
+}
+
+.photo li img {
+    margin-right: 20px;
+}
+
+.photo img:hover {
+    box-shadow: 0px 0px 30px 3px #ff530a;
+    width: 75px;
+    height: 75px;
+    transition: 0.5s;
+}
+
+/*link*/
+
+.link {
+    display: flex;
+}
+
+.link li a {
+    display: block;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background: #B0B0B0;
+    border-radius: 100%;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.link li a:hover {
+    background: #ff530a;
+    transition: 0.5s;
+    width: 50px;
+    height: 50px;
+}
+
+/*copyright*/
+
+.copyright {
+    margin-bottom: 0;
+}
+
+.copyright p {
+    color: #454545;
+    padding: 20px 0;
+    background-color: #E9E9E9;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    line-height: 1.2rem;
+}
+
+.copyright a {
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: #ff530a;
+}
+
+.copyright a:hover {
+    font-size: 1.5rem;
+    transition: 0.5s;
+}
+
+/*scroll*/
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
