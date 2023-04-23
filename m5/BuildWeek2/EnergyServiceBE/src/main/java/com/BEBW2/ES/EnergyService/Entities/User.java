@@ -36,10 +36,10 @@ public class User {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
-    private Set<Role> roles = new HashSet<Role>();
+    private Set<Role> roles = new java.util.LinkedHashSet<>();
 
     public User(String username, String email, String nome, String cognome, String password) {
         this.username = username;
